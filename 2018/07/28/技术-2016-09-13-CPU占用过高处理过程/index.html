@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        线上应用故障排查 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU-100-处理流程"><span class="toc-text">CPU 100% 处理流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内存使用过高处理流程"><span class="toc-text">内存使用过高处理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ps-指令无法查询进程中具体线程的内存适用情况"><span class="toc-text">ps 指令无法查询进程中具体线程的内存适用情况</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        线上应用故障排查
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-07-28 23:52:35</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#系统运维" title="系统运维">系统运维</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="CPU-100-处理流程"><a href="#CPU-100-处理流程" class="headerlink" title="CPU 100% 处理流程"></a>CPU 100% 处理流程</h4><p>当我们遇到 CPU 使用率过高的情况时(这里只考虑 <code>Linux/Solaris</code> 系统)<br>首先想到了 <code>top</code> 指令</p>
+<pre><code>&gt; top
+</code></pre><p>先看看哪个进程使用的cpu 比较高,　当然这里只讲 JVM 使用 CPU 过高的情况;</p>
+<p><img src="/assets/picture/top_cpu_fix.png" alt="图片" title="top 指令执行效果图"><br>这里的图片只是示例用，不存在cpu 使用率过高的问题</p>
+<p>在查询到 vmid 后，查询虚拟机进程中哪个线程使用的 cpu 比较高</p>
+<pre><code>&gt; ps -mp pid -o THREAD,tid,time
+</code></pre><p>确定了使用　cpu 过高的虚拟机线程 id 后，记录下　threadId</p>
+<p>然后再使用　<code>jstack</code> 记录当前虚拟机线程信息快照</p>
+<pre><code>$ jstack -l vmid　&gt; outofcpu.threaddump
+</code></pre><p> 这里已经获得了　<code>threadId</code> 和　当前的虚拟机线程信息快照信息</p>
+<p> 我们可以考虑重启一下 tomcat 或者直接重启 JVM</p>
+<p> 对于保存的　<code>threadId</code> 和　<code>outofcpu.threaddump</code><br> 在 threaddump 文件中查看　threadId 线程信息定位代码问题，达到修复目的</p>
+<hr>
+<h4 id="内存使用过高处理流程"><a href="#内存使用过高处理流程" class="headerlink" title="内存使用过高处理流程"></a>内存使用过高处理流程</h4><p>当我们遇到 <code>内存</code>  使用率过高的情况时(这里只考虑 <code>Linux/Solaris</code> 系统)<br><br>首先想到了还是 <code>top</code> 指令</p>
+<p><img src="/assets/picture/top_mem.png" alt="图片" title="top 指令执行效果图"></p>
+<p>我们看到这里的tomcat 占用内存大到了 60% 多， 记录下 vmid</p>
+<p>下面我们尝试查看这个进程中具体线程的内存使用情况<br><img src="/assets/picture/ps_thread_mem_bug.png" alt="图片" title="ps 指令无法查询进程中具体线程的内存适用情况"><br>这里可以看出</p>
+<h6 id="ps-指令无法查询进程中具体线程的内存适用情况"><a href="#ps-指令无法查询进程中具体线程的内存适用情况" class="headerlink" title="ps 指令无法查询进程中具体线程的内存适用情况"></a>ps 指令无法查询进程中具体线程的内存适用情况</h6><p><br><br>不过我们还有 java 提供的工具 jmap</p>
+<pre><code>&gt; sudo jmap -F -histo 12788 &gt; test.dump
+</code></pre><p>这里使用 <code>jmap -histo</code> 指令去 统计 JVM 堆中的对象信息</p>
+<pre><code>&gt; sudo jmap -F -dump:format=b,file=test.all.dump 12788
+</code></pre><p>这里使用 <code>jmap -dump</code> 指令去生成JVM 堆存储快照， 后面在用 jhat visualvm 等工具进行分析</p>
+<p>在分析之前，我们可以考虑一下是否需要重启服务</p>
+<hr>
+<p>这里在介绍一下 ps 的具体使用<br><img src="/assets/picture/ps_help.png" alt="图片" title="ps 帮助信息"></p>
+<p>-m: 显示当前 <code>process id</code> 进程下的线程的信息<br>-o: 用户自定义显示列</p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>

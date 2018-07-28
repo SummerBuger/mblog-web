@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        SpringMVC源码学习 —— MVC 配置加载过程 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringMVC-配置加载过程"><span class="toc-text">SpringMVC 配置加载过程</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        SpringMVC源码学习 —— MVC 配置加载过程
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-07-28 23:52:35</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Spring" title="Spring">Spring</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="SpringMVC-配置加载过程"><a href="#SpringMVC-配置加载过程" class="headerlink" title="SpringMVC 配置加载过程"></a>SpringMVC 配置加载过程</h3><p><code>Spring</code> 中加载配置文件的工具类是 <code>xxxNamespaceHandler</code>， 解析 SpringMVC 的配置文件，加载默认配置的工具类就是 <code>MvcNameSpaceHandler</code>。</p>
+<p>下面来看看 <code>MvcNameSpaceHandler</code> 的源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcNamespaceHandler</span> <span class="keyword">extends</span> <span class="title">NamespaceHandlerSupport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 注册 &lt;mvc:annotation-driven&gt; 配置标签解析类，具体解析内容见 [AnnotationDrivenBeanDefinitionParser]</span></span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"annotation-driven"</span>, <span class="keyword">new</span> AnnotationDrivenBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"default-servlet-handler"</span>, <span class="keyword">new</span> DefaultServletHandlerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"interceptors"</span>, <span class="keyword">new</span> InterceptorsBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"resources"</span>, <span class="keyword">new</span> ResourcesBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"view-controller"</span>, <span class="keyword">new</span> ViewControllerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"redirect-view-controller"</span>, <span class="keyword">new</span> ViewControllerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"status-controller"</span>, <span class="keyword">new</span> ViewControllerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"view-resolvers"</span>, <span class="keyword">new</span> ViewResolversBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"tiles-configurer"</span>, <span class="keyword">new</span> TilesConfigurerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"freemarker-configurer"</span>, <span class="keyword">new</span> FreeMarkerConfigurerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"velocity-configurer"</span>, <span class="keyword">new</span> VelocityConfigurerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"groovy-configurer"</span>, <span class="keyword">new</span> GroovyMarkupConfigurerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"script-template-configurer"</span>, <span class="keyword">new</span> ScriptTemplateConfigurerBeanDefinitionParser());</span><br><span class="line">		registerBeanDefinitionParser(<span class="string">"cors"</span>, <span class="keyword">new</span> CorsBeanDefinitionParser());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是 <code>AnnotationDrivenBeanDefinitionParser</code> 中的 <code>parse</code> 方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> BeanDefinition <span class="title">parse</span><span class="params">(Element element, ParserContext parserContext)</span> </span>&#123;</span><br><span class="line">		Object source = parserContext.extractSource(element);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 注册 `&lt;mvc:annotation-driven&gt;` 的组件信息</span></span><br><span class="line">		CompositeComponentDefinition compDefinition = <span class="keyword">new</span> CompositeComponentDefinition(element.getTagName(), source);</span><br><span class="line">		<span class="comment">// 将 `&lt;mvc:annotation-driven&gt;` 的组建信息 push 到解析配置的上下文的 栈 中去</span></span><br><span class="line">		parserContext.pushContainingComponent(compDefinition);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 获取 `ContentNegotiationManager`, 如果 &lt;mvc:annotation-driven&gt; 中配置了 ContentNegotiationManager 的实现类名，则返回该实现的引用；</span></span><br><span class="line">		<span class="comment">// 如果没有配置，就会生成一个默认的 ContentNegotiationManager</span></span><br><span class="line">		<span class="comment">// ContentNegotiationManager: 1. 根据request 解析出 mediaType； 2. 根据 mediaType 解析出文件后缀名</span></span><br><span class="line">		RuntimeBeanReference contentNegotiationManager = getContentNegotiationManager(element, source, parserContext);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 创建 RequestMappingHandlerMapping 的Bean 定义</span></span><br><span class="line">		RootBeanDefinition handlerMappingDef = <span class="keyword">new</span> RootBeanDefinition(RequestMappingHandlerMapping.class);</span><br><span class="line">		handlerMappingDef.setSource(source);</span><br><span class="line">		handlerMappingDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		<span class="comment">// 默认 order 为0，优先使用这个 HandlerMapping</span></span><br><span class="line">		handlerMappingDef.getPropertyValues().add(<span class="string">"order"</span>, <span class="number">0</span>);</span><br><span class="line">		handlerMappingDef.getPropertyValues().add(<span class="string">"contentNegotiationManager"</span>, contentNegotiationManager);</span><br><span class="line">		String methodMappingName = parserContext.getReaderContext().registerWithGeneratedName(handlerMappingDef);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 如果 &lt;mvc:annotation-driven&gt; 标签设置了 enable-matrix-variables 属性，在 RequestMappingHandlerMapping 中添加 removeSemicolonContent 属性 如果要使用 matrix-variales 属性， removeSemicolonContent 必须是 false</span></span><br><span class="line">		<span class="keyword">if</span> (element.hasAttribute(<span class="string">"enable-matrix-variables"</span>)) &#123;</span><br><span class="line">			Boolean enableMatrixVariables = Boolean.valueOf(element.getAttribute(<span class="string">"enable-matrix-variables"</span>));</span><br><span class="line">			handlerMappingDef.getPropertyValues().add(<span class="string">"removeSemicolonContent"</span>, !enableMatrixVariables);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (element.hasAttribute(<span class="string">"enableMatrixVariables"</span>)) &#123;</span><br><span class="line">			Boolean enableMatrixVariables = Boolean.valueOf(element.getAttribute(<span class="string">"enableMatrixVariables"</span>));</span><br><span class="line">			handlerMappingDef.getPropertyValues().add(<span class="string">"removeSemicolonContent"</span>, !enableMatrixVariables);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 读取 &lt;mvc:annotation-driven&gt; 中的 path-matching 属性</span></span><br><span class="line">		<span class="comment">// 读取 path-matching 中的 suffix-pattern、trailing-slash、registered-suffixes-only</span></span><br><span class="line">	  <span class="comment">// 设置 RequestMappingHandlerMapping 的 useSuffixPatternMatch、useTrailingSlashMatch、useRegisteredSuffixPatternMatch</span></span><br><span class="line">		<span class="comment">// 读取 path-matching 中的 path-helper （UrlPathHelper 或其自定义子类的全限定名）</span></span><br><span class="line">		<span class="comment">// 设置 RequestMappingHandlerMapping 的 UrlPathHelper，如果 path-helper 不为空则在 ParserContext 中设置当前 UrlPathHelper 的别名为 mvcUrlPathHelper</span></span><br><span class="line">		<span class="comment">// 读取 path-matching 中的 path-helper</span></span><br><span class="line">		<span class="comment">// 设置 RequestMappingHandlerMapping 中的 pathMatcher 默认为 AntPathMatcher(ant 风格的路径匹配器)，如果 path-helper 不为空则在 ParserContext 中设置当前 UrlPathHelper 的别名为 mvcPathMatcher</span></span><br><span class="line">		configurePathMatchingProperties(handlerMappingDef, element, parserContext);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// RequestMappingHandlerMapping 设置 CorsConfiguration(跨域请求配置信息) 并且 将 corsConfigurations 注册到 ParserContext 中</span></span><br><span class="line">		RuntimeBeanReference corsConfigurationsRef = MvcNamespaceUtils.registerCorsConfigurations(<span class="keyword">null</span>, parserContext, source);</span><br><span class="line">		handlerMappingDef.getPropertyValues().add(<span class="string">"corsConfigurations"</span>, corsConfigurationsRef);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 读取 path-matching 中的 conversion-service 获取 conversionService 并且注册到 ParserContext 中去</span></span><br><span class="line">		RuntimeBeanReference conversionService = getConversionService(element, source, parserContext);</span><br><span class="line">		RuntimeBeanReference validator = getValidator(element, source, parserContext);</span><br><span class="line">		RuntimeBeanReference messageCodesResolver = getMessageCodesResolver(element);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		RootBeanDefinition bindingDef = <span class="keyword">new</span> RootBeanDefinition(ConfigurableWebBindingInitializer.class);</span><br><span class="line">		bindingDef.setSource(source);</span><br><span class="line">		bindingDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		bindingDef.getPropertyValues().add(<span class="string">"conversionService"</span>, conversionService);</span><br><span class="line">		bindingDef.getPropertyValues().add(<span class="string">"validator"</span>, validator);</span><br><span class="line">		bindingDef.getPropertyValues().add(<span class="string">"messageCodesResolver"</span>, messageCodesResolver);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 获取配置信息中的 MessageConverter， 如果没有配置或者 register-defaults 为 true， 其实 register-defaults 默认为true</span></span><br><span class="line">		<span class="comment">// 也就是说不管你有没有配置 message-converters 属性  annotation-driven 都会为你注册这写 HttpMessageConverter:</span></span><br><span class="line">		<span class="comment">// ByteArrayHttpMessageConverter、StringHttpMessageConverter、ResourceHttpMessageConverter、SourceHttpMessageConverter、AllEncompassingFormHttpMessageConverter</span></span><br><span class="line">		<span class="comment">// 还有一些是否根据当前 classpath 中是否有对应的jar包才会添加的对应的 HttpMessageConverter</span></span><br><span class="line">		ManagedList&lt;?&gt; messageConverters = getMessageConverters(element, source, parserContext);</span><br><span class="line">		<span class="comment">// 获取用户自定义的 HandlerMethodArgumentResolver， 解析方法参数</span></span><br><span class="line">		ManagedList&lt;?&gt; argumentResolvers = getArgumentResolvers(element, parserContext);</span><br><span class="line">		<span class="comment">// 获取用户自定义的 HandlerMethodReturnValueHandler， 处理方法的返回值</span></span><br><span class="line">		ManagedList&lt;?&gt; returnValueHandlers = getReturnValueHandlers(element, parserContext);</span><br><span class="line">		String asyncTimeout = getAsyncTimeout(element);</span><br><span class="line">		RuntimeBeanReference asyncExecutor = getAsyncExecutor(element);</span><br><span class="line">		ManagedList&lt;?&gt; callableInterceptors = getCallableInterceptors(element, source, parserContext);</span><br><span class="line">		ManagedList&lt;?&gt; deferredResultInterceptors = getDeferredResultInterceptors(element, source, parserContext);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 创建 RequestMappingHandlerAdapter 的 bean 定义</span></span><br><span class="line">		RootBeanDefinition handlerAdapterDef = <span class="keyword">new</span> RootBeanDefinition(RequestMappingHandlerAdapter.class);</span><br><span class="line">		handlerAdapterDef.setSource(source);</span><br><span class="line">		handlerAdapterDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		handlerAdapterDef.getPropertyValues().add(<span class="string">"contentNegotiationManager"</span>, contentNegotiationManager);</span><br><span class="line">		handlerAdapterDef.getPropertyValues().add(<span class="string">"webBindingInitializer"</span>, bindingDef);</span><br><span class="line">		handlerAdapterDef.getPropertyValues().add(<span class="string">"messageConverters"</span>, messageConverters);</span><br><span class="line">		addRequestBodyAdvice(handlerAdapterDef);</span><br><span class="line">		addResponseBodyAdvice(handlerAdapterDef);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (element.hasAttribute(<span class="string">"ignore-default-model-on-redirect"</span>)) &#123;</span><br><span class="line">			Boolean ignoreDefaultModel = Boolean.valueOf(element.getAttribute(<span class="string">"ignore-default-model-on-redirect"</span>));</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"ignoreDefaultModelOnRedirect"</span>, ignoreDefaultModel);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (element.hasAttribute(<span class="string">"ignoreDefaultModelOnRedirect"</span>)) &#123;</span><br><span class="line">			<span class="comment">// "ignoreDefaultModelOnRedirect" spelling is deprecated</span></span><br><span class="line">			Boolean ignoreDefaultModel = Boolean.valueOf(element.getAttribute(<span class="string">"ignoreDefaultModelOnRedirect"</span>));</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"ignoreDefaultModelOnRedirect"</span>, ignoreDefaultModel);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (argumentResolvers != <span class="keyword">null</span>) &#123;</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"customArgumentResolvers"</span>, argumentResolvers);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (returnValueHandlers != <span class="keyword">null</span>) &#123;</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"customReturnValueHandlers"</span>, returnValueHandlers);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (asyncTimeout != <span class="keyword">null</span>) &#123;</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"asyncRequestTimeout"</span>, asyncTimeout);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (asyncExecutor != <span class="keyword">null</span>) &#123;</span><br><span class="line">			handlerAdapterDef.getPropertyValues().add(<span class="string">"taskExecutor"</span>, asyncExecutor);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		handlerAdapterDef.getPropertyValues().add(<span class="string">"callableInterceptors"</span>, callableInterceptors);</span><br><span class="line">		handlerAdapterDef.getPropertyValues().add(<span class="string">"deferredResultInterceptors"</span>, deferredResultInterceptors);</span><br><span class="line">		String handlerAdapterName = parserContext.getReaderContext().registerWithGeneratedName(handlerAdapterDef);</span><br><span class="line"></span><br><span class="line">		String uriCompContribName = MvcUriComponentsBuilder.MVC_URI_COMPONENTS_CONTRIBUTOR_BEAN_NAME;</span><br><span class="line">		RootBeanDefinition uriCompContribDef = <span class="keyword">new</span> RootBeanDefinition(CompositeUriComponentsContributorFactoryBean.class);</span><br><span class="line">		uriCompContribDef.setSource(source);</span><br><span class="line">		uriCompContribDef.getPropertyValues().addPropertyValue(<span class="string">"handlerAdapter"</span>, handlerAdapterDef);</span><br><span class="line">		uriCompContribDef.getPropertyValues().addPropertyValue(<span class="string">"conversionService"</span>, conversionService);</span><br><span class="line">		parserContext.getReaderContext().getRegistry().registerBeanDefinition(uriCompContribName, uriCompContribDef);</span><br><span class="line"></span><br><span class="line">		RootBeanDefinition csInterceptorDef = <span class="keyword">new</span> RootBeanDefinition(ConversionServiceExposingInterceptor.class);</span><br><span class="line">		csInterceptorDef.setSource(source);</span><br><span class="line">		csInterceptorDef.getConstructorArgumentValues().addIndexedArgumentValue(<span class="number">0</span>, conversionService);</span><br><span class="line">		RootBeanDefinition mappedCsInterceptorDef = <span class="keyword">new</span> RootBeanDefinition(MappedInterceptor.class);</span><br><span class="line">		mappedCsInterceptorDef.setSource(source);</span><br><span class="line">		mappedCsInterceptorDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		mappedCsInterceptorDef.getConstructorArgumentValues().addIndexedArgumentValue(<span class="number">0</span>, (Object) <span class="keyword">null</span>);</span><br><span class="line">		mappedCsInterceptorDef.getConstructorArgumentValues().addIndexedArgumentValue(<span class="number">1</span>, csInterceptorDef);</span><br><span class="line">		String mappedInterceptorName = parserContext.getReaderContext().registerWithGeneratedName(mappedCsInterceptorDef);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 创建 ExceptionHandlerExceptionResolver 的 Bean 定义</span></span><br><span class="line">		RootBeanDefinition exceptionHandlerExceptionResolver = <span class="keyword">new</span> RootBeanDefinition(ExceptionHandlerExceptionResolver.class);</span><br><span class="line">		exceptionHandlerExceptionResolver.setSource(source);</span><br><span class="line">		exceptionHandlerExceptionResolver.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		exceptionHandlerExceptionResolver.getPropertyValues().add(<span class="string">"contentNegotiationManager"</span>, contentNegotiationManager);</span><br><span class="line">		exceptionHandlerExceptionResolver.getPropertyValues().add(<span class="string">"messageConverters"</span>, messageConverters);</span><br><span class="line">		exceptionHandlerExceptionResolver.getPropertyValues().add(<span class="string">"order"</span>, <span class="number">0</span>);</span><br><span class="line">		addResponseBodyAdvice(exceptionHandlerExceptionResolver);</span><br><span class="line"></span><br><span class="line">		String methodExceptionResolverName =</span><br><span class="line">				parserContext.getReaderContext().registerWithGeneratedName(exceptionHandlerExceptionResolver);</span><br><span class="line"></span><br><span class="line">		RootBeanDefinition responseStatusExceptionResolver = <span class="keyword">new</span> RootBeanDefinition(ResponseStatusExceptionResolver.class);</span><br><span class="line">		responseStatusExceptionResolver.setSource(source);</span><br><span class="line">		responseStatusExceptionResolver.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		responseStatusExceptionResolver.getPropertyValues().add(<span class="string">"order"</span>, <span class="number">1</span>);</span><br><span class="line">		String responseStatusExceptionResolverName =</span><br><span class="line">				parserContext.getReaderContext().registerWithGeneratedName(responseStatusExceptionResolver);</span><br><span class="line"></span><br><span class="line">		RootBeanDefinition defaultExceptionResolver = <span class="keyword">new</span> RootBeanDefinition(DefaultHandlerExceptionResolver.class);</span><br><span class="line">		defaultExceptionResolver.setSource(source);</span><br><span class="line">		defaultExceptionResolver.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);</span><br><span class="line">		defaultExceptionResolver.getPropertyValues().add(<span class="string">"order"</span>, <span class="number">2</span>);</span><br><span class="line">		String defaultExceptionResolverName =</span><br><span class="line">				parserContext.getReaderContext().registerWithGeneratedName(defaultExceptionResolver);</span><br><span class="line"></span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(handlerMappingDef, methodMappingName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(handlerAdapterDef, handlerAdapterName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(uriCompContribDef, uriCompContribName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(exceptionHandlerExceptionResolver, methodExceptionResolverName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(responseStatusExceptionResolver, responseStatusExceptionResolverName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(defaultExceptionResolver, defaultExceptionResolverName));</span><br><span class="line">		parserContext.registerComponent(<span class="keyword">new</span> BeanComponentDefinition(mappedCsInterceptorDef, mappedInterceptorName));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Ensure BeanNameUrlHandlerMapping (SPR-8289) and default HandlerAdapters are not "turned off"</span></span><br><span class="line">	  <span class="comment">// 创建默认的组件 BeanNameUrlHandlerMapping、HttpRequestHandlerAdapter、SimpleControllerHandlerAdapter</span></span><br><span class="line">		MvcNamespaceUtils.registerDefaultComponents(parserContext, source);</span><br><span class="line"></span><br><span class="line">		parserContext.popAndRegisterContainingComponent();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>

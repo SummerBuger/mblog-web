@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Spring揭秘读书笔记 —— IOC 基本概念 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#以上对两位大神的著作的评论仅属个人言论，欢迎大家指正"><span class="toc-text">以上对两位大神的著作的评论仅属个人言论，欢迎大家指正</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IoC的基本概念读书笔记"><span class="toc-text">IoC的基本概念读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IoC-控制反转-————-我们的理念是：让别人为你服务"><span class="toc-text">IoC [控制反转] ———— 我们的理念是：让别人为你服务</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Spring揭秘读书笔记 —— IOC 基本概念
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-07-28 23:52:35</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Spring" title="Spring">Spring</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一直在使用Spring 这一开源项目， 但是在学习spring 的过程中一直没遇到让我心旷神怡的好书，看过 <code>《Spring技术内幕：深入解析Spring架构与设计原理（第2版）》</code>， 从源码角度讲解spring， 虽然也很不错， 但是略感枯燥。  另外就是开涛大神的 <code>跟我学Spring</code>(<a href="http://jinnianshilongnian.iteye.com/blog/1482071" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/blog/1482071</a>) 和 <code>跟我学Spring MVC</code>(<a href="http://jinnianshilongnian.iteye.com/blog/1617451)" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/blog/1617451)</a>, 这两个系列的博客，主要是从使用Spring 的角度出发，很适合初学者系列的学习Spring 的使用以及一些Spring 的原理。</p>
+<h6 id="以上对两位大神的著作的评论仅属个人言论，欢迎大家指正"><a href="#以上对两位大神的著作的评论仅属个人言论，欢迎大家指正" class="headerlink" title="以上对两位大神的著作的评论仅属个人言论，欢迎大家指正"></a>以上对两位大神的著作的评论仅属个人言论，欢迎大家指正</h6><p>最近接触到一本比较 <code>古老</code> 的 Spring 学习书籍 ———— <code>《Spring揭秘》</code> , 这本书貌似现在已经停刊了，讲的 Spring 也是将的 <code>Spring 2.X</code> , 但是 Spring 的主要思想，在这本书中被作者用一种通俗易懂的语言表达的让人能一边看，一边笑着点头， 甚是舒畅。</p>
+<hr>
+<h2 id="IoC的基本概念读书笔记"><a href="#IoC的基本概念读书笔记" class="headerlink" title="IoC的基本概念读书笔记"></a>IoC的基本概念读书笔记</h2><h4 id="IoC-控制反转-————-我们的理念是：让别人为你服务"><a href="#IoC-控制反转-————-我们的理念是：让别人为你服务" class="headerlink" title="IoC [控制反转] ———— 我们的理念是：让别人为你服务"></a>IoC [控制反转] ———— 我们的理念是：让别人为你服务</h4><p>书中的比喻很形象<br><img src="/assets/picture/iocmetaphor.png" alt="" title="IoC形象比喻"></p>
+<p>常见的 Ioc 实现方法</p>
+<ol>
+<li>构造方法注入</li>
+<li>setter方法注入</li>
+<li>接口注入</li>
+</ol>
+<p>三种方法中 <code>接口注入</code> 较为难理解<br>被注入的对象要想 Ioc Service Provider 为其注入依赖对象， 就要实现一个特定接口，特定的接口提供一个方法，用来为其注入一个依赖对象，这个特性接口就如同是上图比喻中的 “拿衣服的女朋友”</p>
+<p>示例：<br><img src="/assets/picture/ioc.interfaceinsert.demo.png" alt=""><br>FxNewsProvider 希望能被注入依赖 IFXNewsListener, 使用接口注入时，实现 FXNewsListenerCallable 接口  FXNewListenerCallable 接口提供了 injectNewsListener 方法, 这个方法的参数的类型就是 IFXNewsListenr</p>
+<p><code>接口注入</code>这种注入方式目前已经过时，不提倡使用</p>
+<p><code>构造方法注入</code> 在对象构造完之后，就会立即进入就绪状态，可以马上使用。但是如果依赖的对象比较多，构造方法的参数列表会比较长，而且<code>构造方法注入</code>底层实现还是基于反射机制，而反射机制对于构造方法中相同类型的参数处理会有困难；而且构造方法不能被继承，不能设置默认值</p>
+<p><code>setter方法注入</code> setter 方法参数单一，反射机制可以很好的支持，而且setter 方法能被继承，能够设置默认值</p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>

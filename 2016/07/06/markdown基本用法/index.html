@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        MarkDown 基本语法 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MarkDown-基本语法"><span class="toc-text">MarkDown 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题："><span class="toc-text">标题：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在文字标题之前加上-“-”-表示标题，-通过-“-”-的数量表示标题等，一个”-”表示一级，两个表示二级，最多六级"><span class="toc-text">1. 在文字标题之前加上 “#” 表示标题， 通过 “#” 的数量表示标题等，一个”#”表示一级，两个表示二级，最多六级</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一级标题"><span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二级标题"><span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#六级标题"><span class="toc-text">六级标题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-在文字下方加上两个以上的-“-“-表示标题-等同于二级标题-“-”"><span class="toc-text">2. 在文字下方加上两个以上的 “-“ 表示标题, 等同于二级标题 (“##”)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两个以上-‘-‘-表示二级标题"><span class="toc-text">两个以上 ‘-‘ 表示二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-在文字下方加上两个以上的-“-”-表示标题，等同于一级标题-“-”"><span class="toc-text">3. 在文字下方加上两个以上的 “=” 表示标题，等同于一级标题 (“#”)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#两个以上-‘-’-表示一级标题"><span class="toc-text">两个以上 ‘=’ 表示一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#粗体"><span class="toc-text">粗体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在-文字-前后-加上-两个-‘-’-或-‘-’"><span class="toc-text">1. 在 文字 前后 加上 两个 ‘_’ 或 ‘*’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斜体"><span class="toc-text">斜体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在文字前后加上一个-‘-’-或-‘-’"><span class="toc-text">1. 在文字前后加上一个 ‘_’ 或 ‘*’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粗斜体"><span class="toc-text">粗斜体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在文字前后加上三个-‘-’-或-‘-’"><span class="toc-text">1. 在文字前后加上三个 ‘_’ 或 ‘*’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-text">代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-行首加上四个-Tab-或-四个空格-代码块自带滚动条效果"><span class="toc-text">1. 行首加上四个 Tab 或 四个空格 (代码块自带滚动条效果)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区块引用"><span class="toc-text">区块引用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-文字前面加上-“-gt-”"><span class="toc-text">1. 文字前面加上 “&gt;”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-区块引用可以嵌套使用"><span class="toc-text">2. 区块引用可以嵌套使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割线"><span class="toc-text">分割线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-三个以上”-“"><span class="toc-text">1. 三个以上”-“</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-三个以上”-”"><span class="toc-text">2. 三个以上”*”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块和语法高亮"><span class="toc-text">代码块和语法高亮</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-代码块使用方法如下："><span class="toc-text">1. 代码块使用方法如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-代码块语法高亮-在-“"><span class="toc-text">2. 代码块语法高亮 在 “后加上 language1234```javapublic static void main(String[] args) {    System.out.println(&quot;hello markdown&quot;);}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-高亮部分文字"><span class="toc-text">3. 高亮部分文字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#超链接"><span class="toc-text">超链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-“-链接显示文字-url-“超链接标题”-“-url-和标题之间有空格"><span class="toc-text">1. “[链接显示文字](url “超链接标题”)“ url 和标题之间有空格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-指向本地文件的链接"><span class="toc-text">2. 指向本地文件的链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片引用"><span class="toc-text">图片引用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-图片引用使用方法如下"><span class="toc-text">1.  图片引用使用方法如下</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转义字符"><span class="toc-text">转义字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在需要转义的字符前面加上’-’"><span class="toc-text">1. 在需要转义的字符前面加上’\’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除线"><span class="toc-text">删除线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在文字前后加上两个-‘-’"><span class="toc-text">1. 在文字前后加上两个 ‘~’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-text">表格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-使用-来分隔不同的单元格，使用-来分隔表头和其他行："><span class="toc-text">1. 使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-表格对其-在表头和其他行的分隔符中加上-‘-’"><span class="toc-text">2. 表格对其, 在表头和其他行的分隔符中加上 ‘:’</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#‘-—‘-左对齐"><span class="toc-text">‘:—‘ 左对齐</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#‘-–-’-居中"><span class="toc-text">‘:–:’ 居中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#‘—-’-右对齐"><span class="toc-text">‘—:’ 右对齐</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上标和下标"><span class="toc-text">上标和下标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-上标-使用html标签-lt-sup-gt"><span class="toc-text">1. 上标 使用html标签 &lt;sup&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-下标-使用html-标签-lt-sub-gt"><span class="toc-text">2. 下标  使用html 标签 &lt;sub&gt;</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        MarkDown 基本语法
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2016-07-06 00:00:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#markdown" title="markdown">markdown</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>看到同事用 [git+github+markdown+jekyll] 搭建了一个<a href="http://littlepang.github.io/" target="_blank" rel="noopener"><em>个人博客</em></a>， 感觉很不错，果断 fork 他的分支，给自己来一个，下面简单记一些 [markdown]的语法，或者说占位符的用法</p>
+<h1 id="MarkDown-基本语法"><a href="#MarkDown-基本语法" class="headerlink" title="MarkDown 基本语法"></a>MarkDown 基本语法</h1><hr>
+<h3 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h3><h4 id="1-在文字标题之前加上-“-”-表示标题，-通过-“-”-的数量表示标题等，一个”-”表示一级，两个表示二级，最多六级"><a href="#1-在文字标题之前加上-“-”-表示标题，-通过-“-”-的数量表示标题等，一个”-”表示一级，两个表示二级，最多六级" class="headerlink" title="1. 在文字标题之前加上 “#” 表示标题， 通过 “#” 的数量表示标题等，一个”#”表示一级，两个表示二级，最多六级"></a>1. 在文字标题之前加上 “#” 表示标题， 通过 “#” 的数量表示标题等，一个”#”表示一级，两个表示二级，最多六级</h4><pre><code>例：# 用&quot;#&quot;表示标题
+   # 一级标题
+   ## 二级标题
+   ...
+   ####### 六级标题
+</code></pre><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>…</p>
+<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
+<h4 id="2-在文字下方加上两个以上的-“-“-表示标题-等同于二级标题-“-”"><a href="#2-在文字下方加上两个以上的-“-“-表示标题-等同于二级标题-“-”" class="headerlink" title="2. 在文字下方加上两个以上的 “-“ 表示标题, 等同于二级标题 (“##”)"></a>2. 在文字下方加上两个以上的 “-“ 表示标题, 等同于二级标题 (“##”)</h4><pre><code>  例： 在文字下方加上两个以上 &quot;-&quot; 表示标题
+----------------------------------
+</code></pre><h2 id="两个以上-‘-‘-表示二级标题"><a href="#两个以上-‘-‘-表示二级标题" class="headerlink" title="两个以上 ‘-‘ 表示二级标题"></a>两个以上 ‘-‘ 表示二级标题</h2><h4 id="3-在文字下方加上两个以上的-“-”-表示标题，等同于一级标题-“-”"><a href="#3-在文字下方加上两个以上的-“-”-表示标题，等同于一级标题-“-”" class="headerlink" title="3. 在文字下方加上两个以上的 “=” 表示标题，等同于一级标题 (“#”)"></a>3. 在文字下方加上两个以上的 “=” 表示标题，等同于一级标题 (“#”)</h4><pre><code>    例：在文字下方加上 &quot;=&quot; 表示标题(两个以上&quot;=&quot;)
+=======================
+</code></pre><h1 id="两个以上-‘-’-表示一级标题"><a href="#两个以上-‘-’-表示一级标题" class="headerlink" title="两个以上 ‘=’ 表示一级标题"></a>两个以上 ‘=’ 表示一级标题</h1><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><h4 id="1-在-文字-前后-加上-两个-‘-’-或-‘-’"><a href="#1-在-文字-前后-加上-两个-‘-’-或-‘-’" class="headerlink" title="1. 在 文字 前后 加上 两个 ‘_’ 或 ‘*’"></a>1. 在 <strong>文字</strong> 前后 <strong>加上</strong> 两个 ‘_’ 或 ‘*’</h4><pre><code>例：__n__  或 **n**
+</code></pre><p><strong>粗体</strong></p>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><h4 id="1-在文字前后加上一个-‘-’-或-‘-’"><a href="#1-在文字前后加上一个-‘-’-或-‘-’" class="headerlink" title="1. 在文字前后加上一个 ‘_’ 或 ‘*’"></a>1. 在文字前后加上一个 ‘_’ 或 ‘*’</h4><pre><code>例： _斜体_ 或 *斜体*
+</code></pre><p>_斜体_</p>
+<h3 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h3><h4 id="1-在文字前后加上三个-‘-’-或-‘-’"><a href="#1-在文字前后加上三个-‘-’-或-‘-’" class="headerlink" title="1. 在文字前后加上三个 ‘_’ 或 ‘*’"></a>1. 在文字前后加上三个 ‘_’ 或 ‘*’</h4><pre><code>例： ___斜粗体___ 或 ***斜粗体***
+</code></pre><p><strong><em>粗斜体</em></strong>  <strong><em>粗斜体</em></strong></p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><h4 id="1-行首加上四个-Tab-或-四个空格-代码块自带滚动条效果"><a href="#1-行首加上四个-Tab-或-四个空格-代码块自带滚动条效果" class="headerlink" title="1. 行首加上四个 Tab 或 四个空格 (代码块自带滚动条效果)"></a>1. 行首加上四个 Tab 或 四个空格 (代码块自带滚动条效果)</h4><pre><code>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------
+------------------
+-------
+</code></pre><h3 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h3><h4 id="1-文字前面加上-“-gt-”"><a href="#1-文字前面加上-“-gt-”" class="headerlink" title="1. 文字前面加上 “&gt;”"></a>1. 文字前面加上 “&gt;”</h4><pre><code>例： &gt; 这个一个区块引用
+</code></pre><blockquote>
+<p> 区块引用效果如下</p>
+</blockquote>
+<h4 id="2-区块引用可以嵌套使用"><a href="#2-区块引用可以嵌套使用" class="headerlink" title="2. 区块引用可以嵌套使用"></a>2. 区块引用可以嵌套使用</h4><pre><code>例：
+&gt; 这是外层
+&gt;&gt; 这是内层
+&gt;&gt;&gt; 这里更内层
+</code></pre><p>示例效果：</p>
+<blockquote>
+<p>这里外层</p>
+<blockquote>
+<p>这是内层</p>
+<blockquote>
+<p>这是更内层<br>这也是内层</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>注意<br>如果 <code>&gt;</code> 和 <code>&gt;&gt;</code> 嵌套使用的话，从 <code>&gt;&gt;</code> 退到 <code>&gt;</code> 时，必须之间要加一个空格或者 <code>&gt;</code> 作为过渡，否则默认为下一行和上一行是同一级别的引用。如示例所示。<br>示例效果：</p>
+<blockquote>
+<p>这里外层</p>
+<blockquote>
+<p>这是内层</p>
+<blockquote>
+<p>这是更内层</p>
+</blockquote>
+<p>这也是内层</p>
+</blockquote>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><h4 id="1-三个以上”-“"><a href="#1-三个以上”-“" class="headerlink" title="1. 三个以上”-“"></a>1. 三个以上”-“</h4><pre><code>例： ----
+</code></pre><p>示例效果如下</p>
+<hr>
+<h4 id="2-三个以上”-”"><a href="#2-三个以上”-”" class="headerlink" title="2. 三个以上”*”"></a>2. 三个以上”*”</h4><pre><code>例： ***
+</code></pre><p>示例效果如下</p>
+<hr>
+<h3 id="代码块和语法高亮"><a href="#代码块和语法高亮" class="headerlink" title="代码块和语法高亮"></a>代码块和语法高亮</h3><h4 id="1-代码块使用方法如下："><a href="#1-代码块使用方法如下：" class="headerlink" title="1. 代码块使用方法如下："></a>1. 代码块使用方法如下：</h4><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo(<span class="string">"this a js code Block"</span>);</span><br></pre></td></tr></table></figure>
+</code></pre><p>代码块效果如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tip = <span class="string">"this a js code block"</span>;</span><br><span class="line">echo(tip);</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-代码块语法高亮-在-“"><a href="#2-代码块语法高亮-在-“" class="headerlink" title="2. 代码块语法高亮 在 “"></a>2. 代码块语法高亮 在 “<figure class="highlight plain"><figcaption><span>后加上 language</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```java</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    System.out.println(&quot;hello markdown&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></h4><h4 id="3-高亮部分文字"><a href="#3-高亮部分文字" class="headerlink" title="3. 高亮部分文字"></a>3. 高亮部分文字</h4><pre><code>`高亮部分`
+</code></pre><p><code>高亮效果示例</code></p>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><h4 id="1-“-链接显示文字-url-“超链接标题”-“-url-和标题之间有空格"><a href="#1-“-链接显示文字-url-“超链接标题”-“-url-和标题之间有空格" class="headerlink" title="1. “[链接显示文字](url “超链接标题”)“ url 和标题之间有空格"></a>1. “[链接显示文字](url “超链接标题”)“ url 和标题之间有空格</h4><pre><code>例： [百度](http://www.baidu.com &quot;百度&quot;)
+</code></pre><p>示例效果:   <a href="http://www.baidu.com" title="百度" target="_blank" rel="noopener">百度</a></p>
+<h4 id="2-指向本地文件的链接"><a href="#2-指向本地文件的链接" class="headerlink" title="2. 指向本地文件的链接"></a>2. 指向本地文件的链接</h4><pre><code>例: [icon.png](/assets/picture/headPicture.png)
+</code></pre><p><a href="/assets/picture/headPicture.png">icon.png</a></p>
+<h3 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h3><h4 id="1-图片引用使用方法如下"><a href="#1-图片引用使用方法如下" class="headerlink" title="1.  图片引用使用方法如下"></a>1.  图片引用使用方法如下</h4><pre><code>例： ![图片](图片路径 &quot;图片标题&quot;)
+</code></pre><p><img src="/assets/picture/headPicture.png" alt="图片" title="图片标题"></p>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><h4 id="1-在需要转义的字符前面加上’-’"><a href="#1-在需要转义的字符前面加上’-’" class="headerlink" title="1. 在需要转义的字符前面加上’\’"></a>1. 在需要转义的字符前面加上’\’</h4><pre><code>例： 这是用来 _演示_ 的 **文本**
+
+    这是用来 \_演示\_ 的 \**文本\**
+</code></pre><p>这是用来 _演示_ 的 <strong>文本</strong></p>
+<p>这是用来 _演示_ 的 **文本**</p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><h4 id="1-在文字前后加上两个-‘-’"><a href="#1-在文字前后加上两个-‘-’" class="headerlink" title="1. 在文字前后加上两个 ‘~’"></a>1. 在文字前后加上两个 ‘~’</h4><pre><code>例： ~~删除线~~
+</code></pre><p>示例效果<br><del>删除线</del></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h4 id="1-使用-来分隔不同的单元格，使用-来分隔表头和其他行："><a href="#1-使用-来分隔不同的单元格，使用-来分隔表头和其他行：" class="headerlink" title="1. 使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行："></a>1. 使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行：</h4><pre><code>例：
+| name | age |
+| ---- | --- |
+| zero | 24  |
+| liam | 23  |
+</code></pre><p>示例效果：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zero</td>
+<td>24</td>
+</tr>
+<tr>
+<td>liam</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-表格对其-在表头和其他行的分隔符中加上-‘-’"><a href="#2-表格对其-在表头和其他行的分隔符中加上-‘-’" class="headerlink" title="2. 表格对其, 在表头和其他行的分隔符中加上 ‘:’"></a>2. 表格对其, 在表头和其他行的分隔符中加上 ‘:’</h4><h5 id="‘-—‘-左对齐"><a href="#‘-—‘-左对齐" class="headerlink" title="‘:—‘ 左对齐"></a>‘:—‘ 左对齐</h5><h5 id="‘-–-’-居中"><a href="#‘-–-’-居中" class="headerlink" title="‘:–:’ 居中"></a>‘:–:’ 居中</h5><h5 id="‘—-’-右对齐"><a href="#‘—-’-右对齐" class="headerlink" title="‘—:’ 右对齐"></a>‘—:’ 右对齐</h5><pre><code>例：
+| left | center | right |
+| :--- | :----: | ----: |
+|左    |中     |右     |
+</code></pre><p>示例效果:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">left</th>
+<th style="text-align:center">center</th>
+<th style="text-align:right">right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左</td>
+<td style="text-align:center">中</td>
+<td style="text-align:right">右</td>
+</tr>
+</tbody>
+</table>
+<h3 id="上标和下标"><a href="#上标和下标" class="headerlink" title="上标和下标"></a>上标和下标</h3><h4 id="1-上标-使用html标签-lt-sup-gt"><a href="#1-上标-使用html标签-lt-sup-gt" class="headerlink" title="1. 上标 使用html标签 &lt;sup&gt;"></a>1. 上标 使用html标签 <code>&lt;sup&gt;</code></h4><pre><code>例： 来个上标 &lt;sup&gt;[1]&lt;/sup&gt;
+</code></pre><p>示例效果:</p>
+<p>来个上标<sup>[1]</sup></p>
+<h4 id="2-下标-使用html-标签-lt-sub-gt"><a href="#2-下标-使用html-标签-lt-sub-gt" class="headerlink" title="2. 下标  使用html 标签 &lt;sub&gt;"></a>2. 下标  使用html 标签 <code>&lt;sub&gt;</code></h4><pre><code>例: 来个下标 &lt;sub&gt;[2]&lt;/sub&gt;
+</code></pre><p>示例效果:</p>
+<p>来个下标<sub>[2]</sub></p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>

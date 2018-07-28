@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        etcd 使用入门 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#etcd-使用入门"><span class="toc-text">etcd 使用入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#etcd-安装"><span class="toc-text">etcd 安装</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        etcd 使用入门
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-07-28 23:52:35</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#etcd" title="etcd">etcd</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="etcd-使用入门"><a href="#etcd-使用入门" class="headerlink" title="etcd 使用入门"></a>etcd 使用入门</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>介绍 etcd 和 raft协议</p>
+<h3 id="etcd-安装"><a href="#etcd-安装" class="headerlink" title="etcd 安装"></a>etcd 安装</h3><p>etcd 的安装有两种方式</p>
+<ol>
+<li>直接从<a href="&quot;https://github.com/coreos/etcd/releases/&quot;" title="release binary page">官网</a>下载 release 版本的二进制文件</li>
+<li>下载源码手动编译安装</li>
+</ol>
+<p>个人倾向于使用 release 版本安装，下面开始下载安装</p>
+<ol>
+<li><p>找到下载的压缩包，解压</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip etcd-v3.3.8-darwin-amd64.zip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将解压的文件夹的移动到安装目录中</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /path/to/etcd /usr/<span class="built_in">local</span>/etcd</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此时我们可以先看看解压后有什么？</p>
+<pre><code>➜  etcd-v3.3.8-darwin-amd64 ll
+total 113064
+drwxr-xr-x  22 ?  staff   748B  6 16 00:55 Documentation
+-rw-r--r--   1 ?  staff    38K  6 16 00:55 README-etcdctl.md
+-rw-r--r--   1 ?  staff   7.1K  6 16 00:55 README.md
+-rw-r--r--   1 ?  staff   7.7K  6 16 00:55 READMEv2-etcdctl.md
+drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
+-rwxr-xr-x   1 ?  staff    30M  6 16 00:55 etcd
+-rwxr-xr-x   1 ?  staff    25M  6 16 00:55 etcdctl
+</code></pre><p>可以看到这里有两个可执行程序: <code>etcd</code> 和 <code>etcdctl</code></p>
+<p><code>etcd</code>: etcd 服务端程序<br><code>etcdctl</code>: etcd 客户端程序</p>
+<ol start="3">
+<li>启动程序</li>
+</ol>
+<p>3.1 使用默认配置启动程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcd</span><br></pre></td></tr></table></figure>
+<p>3.2 来一个配置文件</p>
+<p><em><em>待补充</em></em></p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>

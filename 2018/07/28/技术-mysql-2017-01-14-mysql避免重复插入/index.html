@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        mysql 避免重复插入 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>Liam Chen</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql-避免重复插入"><span class="toc-text">mysql 避免重复插入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-ignore-关键字"><span class="toc-text">使用 ignore 关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-replace-关键字"><span class="toc-text">使用 replace 关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-on-duplicate-key-update"><span class="toc-text">使用 on duplicate key update</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        mysql 避免重复插入
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-07-28 23:52:35</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#mysql" title="mysql">mysql</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="mysql-避免重复插入"><a href="#mysql-避免重复插入" class="headerlink" title="mysql 避免重复插入"></a>mysql 避免重复插入</h3><p><code>mysql</code> 避免重复插入的方式有这样几种</p>
+<ol>
+<li>使用 <code>ignore</code> 关键字</li>
+<li>使用 <code>replace</code> 关键字</li>
+<li>使用 <code>on duplicate key update</code></li>
+</ol>
+<hr>
+<h4 id="使用-ignore-关键字"><a href="#使用-ignore-关键字" class="headerlink" title="使用 ignore 关键字"></a>使用 <code>ignore</code> 关键字</h4><p>当表中存在<code>主键</code>或者<code>唯一索引</code>的时候, 避免重复插入的时候，就可以使用以下命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">ignore</span> <span class="keyword">into</span> table_name <span class="keyword">set</span> <span class="keyword">name</span> = ?, <span class="keyword">desc</span> = ?</span><br></pre></td></tr></table></figure>
+<p>当表中已经存在数据的时候，本次 <code>insert</code> 会被忽略</p>
+<p><em>注意：需要注意的是 <code>insert ignore</code> 在忽略某一次插入的时候自增id 还是会增长的，举例如下：</em><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tb1`</span> (</span><br><span class="line"> <span class="string">`id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line"> <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'名称'</span>,</span><br><span class="line"> <span class="string">`modify_time`</span> <span class="keyword">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'2000-01-01 00:00:00'</span> <span class="keyword">COMMENT</span> <span class="string">'修改时间'</span>,</span><br><span class="line"> PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'测试表'</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into tb1 value(1, "name1", now());</span><br><span class="line">Query OK, 1 row affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into tb1 value(1, "name2", now());</span><br><span class="line">ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'</span><br><span class="line">mysql&gt; select * from tb1;</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">| id | name  | modify_time         |</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">|  1 | name1 | 2018-07-25 13:35:27 |</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">insert</span> <span class="keyword">ignore</span> <span class="keyword">into</span> tb1 <span class="keyword">value</span>(<span class="number">1</span>, <span class="string">"name2"</span>, <span class="keyword">now</span>());</span><br><span class="line">Query OK, 0 rows affected, 1 warning (0.01 sec)</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="使用-replace-关键字"><a href="#使用-replace-关键字" class="headerlink" title="使用 replace 关键字"></a>使用 <code>replace</code> 关键字</h4><p>除了 <code>insert ignore</code> 之外还有 <code>replace into</code> 这里也要求表中必须存在 <code>主键</code> 或者 <code>唯一索引</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">replace</span> <span class="keyword">into</span> table_name <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'a'</span>, <span class="keyword">desc</span> = <span class="string">'b'</span></span><br></pre></td></tr></table></figure>
+<p>表中 name 必须存在 <code>唯一索引</code> ， 如果表中已经存在 name = ‘a’ 的时候， desc 的值将变更为 ‘b’</p>
+<hr>
+<h4 id="使用-on-duplicate-key-update"><a href="#使用-on-duplicate-key-update" class="headerlink" title="使用 on duplicate key update"></a>使用 <code>on duplicate key update</code></h4><p>当表中存在<code>主键</code>或者<code>唯一索引</code>的时候, 避免重复插入的时候，还可以使用以下命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name(uniq_name, <span class="keyword">desc</span>) <span class="keyword">values</span>(<span class="string">'exists_name'</span>, <span class="string">'desc'</span>) <span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">on</span> <span class="keyword">update</span> <span class="keyword">count</span> = <span class="keyword">count</span>+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>上面的语句在避免重复插入的同时，还可以修改某一字段， 如果不需要修改任何字段，请使用一下语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name(uniq_name, <span class="keyword">desc</span>) <span class="keyword">values</span>(<span class="string">'exists_name'</span>, <span class="string">'desc'</span>) <span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">on</span> <span class="keyword">update</span> <span class="keyword">desc</span> = <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<p>可以说 <code>on duplicate key update</code> 能够实现 <code>insert ignore</code> 和 <code>replace into</code> 的功能！</p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>
