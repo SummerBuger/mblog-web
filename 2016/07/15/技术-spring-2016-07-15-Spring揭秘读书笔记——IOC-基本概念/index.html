@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="前言一直在使用Spring 这一开源项目， 但是在学习spring 的过程中一直没遇到让我心旷神怡的好书，看过 《Spring技术内幕：深入解析Spring架构与设计原理（第2版）》， 从源码角度讲解spring， 虽然也很不错， 但是略感枯燥。  另外就是开涛大神的 跟我学Spring(http://jinnianshilongnian.iteye.com/blog/1482071) 和 跟我学">
+<meta name="description" content="《Spring揭秘》学习系列，回顾IOC 基本概念">
 <meta name="keywords" content="Spring,《Spring揭秘》">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring揭秘读书笔记 —— IOC 基本概念">
 <meta property="og:url" content="https://summerbuger.github.io/2016/07/15/技术-spring-2016-07-15-Spring揭秘读书笔记——IOC-基本概念/index.html">
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
-<meta property="og:description" content="前言一直在使用Spring 这一开源项目， 但是在学习spring 的过程中一直没遇到让我心旷神怡的好书，看过 《Spring技术内幕：深入解析Spring架构与设计原理（第2版）》， 从源码角度讲解spring， 虽然也很不错， 但是略感枯燥。  另外就是开涛大神的 跟我学Spring(http://jinnianshilongnian.iteye.com/blog/1482071) 和 跟我学">
+<meta property="og:description" content="《Spring揭秘》学习系列，回顾IOC 基本概念">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/iocmetaphor.png">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/ioc.interfaceinsert.demo.png">
-<meta property="og:updated_time" content="2018-07-28T17:24:56.000Z">
+<meta property="og:updated_time" content="2018-07-29T02:47:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring揭秘读书笔记 —— IOC 基本概念">
-<meta name="twitter:description" content="前言一直在使用Spring 这一开源项目， 但是在学习spring 的过程中一直没遇到让我心旷神怡的好书，看过 《Spring技术内幕：深入解析Spring架构与设计原理（第2版）》， 从源码角度讲解spring， 虽然也很不错， 但是略感枯燥。  另外就是开涛大神的 跟我学Spring(http://jinnianshilongnian.iteye.com/blog/1482071) 和 跟我学">
+<meta name="twitter:description" content="《Spring揭秘》学习系列，回顾IOC 基本概念">
 <meta name="twitter:image" content="https://summerbuger.github.io/assets/picture/iocmetaphor.png">
 
 
@@ -331,6 +331,10 @@
           
 
           
+              <div class="post-description">
+                  《Spring揭秘》学习系列，回顾IOC 基本概念
+              </div>
+          
 
         </div>
       </header>
@@ -392,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/15/技术-spring-2016-07-15-Spring揭秘读书笔记——IOC之BeanFactory/" rel="next" title="Spring揭秘读书笔记 —— IOC BeanFactory">
-                <i class="fa fa-chevron-left"></i> Spring揭秘读书笔记 —— IOC BeanFactory
+              <a href="/2016/07/10/技术-java-2016-07-10-jackson中的Feature/" rel="next" title="Jackson 中的 Features">
+                <i class="fa fa-chevron-left"></i> Jackson 中的 Features
               </a>
             
           </div>
@@ -402,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/16/技术-spring-2016-07-16-Spring揭秘读书笔记——如何干涉IOC容器/" rel="prev" title="Spring揭秘读书笔记 —— 如何干涉IOC容器">
-                Spring揭秘读书笔记 —— 如何干涉IOC容器 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/15/技术-spring-2016-07-15-Spring揭秘读书笔记——IOC之BeanFactory/" rel="prev" title="Spring揭秘读书笔记 —— IOC BeanFactory">
+                Spring揭秘读书笔记 —— IOC BeanFactory <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -485,7 +489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -496,7 +500,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -507,7 +511,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

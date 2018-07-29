@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="synchronized 几种使用方法比较synchronized 关键字在 Java 中出现的很早， Java 提供的实现原子性的内置锁机制，就是用这个关键字实现。synchronized 关键字可以修饰方法，也可以修饰一个代码块，实现一种互斥锁，这里就不做赘述。 下面讨论几个问题 1. synchronized 关键字修饰 非静态方法， 锁定的是对象实例还是类？1234567891011121">
+<meta name="description" content="java 并发基础，synchronized 关键字使用说明">
 <meta name="keywords" content="Java,并发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="synchronized 几种使用方法比较">
-<meta property="og:url" content="https://summerbuger.github.io/2016/07/27/技术-2016-07-27-synchronized-几种使用方法比较/index.html">
+<meta property="og:url" content="https://summerbuger.github.io/2016/07/27/技术-java-2016-07-27-synchronized-几种使用方法比较/index.html">
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
-<meta property="og:description" content="synchronized 几种使用方法比较synchronized 关键字在 Java 中出现的很早， Java 提供的实现原子性的内置锁机制，就是用这个关键字实现。synchronized 关键字可以修饰方法，也可以修饰一个代码块，实现一种互斥锁，这里就不做赘述。 下面讨论几个问题 1. synchronized 关键字修饰 非静态方法， 锁定的是对象实例还是类？1234567891011121">
+<meta property="og:description" content="java 并发基础，synchronized 关键字使用说明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-28T17:19:06.000Z">
+<meta property="og:updated_time" content="2018-07-29T02:33:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="synchronized 几种使用方法比较">
-<meta name="twitter:description" content="synchronized 几种使用方法比较synchronized 关键字在 Java 中出现的很早， Java 提供的实现原子性的内置锁机制，就是用这个关键字实现。synchronized 关键字可以修饰方法，也可以修饰一个代码块，实现一种互斥锁，这里就不做赘述。 下面讨论几个问题 1. synchronized 关键字修饰 非静态方法， 锁定的是对象实例还是类？1234567891011121">
+<meta name="twitter:description" content="java 并发基础，synchronized 关键字使用说明">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://summerbuger.github.io/2016/07/27/技术-2016-07-27-synchronized-几种使用方法比较/"/>
+  <link rel="canonical" href="https://summerbuger.github.io/2016/07/27/技术-java-2016-07-27-synchronized-几种使用方法比较/"/>
 
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2016/07/27/技术-2016-07-27-synchronized-几种使用方法比较/">
+    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2016/07/27/技术-java-2016-07-27-synchronized-几种使用方法比较/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liam Chen">
@@ -327,6 +327,10 @@
 
           
 
+          
+              <div class="post-description">
+                  java 并发基础，synchronized 关键字使用说明
+              </div>
           
 
         </div>
@@ -566,7 +570,7 @@ Process finished with exit code 0
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +581,7 @@ Process finished with exit code 0
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +592,7 @@ Process finished with exit code 0
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

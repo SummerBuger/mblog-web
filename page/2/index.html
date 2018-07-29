@@ -252,167 +252,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2017/11/23/技术-docker-2017-11-23-Docker常用指令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liam Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/headPicture.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ice summer bug's notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/技术-docker-2017-11-23-Docker常用指令/" itemprop="url">Docker常用指令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T21:00:00+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Docker-常用指令"><a href="#Docker-常用指令" class="headerlink" title="Docker 常用指令"></a>Docker 常用指令</h3><p>作为一个开发最近才开始使用docker ，深感惭愧！<br>最近在学习 <code>CloudMan</code> 大佬的 <a href="http://mp.weixin.qq.com/s/7o8QxGydMTUe4Q7Tz46Diw" target="_blank" rel="noopener"><em>《每天5分钟玩转 Docker 容器技术》</em></a>, 通俗易懂，每天积累一点点，积累，这里记录一下常用的 docker 相关知识，仅做笔记用。</p>
-<ol>
-<li><p>查看本地的所有 <code>docker</code>镜像</p>
-<pre><code>docker images
-</code></pre></li>
-<li><p>查看指定镜像信息</p>
-<pre><code>docker images ubuntu
-</code></pre></li>
-<li><p>查看指定tag 的镜像信息</p>
-<pre><code>docker images ubuntu:latest
-</code></pre></li>
-</ol>
-<ol start="4">
-<li><p>从 <code>Docker Hub</code> 下载镜像</p>
-<pre><code>docker pull hello-world
-</code></pre></li>
-<li><p>交互运行一个 container</p>
-<pre><code>docker run -it ubuntu
-</code></pre></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2017/09/01/计算广告-2017-09-01-计算广告学习笔记之名词汇总0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -505,116 +344,14 @@
 
       
         
-          
-            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>最近看了刘鹏老师的《计算广告》，叹为惊止，对于接触广告投放业务不到一年的我产生了很大帮助，决定好好研读这本广告 <code>圣经</code></p>
-<h4 id="计算广告名词汇总"><a href="#计算广告名词汇总" class="headerlink" title="计算广告名词汇总"></a>计算广告名词汇总</h4><p><code>广告主（Advisiter）</code>： 买广告位的个人或公司<br><code>媒体（media）</code>：卖广告位的个体<br><code>受众（audience）</code>：看广告的人</p>
-<p>在线广告创意类型</p>
-<ol>
-<li><code>横幅广告</code></li>
-<li><code>文字链广告</code></li>
-<li><code>富媒体广告</code></li>
-<li><code>视屏广告</code></li>
-<li><code>社交广告</code>：社交广告是指几月社交信息，在用户的社交信息流中展示的广告，如你的还有对汽车很感兴趣，你们有很多的相似点，你将在你的朋友圈看到汽车广告</li>
-<li><code>移动广告</code>：移动端的广告</li>
-<li><code>邮件定向营销广告</code>：类似产品有通过广告、imessage等方式投放的广告</li>
-</ol>
-<p><code>展示广告（Display  Advertising）</code>：纸媒上的广告方式迁移到网页中<br><code>合约广告（Agreement-based Advertising）</code>: 采用合同方式约定某一个广告位在某一时间段为某特定广告主主所独占； CPT 结算方式<br><code>受众广告（Target  Advertising）</code>：针对不同用户投放不同的广告<br><code>受众定向（Audience  Targeting）</code>：收集用户信息，进行归类、贴标签<br><code>广告投放 （Advertising Serving）</code>：从静态页面变为实时从服务器获取要展示的广告信息</p>
-<p><code>担保式投放（Guaranteed Delivery, GD）</code>：在合约广告的基础上，媒体向广告主保证，某个投放量，并确定投放量未完成的情况下 的赔偿方案。<br><code>按千次展现付费 (Cost per Mille, CPM)</code><br><code>在线分配(online allocation)</code>：对于每一次在线广告的展现进行实时决策，有效的将流量分配到各个合约互相交叉的人群覆盖上</p>
-<p><code>竞价广告（auction-based advertising）</code><br><code>搜索广告（search advertising）</code>：用户输入关键词，根据关键词精确定位广告；广告主通过购买关键词来购买广告位资源<br><em>疑问：搜索广告和上下文广告中，广告主都是针对关键词出价，如果两个广告主都买了同一个广告词时，如果选择展示哪个广告？按照 eCPM 排序吗？</em><br><code>上下文广告（search advertising）</code>：将搜索广告中的搜索词换成页面的关键词，通过页面关键词定位广告</p>
-<p><code>广义第二高价(Generalized Second Price, GSP)</code></p>
-<p><code>ADN（AD Network）</code>：广告网络，批量运营媒体的广告位资源，按照人群或者上下文标签售卖给需求方，并用竞价的方式决定流量分配；在广告市场中广告网络的出现是为了批量聚合各媒体方的<code>剩余流量</code>，批量卖给需求方实现变现，因此广告网络提供的流量一般质量较差，广告网络先天性不适合投放品牌广告；国内主要公司产品：百度网盟</p>
-<p><code>竞价广告网络</code>: 竞价售卖方式的广告网络，淡化广告位标的，售卖标的是根据标签划分的人群。产品特点如下</p>
-<ol>
-<li>竞价方式不向广告主做出量的约定，使得广告网络可以专注于对eCPM的估计</li>
-<li>广告网络的出现就是为了批量聚合各媒体的<code>剩余流量</code>，淡化广告位，按人群售卖，很难拿到品牌溢价高的广告位，一般不适合品牌类广告</li>
-<li>竞价广告的结算方式首推CPC, 屏蔽了广告位的概念之后，广告主无法估计每次展现出价，当使用CPC结算时，广告主只需要根据点击出价</li>
-</ol>
-<p><code>竞价广告需求方产品</code>: 1. 挑选广告合适的目标人群 2.针对目标人群给出合理的出价； 上述两个问题的根本就是优化<code>ROI</code><br>a) <code>搜索引擎营销(SEM Search Engine Marketing)</code>：选择合适的关键词；对关键词出价</p>
-<p><code>CPC（Cost per click）</code>：按点击收费<br><code>TD（Trading Desk）</code>：交易终端，面对多个ADN或者媒体按人群一站式采买的广告并优化投入产出比的需求方产品</p>
-<p><code>RTB（Real Time Bidding）</code>：实时竞价，针对每一次广告展现，向需求方产品发送广告位及用户标识，从需求方获取报价，比较各需求方的价格，选出最优价格，展示该需求方的广告<br><code>ADX (Advertising Exchange)</code>：广告交易平台，大量聚合媒体的剩余流量，并且通过实时竞价的方式将它们变现的产品形态<br><code>DSP（Demand Side Platform）</code>：需求方平台，通过实时竞价的方式，按照定制化的人群标签购买广告； 需求方平台将非竞价广告中需要广告交易平台来实现的对人群进行定制化标签划分工作给接管了，DSP 根据自身的第一方数据（来自DMP)面对市场提供的开放竞价接口，出价采买合适的广告<br><code>DMP (Data Management Platform)</code>：数据管理平台，收集第一方数据，为自身平台收集数据信息<br><code>数据交易平台 (Data Exchange Platform, DEP)</code> 数据交易平台，收集管理交易第三方数 据</p>
-<p>第一方数据：广告主自身的数据<br>第二方数据：广告平台的数据<br>第三方数据：不直接参与广告交易的其他数据提供方的数据</p>
-<p><code>重定向</code>: 针对在广告主网站有过操作的用户，精确投放操作相关的广告，提高转化率；缺点是只能提高ROI，无法获取新用户</p>
-<ol>
-<li>个性化重定向， 类似于站外推荐，依赖根据用户信息的精确推荐引擎，对于电商系统动态库存查询接口也是必要的</li>
-</ol>
-<p><code>新客推荐</code>: 在第一方数据的基础上，依赖第二方数据，针对“对自己的产品可能感兴趣”的用户进行广告投放，针对的是没有关注广告主网站的用户。</p>
-<p><em><em>ADN 和 ADX 的差别在于，ADN将媒体资源分类后打包出售，而 ADX 针对每一次广告展现通过实时竞价的方式，单次售卖每一次广告展现</em></em></p>
-<p><em><em>TD 和 DSP 的差别在于，TD 批量的从ADN 或者媒体采买广告，而 DSP 需要尽可能的估计每一次广告展现带来的期望价值，计算出一个合理的报价，通过实时竞价从ADX 购买广告</em></em></p>
-<p><code>程序化交易(programmatic trade)</code></p>
-<p><code>优选(preferred deals)</code>: 允许单个广告主按照自己的意愿挑选广告</p>
-<p><code>私有交易市场(Private Market Place, PMP)</code>：邀请部分优质广告主，通过竞价方式，进行广告交易</p>
-<p><code>媒介采买平台(media buying Platform)</code></p>
-<p><code>原生广告(Native Advertising)</code>：将广告内容和页面信息尽量做到意向近似或展示形式近似</p>
-<p><code>eCPM(expected Cost per Mille)</code>：千次展现期望收入，点击率和点击价值的乘积, <code>eCPM</code>的基础是对每次广告展现进行点击率预估</p>
-<p><code>广告安全(AD safety)</code>：让合适的广告出现在合适的媒体上</p>
-<p><code>CTR (Click Through Rate)</code>：点击率，广告点击和广告展现的比率</p>
-<p><code>CVR (Conversion Rate)</code>：转化率，转化次数和到达次数的比例</p>
-<pre><code>eCPM =  r(a,u,c) = μ(a,u,c) * v(a,u,c)
-(a:广告 u:用户 c:环境 r: 总收入 μ:点击率 v:点击价值)
-</code></pre><p>从上述表达式得出: 当点击价值恒定是，CTR == eCPM<br>eCPM代表DSP的出价，为了快速花完预算，可以将eCPM 预估的高于市场价；为了获得性价比高的流量，将eCPM定位在市场价较低的地方</p>
-<p><em><em>eCPM 一般指的是估计的千次展现收益; RPM 指的是千次展现收入; CPM 是千次展示成本</em></em></p>
-<p>广告结算方式</p>
-<ol>
-<li><code>CPM 结算</code>：按照千次展示结算，供给方和需求方约定好前次展示的计费标准，展示的收益效果由需求方把控</li>
-<li><code>CPC 结算</code>：即按点击结算，供给方（或中间市场）提供点击率数据，需求方估计点击价值，并且通过点击出价的方式向市场通知自己的估价。优点是，供给方通过大量收集用户行为数据可以相对准确的估计点击率；广告主通过分析用户的站内行为数据，对点击价值作出评估。</li>
-<li><code>CPS(Cose per sale)/ CPA(Cost Per Action)/ROI(Return Of Investment) 结算</code>：需求方按照转化收益结算，对需求方来说极大的规避了风险，对供给方来说既要估计点击率又要估计点击价值；在一些场景中供给方无法准确估计点击价值，该结算方式要求供给方能够较准确的估计点击价值或者能借助完善的第三方转化监测估计点击价值。</li>
-<li><code>CPT(Cost per Time)</code>：将某个广告位在某段时间内以独占的方式售卖给广告主，价格由双方约定，无需计量；是品牌广告的不二选择</li>
-</ol>
-<p><code>垂直广告网络(vertical ad network)</code>：特定主题的广告网络，适用<code>CPS(Cose per sale)/ CPA(Cost Per Action)/ROI(Return Of Investment) 结算</code></p>
-<p><code>合约广告产品</code>: 按照时段售卖的CPT 广告和按照约定展示量售卖的CPM广告<br><code>竞价广告产品</code>: 主要是搜索广告</p>
-<p><code>流量预测</code>: 在担保式投放中，合约中明确约定了投放的量；那么对于供应方系统和广告交易系统来说，精准的<code>流量预测</code>能够让供应方在售卖流量的时候不会因为低估流量而导致流量浪费，也不会因为高估流量导致无法完成合同约定的投放量，总而言之，就是指导媒体方售卖流量；媒体方大多数情况下会和多个广告主之间签订担保投放合同，当一次广告展示符合多个合约的要求，如何决策分配给那个合约能达到整体满足所有合约的目的？在线分配强依赖于<code>流量预测</code>的结果，提高在线分配的效率和准确性；而在竞价广告中供应方不在担保投放量，此时需要广告主根据自己估计的流量预估出价；</p>
-<p><code>流量塑形(traffic shaping)</code>: 在有些情况下我们需要主动地影响流量，如修改首页链接入口（待续！）</p>
-<p><code>在线分配</code>: 在担保式投放中，多个合约覆盖的人群可能有……待续</p>
-<p><code>位置拍卖</code>: 针对一次展现的一组广告位，按照其经验价值排名，在某次广告请求中去除前S个高出价的广告一次放到排序号的S个广告位上，此时可以假设点击率仅与位置s有关，点击价值仅与广告a有关</p>
-<p><code>第二高价</code>: 在一个广告位的多轮竞价中，广告主会倾向于逐步降低自己的出价，降到比第二高价高一点点即可成为最高价，为了避免这一现象，我们按照竞价对垒中的第二高价进行收费，此时广告主A出价1元，广告主B出价2元时，广告主A没有降价的动力，广告主B如果降价可能会比广告主A更低，而且降价后加个不会低于1元，保证了市场的收益。<br><code>广义第二高价(GSP， Generalized Second Price)</code>: 将<code>第二高价</code>推广到一系列广告位的竞拍中，对赢得每个位置的广告主，都按照他的下一位的广告位置出价来收取费用。</p>
-<p><code>VCG定价</code>: 对于赢得了某个位置的广告主，其所付出的成本应该等于他占据的位置给其他市场参与者带来的价值损害。</p>
-<p><code>市场保留价(MRP, Market Reserve Price)</code>:对拍的一个广告位的最低价格，当竞争充分、广告主深度足够时，MRP可以设置的比较高；针对不同流量可以设置不同的MRP。</p>
-<p><code>价格挤压</code><br>    r = μ^k * bid(cpc)<br>    k：一个大于0的实数，当k接近正无穷的时候，价格r只与点击率有关；当k接近于0的时候，价格只与cpc出价有关，称为<code>价格挤压因子</code></p>
-<p><code>单位流量变现能力(Revenue per Mille, RMP)</code>: 中小媒体没有优秀的品牌价值，无法销售优质品牌溢价广告，只能重点关注单位流量的变现能努力</p>
-<blockquote>
-<p><code>广告投放引擎</code>: 实时响应广告请求，并决策广告的投放，并且从全局优化的角度管理整体收益；采用的还是类搜索架构（检索+排序）</p>
-<blockquote>
-<p><code>广告投放机</code>: 结合<code>广告投放引擎</code>的其他模块，接受广告前端web服务器发送来的请求，完成广告投放决策并返回最后页面片段的主逻辑</p>
-</blockquote>
-<blockquote>
-<p><code>广告检索</code>: 在线时根据<code>用户标签</code>和<code>页面标签</code>从<code>广告索引</code>中查找符合条件的广告候选，送入<code>广告排序</code>模块</p>
-</blockquote>
-<blockquote>
-<p><code>广告排序</code>: 结合离线特征（<code>CTR模型和特征</code>）和在线特征（<code>实时点击率特征</code>）预估点击率，实时计算出eCPM，并按此排序</p>
-</blockquote>
-<blockquote>
-<p><code>收益管理</code>: 将部分<code>广告排序</code>的结果进一步调整，尽量调整到全局收益最优</p>
-</blockquote>
-<blockquote>
-<p><code>广告请求接口</code>: 接受广告请求，并且将决策好的广告返回给媒体</p>
-</blockquote>
-<blockquote>
-<p><code>定制化用户划分</code>: 根据广告主的逻辑来划分用户群；从广告主处收集用户信息和产品接口，数据经过复杂的加工之后，通过 <code>数据高速公路</code>导入<code>受众定向</code>模块</p>
-</blockquote>
-<p><code>离线数据处理平台</code>: 生成报表；通过数据挖掘、机器学习进行受众定向、点击率评估、分配策略规划</p>
-<blockquote>
-<p><code>用户会话日志生成</code>: 从各个渠道收集到的日志（点击日志等）先整理成已维护ID为键的统一存储格式。</p>
-</blockquote>
-<blockquote>
-<p><code>行为定向</code>: 根据日志中的行为给用户打上<code>结构化标签库</code>中的某些标签，并将结果存储在用户标签的在线缓存中，供广告投放机使用</p>
-</blockquote>
-<blockquote>
-<p><code>上下文定向</code>: 结合<code>半在线页面抓取</code>和上下文页面标签的缓存，与行为定向互相配合，给上下文页面打上标签，并将结果存储到<code>页面标签</code>的在线缓存中，供广告投放机使用</p>
-</blockquote>
-<blockquote>
-<p><code>点击率建模</code>: 在<code>分布式计算平台</code>上训练得到点击率的模型参数和相应特征，加载到缓存中供线上投放系统决策时使用</p>
-</blockquote>
-<blockquote>
-<p><code>分配规划</code>: 根据广告系统全局优化的具体要求，利用离线日志数据进行规划，得到适合线上执行<code>分配方案</code></p>
-</blockquote>
-<blockquote>
-<p><code>商业智能</code>:</p>
-</blockquote>
-</blockquote>
-<p><code>广告排期系统</code>: 一般技术方案是将广告素材按预先确定的排期直接插入媒体页面，并通过<code>内容分发网络(Content Delivery Network CDN)</code>加速访问</p>
-<p><code>奇异值分析</code><br><code>潜在语义分析</code></p>
-
-          
+          学习《计算广告》，列举广告行业基本术语
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/01/计算广告-2017-09-01-计算广告学习笔记之名词汇总0/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -753,245 +490,14 @@
 
       
         
-          
-            <h3 id="执行-sql-文件"><a href="#执行-sql-文件" class="headerlink" title="执行 .sql 文件"></a>执行 <code>.sql</code> 文件</h3><p><em>方法1</em></p>
-<pre><code>mysql -h1.1.1.1 -P3306 -uadmin -ppwd db_name &lt; test.sql
-</code></pre><p><em>方法2</em></p>
-<ol>
-<li>使用 <code>mysql-client</code> 登录到 mysql 服务器</li>
-<li>source /root/path/to/.sql</li>
-</ol>
-<h3 id="mysql-查看-binlog"><a href="#mysql-查看-binlog" class="headerlink" title="mysql 查看 binlog"></a>mysql 查看 binlog</h3><p><code>mysql</code> 提供了 <code>mysqlbinlog</code> 指令，用于查看binlog</p>
-<p>先来一个小例子, 查看某一段时间的 bin log</p>
-<pre><code>mysqlbinlog -h[host]  -P[port] -u[username] -p[password] --read-from-remote-server [binlog file name]
---base64-output=decode-rows --start-datetime=&apos;2017-11-02 00:00:00&apos;
---stop-datetime=&apos;2017-11-02 00:10:00&apos;
-</code></pre><p>看了上面这个小例子，发现一个小问题: <em><em>binlog file name 从哪来？</em></em><br>这个需要我们去mysql中去查看</p>
-<pre><code>mysql&gt; mysql -u[username] -p[password]    ## 登录mysql
-mysql&gt; show variables like &apos;log_bin&apos;;
-+---------------+-------+
-| Variable_name | Value |
-+---------------+-------+
-| log_bin       | OFF   | # 这个参数说明当前mysql 没有开启binlog 日志
-+---------------+-------+
-</code></pre><p>这里又引入一个问题: <em><em>如何开启 mysql 的 binlog</em></em></p>
-<p>在 <code>mysql</code> 的 <code>官方文档</code> 中，对于 <code>binlog</code> 的开启只有一段内容</p>
-<pre><code>Binary logging is enabled by default (the log_bin system variable is set to ON). The exception is if you use mysqld to initialize the data directory manually by invoking it with the --initialize or --initialize-insecure option, when binary logging is disabled by default, but can be enabled by specifying the --log-bin option.
-二进制日志是默认启用（系统变量log_bin默认设置为ON）。唯一的例外是如果你使用mysqld来初始化数据目录手动调用它的 --initialize 或 --initialize-insecure 选项，当二进制日志默认是禁用的，但可以通过指定 `--log-bin` 选项启用。
-</code></pre><p>我们开始设置 <code>mysql</code> 的启动配置， 这里有两种方式</p>
-<ol>
-<li><p>直接在启动命令行中添加参数</p>
-<pre><code>sudo /usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql --log-bin=mysql-bin --user=\_mysql
-</code></pre></li>
-<li><p>在 mysql 配置文件中增加配置信息<br>这个时候我们遇到一个问题: Mysql 的配置文件在哪？</p>
-<pre><code>&gt; sudo mysqld --verbose --help | grep -A2 &quot;Default options are read from the following files in the given order:&quot;
-Default options are read from the following files in the given order:
-/etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf
-</code></pre></li>
-</ol>
-<p>从上面可以看到 <code>mysql</code> 的配置文件如下：</p>
-<pre><code>/etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf
-</code></pre><p>在 <code>/etc/my.cnf</code> 添加配置如下</p>
-<pre><code>[mysqld]
-basedir=/usr/local/mysql
-datadir=/usr/local/mysql/data
-plugin-dir=/usr/local/mysql/lib/plugin
-user=\_mysql
-log-bin=mysql-bin
-port=3306
-</code></pre><p>我们来尝试启动 <code>mysql</code>，但是却没能启动成功， 报错信息如下</p>
-<pre><code>[ERROR] You have enabled the binary log, but you haven&apos;t provided the mandatory server-id. Please refer to the proper server start-up parameters documentation
-</code></pre><p>遇到问题，我们再去看看官方文档，在官方文档中有如下介绍，在 mysql 5.7 及以上版本中，需要设置参数 <code>server-id</code></p>
-<pre><code>In MySQL 5.7, a server ID had to be specified when binary logging was enabled, or the server would not start. The server_id system variable is set to 1 by default. The server can be started with this default ID when binary logging is enabled, but a warning message is issued if you do not specify a server ID explicitly using the --server-id option. For servers that are used in a replication topology, you must specify a unique non-zero server ID for each server.
-在MySQL 5.7中，当启用二进制日志时，必须指定服务器ID，否则服务器将无法启动。系统变量 server_id 默认设置为1。当启用二进制日志记录时，服务器可以以这个默认ID启动，但如果未显式使用服务器ID选项指定服务器ID，则会发出警告消息。对于复制拓扑中使用的服务器，必须为每个服务器指定唯一的非零服务器ID。
-</code></pre><p>将 <code>/etc/my.cnf</code> 配置修改如下：</p>
-<pre><code>[mysqld]
-basedir=/usr/local/mysql
-datadir=/usr/local/mysql/data
-plugin-dir=/usr/local/mysql/lib/plugin
-user=\_mysql
-log-bin=mysql-bin
-port=3306
-server-id=1
-</code></pre><p>再次启动mysql，成功了！但是有个问题，mysql 的日志直接输出在控制台中，需要输出到指定文件夹中，在 <code>/etc/my.cnf</code> 的 <code>[mysqld]</code> 中增加配置</p>
-<pre><code>log-error=/usr/local/mysql/data/local.err
-</code></pre><p>我们开启了binlog之后，可以使用 <code>mysqlbinlog</code> 来查看binlog了！<br>回到第一个问题 <em><em>binlog file name 从哪来？</em></em></p>
-<pre><code>mysql&gt; show master status;
-
-+------------------+-----------+--------------+------------------+-------------------------------------------------+
-| File             | Position  | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set                               |
-+------------------+-----------+--------------+------------------+-------------------------------------------------+
-| mysql-bin.000065 | 516819919 |              |                  | 63c58e9d-e063-11e6-8a0e-6c92bf324c90:1-19804498 |
-+------------------+-----------+--------------+------------------+-------------------------------------------------+
-1 row in set (0.00 sec)
-</code></pre><p>这里第一列就是 binlog 日志文件的名称了！</p>
-<pre><code>mysqlbinlog
--?, --help          Display this help and exit.
-                    查看帮助信息
---base64-output=name
-                    Determine when the output statements should be
-                    base64-encoded BINLOG statements: &apos;never&apos; disables it and
-                    works only for binlogs without row-based events;
-                    &apos;decode-rows&apos; decodes row events into commented
-                    pseudo-SQL statements if the --verbose option is also
-                    given; &apos;auto&apos; prints base64 only when necessary (i.e.,
-                    for row-based events and format description events).  If
-                    no --base64-output[=name] option is given at all, the
-                    default is &apos;auto&apos;.
---bind-address=name IP address to bind to.
---character-sets-dir=name
-                    Directory for character set files.
--d, --database=name 指明查询binlog 的数据库，如：-dtest，查看test 数据库
---rewrite-db=name   Rewrite the row event to point so that it can be applied
-                    to a new database
--#, --debug[=#]     This is a non-debug version. Catch this and exit.
---debug-check       This is a non-debug version. Catch this and exit.
---debug-info        This is a non-debug version. Catch this and exit.
---default-auth=name Default authentication client-side plugin to use.
--D, --disable-log-bin
-                    Disable binary log. This is useful, if you enabled
-                    --to-last-log and are sending the output to the same
-                    MySQL server. This way you could avoid an endless loop.
-                    You would also like to use it when restoring after a
-                    crash to avoid duplication of the statements you already
-                    have. NOTE: you will need a SUPER privilege to use this
-                    option.
--F, --force-if-open Force if binlog was not closed properly.
-                    (Defaults to on; use --skip-force-if-open to disable.)
--f, --force-read    Force reading unknown binlog events.
--H, --hexdump       Augment output with hexadecimal and ASCII event dump.
--h, --host=name     Get the binlog from server.
--i, --idempotent    Notify the server to use idempotent mode before applying
-                    Row Events
--l, --local-load=name
-                    Prepare local temporary files for LOAD DATA INFILE in the
-                    specified directory.
--o, --offset=#      Skip the first N entries.
--p, --password[=name]
-                    Password to connect to remote server.
---plugin-dir=name   Directory for client-side plugins.
--P, --port=#        Port number to use for connection or 0 for default to, in
-                    order of preference, my.cnf, $MYSQL_TCP_PORT,
-                    /etc/services, built-in default (3306).
---protocol=name     The protocol to use for connection (tcp, socket, pipe,
-                    memory).
--R, --read-from-remote-server
-                    Read binary logs from a MySQL server. This is an alias
-                    for read-from-remote-master=BINLOG-DUMP-NON-GTIDS.
---read-from-remote-master=name
-                    Read binary logs from a MySQL server through the
-                    COM_BINLOG_DUMP or COM_BINLOG_DUMP_GTID commands by
-                    setting the option to either BINLOG-DUMP-NON-GTIDS or
-                    BINLOG-DUMP-GTIDS, respectively. If
-                    --read-from-remote-master=BINLOG-DUMP-GTIDS is combined
-                    with --exclude-gtids, transactions can be filtered out on
-                    the master avoiding unnecessary network traffic.
---raw               Requires -R. Output raw binlog data instead of SQL
-                    statements, output is to log files.
--r, --result-file=name
-                    Direct output to a given file. With --raw this is a
-                    prefix for the file names.
---secure-auth       Refuse client connecting to server if it uses old
-                    (pre-4.1.1) protocol. Deprecated. Always TRUE
---server-id=#       Extract only binlog entries created by the server having
-                    the given id.
---server-id-bits=#  Set number of significant bits in server-id
---set-charset=name  Add &apos;SET NAMES character_set&apos; to the output.
--s, --short-form    Just show regular queries: no extra info and no row-based
-                    events. This is for testing only, and should not be used
-                    in production systems. If you want to suppress
-                    base64-output, consider using --base64-output=never
-                    instead.
--S, --socket=name   The socket file to use for connection.
---ssl-mode=name     SSL connection mode.
---ssl               Deprecated. Use --ssl-mode instead.
-                    (Defaults to on; use --skip-ssl to disable.)
---ssl-verify-server-cert
-                    Deprecated. Use --ssl-mode=VERIFY_IDENTITY instead.
---ssl-ca=name       CA file in PEM format.
---ssl-capath=name   CA directory.
---ssl-cert=name     X509 cert in PEM format.
---ssl-cipher=name   SSL cipher to use.
---ssl-key=name      X509 key in PEM format.
---ssl-crl=name      Certificate revocation list.
---ssl-crlpath=name  Certificate revocation list path.
---tls-version=name  TLS version to use, permitted values are: TLSv1, TLSv1.1
---start-datetime=name
-                    Start reading the binlog at first event having a datetime
-                    equal or posterior to the argument; the argument must be
-                    a date and time in the local time zone, in any format
-                    accepted by the MySQL server for DATETIME and TIMESTAMP
-                    types, for example: 2004-12-25 11:25:56 (you should
-                    probably use quotes for your shell to set it properly).
--j, --start-position=#
-                    Start reading the binlog at position N. Applies to the
-                    first binlog passed on the command line.
---stop-datetime=name
-                    Stop reading the binlog at first event having a datetime
-                    equal or posterior to the argument; the argument must be
-                    a date and time in the local time zone, in any format
-                    accepted by the MySQL server for DATETIME and TIMESTAMP
-                    types, for example: 2004-12-25 11:25:56 (you should
-                    probably use quotes for your shell to set it properly).
---stop-never        Wait for more data from the server instead of stopping at
-                    the end of the last log. Implicitly sets --to-last-log
-                    but instead of stopping at the end of the last log it
-                    continues to wait till the server disconnects.
---stop-never-slave-server-id=#
-                    The slave server_id used for --read-from-remote-server
-                    --stop-never. This option cannot be used together with
-                    connection-server-id.
---connection-server-id=#
-                    The slave server_id used for --read-from-remote-server.
-                    This option cannot be used together with
-                    stop-never-slave-server-id.
---stop-position=#   Stop reading the binlog at position N. Applies to the
-                    last binlog passed on the command line.
--t, --to-last-log   Requires -R. Will not stop at the end of the requested
-                    binlog but rather continue printing until the end of the
-                    last binlog of the MySQL server. If you send the output
-                    to the same MySQL server, that may lead to an endless
-                    loop.
--u, --user=name     链接数据库的用户名
--v, --verbose       Reconstruct pseudo-SQL statements out of row events. -v
-                    -v adds comments on column data types.
--V, --version       查看 `mysqlbinlog` 版本信息
---open-files-limit=#
-                    Used to reserve file descriptors for use by this program.
--c, --verify-binlog-checksum
-                    Verify checksum binlog events.
---binlog-row-event-max-size=#
-                    The maximum size of a row-based binary log event in
-                    bytes. Rows will be grouped into events smaller than this
-                    size if possible. This value must be a multiple of 256.
---skip-gtids        Do not preserve Global Transaction Identifiers; instead
-                    make the server execute the transactions as if they were
-                    new.
---include-gtids=name
-                    打印binlog 信息时，只打印指定的部分全局事务id对应的binglog 信息
---exclude-gtids=name
-                    打印binlog 信息时，排除部分全局事务id对应的binglog 信息
-</code></pre><h4 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h4><p>如果在 mac os 的设置中启动了mysql 而且勾选了 <code>Automatically Start MySQL Server on Startup</code>, 当你想要关闭 mysql 的时候，mysql 会自动重启！！！<br>这个问题找了好久才发现，至于这个不断重启功能的实现待研究…</p>
-<h3 id="mysql-查看存储过程"><a href="#mysql-查看存储过程" class="headerlink" title="mysql 查看存储过程"></a>mysql 查看存储过程</h3><h4 id="查看存储过程状态"><a href="#查看存储过程状态" class="headerlink" title="查看存储过程状态"></a>查看存储过程状态</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">procedure</span> <span class="keyword">status</span>;</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<pre><code>mysql&gt; show procedure status\G
-*************************** 1. row ***************************
-              Db: db_name
-            Name: procedure_name
-            Type: PROCEDURE
-         Definer: root@localhost
-        Modified: 2017-05-10 14:10:00
-         Created: 2017-05-10 14:10:00
-   Security_type: DEFINER
-         Comment:
-character_set_client: utf8mb4
-collation_connection: utf8mb4_general_ci
-Database Collation: utf8_general_ci
-1 row in set (0.02 sec)
-</code></pre><h4 id="查看存储过程具体定义"><a href="#查看存储过程具体定义" class="headerlink" title="查看存储过程具体定义"></a>查看存储过程具体定义</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">procedure</span> %procedure_name%;</span><br></pre></td></tr></table></figure>
-<h4 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> &#123;<span class="keyword">PROCEDURE</span> | <span class="keyword">FUNCTION</span>&#125; [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] sp_name</span><br></pre></td></tr></table></figure>
-
-          
+          mysql 常用指令和操作
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/22/技术-mysql-2017-05-22-mysql常用指令/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1130,43 +636,14 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这里把使用 <code>Spring</code> 过程中遇到的问题做个记录，有些给出了解决方案，有些没有，欢迎同道读者斧正！</p>
-<h2 id="如何正确的创建-prototype-类型的-Spring-bean"><a href="#如何正确的创建-prototype-类型的-Spring-bean" class="headerlink" title="如何正确的创建 prototype 类型的 Spring bean"></a>如何正确的创建 <code>prototype</code> 类型的 <code>Spring bean</code></h2><p>这里先尝试的去创建一个 <code>prototype</code> 的 <code>bean</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scope</span>(ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProtoTypeComponent</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> random;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ProtoTypeComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// random 值设置为一个随机值，</span></span><br><span class="line">    <span class="keyword">this</span>.random = ThreadLocalRandom.current().nextInt(<span class="number">100000</span>);</span><br><span class="line">    LOGGER.info(<span class="string">"create a new ProtoTypeComponent with random:&#123;&#125;"</span>, random);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> random;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，我们在Controller 中注入这个 <code>prototype bean</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Resource</span></span><br><span class="line">  <span class="keyword">private</span> ProtoTypeComponent protoTypeComponent;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>)</span><br><span class="line">  <span class="meta">@ResponseBody</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"&#123;\"class\": \""</span> + protoTypeComponent + <span class="string">"\", \"random\":\""</span></span><br><span class="line">        + protoTypeComponent.getRandom() + <span class="string">"\"&#125;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们开始请求这个 http 接口</p>
-<p><img src="/assets/picture/prototypebeaninfo.png" alt="" title="请求上方 /hello 接口获取 prototype bean 信息"></p>
-<p>不断的刷新页面，返回的结果都是一模一样！我们再来看看日志</p>
-<p><img src="/assets/picture/prototypecomponent.png" alt="" title="请求上方 /hello 接口时的日志信息"></p>
-<p>从上面的日志上我们看到这个 <code>prototype bean</code> 的构造方法只被调用了一次！</p>
-<p>到这里，我感到奇怪了，为什么这个 <code>prototype bean</code> 成了 <code>singleton bean</code> 了？</p>
-<p>这个时候我想了 《Spring揭秘》 中看到的正解， 之前这个现象出现的原因是 <code>HelloController</code> 是 <code>singleton</code> 类型的，这个 <code>bean</code> 只会被初始化一次， 而 <code>HelloController</code> 依赖的 <code>ProtoTypeComponent</code> 也只会被注入一次！<br>到这里，谜底揭晓：</p>
-<p><em><code>singleton bean</code> 依赖的 <code>prototype bean</code> 会 “变成” <code>singleton bean</code></em></p>
-<p>这里，解决这个问题的第一个方案也出现了：</p>
-<h6 id="依赖-prototype-bean-也必须是-prototype-bean"><a href="#依赖-prototype-bean-也必须是-prototype-bean" class="headerlink" title="依赖 prototype bean 也必须是 prototype bean"></a>依赖 <code>prototype bean</code> 也必须是 <code>prototype bean</code></h6><p>很明显这个方案不能解决很多状况， 我们继续这个问题</p>
-<p>再来翻翻 <code>《Spring 揭秘》</code> 找找答案<br>我们看到了两个答案</p>
-<ol>
-<li>使用方法注入</li>
-<li>继承 ApplicationContextAware 每次去获取bean</li>
-</ol>
-<h5 id="使用方法注入"><a href="#使用方法注入" class="headerlink" title="使用方法注入"></a>使用方法注入</h5><p>在传统的 xml 配置方式中我们需要这样配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"protoTypeBean"</span> <span class="attr">class</span>=<span class="string">"...impl.ProtoTypeService"</span> <span class="attr">singleton</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span> = <span class="string">"...impl.SimpleServiceImpl"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">lookup-method</span> <span class="attr">name</span>=<span class="string">"getProtoTypeBean"</span> <span class="attr">bean</span>=<span class="string">"protoTypeBean"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>getProtoTypeBean 方法定义如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ProtoTypeService protoTypeBean;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ProtoTypeService <span class="title">getProtoTypeBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> protoTypeBean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在我们更倾向于使用注解，那么基于注解怎么实现上面这种方式呢？<br>我们这里引入 <code>@Lookup</code> 注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * An annotation that indicates 'lookup' methods, to be overridden by the container</span></span><br><span class="line"><span class="comment"> * to redirect them back to the &#123;<span class="doctag">@link</span> org.springframework.beans.factory.BeanFactory&#125;</span></span><br><span class="line"><span class="comment"> * for a &#123;<span class="doctag">@code</span> getBean&#125; call. This is essentially an annotation-based version of the</span></span><br><span class="line"><span class="comment"> * XML &#123;<span class="doctag">@code</span> lookup-method&#125; attribute, resulting in the same runtime arrangement.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;The resolution of the target bean can either be based on the return type</span></span><br><span class="line"><span class="comment"> * (&#123;<span class="doctag">@code</span> getBean(Class)&#125;) or on a suggested bean name (&#123;<span class="doctag">@code</span> getBean(String)&#125;),</span></span><br><span class="line"><span class="comment"> * in both cases passing the method's arguments to the &#123;<span class="doctag">@code</span> getBean&#125; call</span></span><br><span class="line"><span class="comment"> * for applying them as target factory method arguments or constructor arguments.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;Such lookup methods can have default (stub) implementations that will simply</span></span><br><span class="line"><span class="comment"> * get replaced by the container, or they can be declared as abstract - for the</span></span><br><span class="line"><span class="comment"> * container to fill them in at runtime. In both cases, the container will generate</span></span><br><span class="line"><span class="comment"> * runtime subclasses of the method's containing class via CGLIB, which is why such</span></span><br><span class="line"><span class="comment"> * lookup methods can only work on beans that the container instantiates through</span></span><br><span class="line"><span class="comment"> * regular constructors: i.e. lookup methods cannot get replaced on beans returned</span></span><br><span class="line"><span class="comment"> * from factory methods where we cannot dynamically provide a subclass for them.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;&lt;b&gt;Concrete limitations in typical Spring configuration scenarios:&lt;/b&gt;</span></span><br><span class="line"><span class="comment"> * When used with component scanning or any other mechanism that filters out abstract</span></span><br><span class="line"><span class="comment"> * beans, provide stub implementations of your lookup methods to be able to declare</span></span><br><span class="line"><span class="comment"> * them as concrete classes. And please remember that lookup methods won't work on</span></span><br><span class="line"><span class="comment"> * beans returned from &#123;<span class="doctag">@code</span> <span class="doctag">@Bean</span>&#125; methods in configuration classes; you'll have</span></span><br><span class="line"><span class="comment"> * to resort to &#123;<span class="doctag">@code</span> <span class="doctag">@Inject</span> Provider&amp;lt;TargetBean&amp;gt;&#125; or the like instead.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Juergen Hoeller</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 4.1</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> org.springframework.beans.factory.BeanFactory#getBean(Class, Object...)</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> org.springframework.beans.factory.BeanFactory#getBean(String, Object...)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Lookup &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * This annotation attribute may suggest a target bean name to look up.</span></span><br><span class="line"><span class="comment">	 * If not specified, the target bean will be resolved based on the</span></span><br><span class="line"><span class="comment">	 * annotated method's return type declaration.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br></pre></td></tr></table></figure>
-<p>从上面的代码能看出：<br>这个注解只能修饰方法，根据方法的返回值类型创建对应的Bean，底层机制是调用 <code>org.springframework.beans.factory.BeanFactory#getBean(Class, Object...)</code> 或 <code>org.springframework.beans.factory.BeanFactory#getBean(String, Object...)</code></p>
-<p>先来使用 <code>@Lookup</code> 注解改成一下我们尝试创建 有状态的 <code>prototype bean</code></p>
-<p>修正的代码如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> ProtoTypeComponent protoTypeComponent;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>)</span><br><span class="line">  <span class="meta">@ResponseBody</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ProtoTypeComponent component = getProtoTypeComponent();</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"&#123;\"class\": \""</span> + component + <span class="string">"\", \"random\":\""</span></span><br><span class="line">        + component.getRandom() + <span class="string">"\"&#125;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Lookup</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> ProtoTypeComponent <span class="title">getProtoTypeComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> protoTypeComponent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>让我们运行起 <code>tomcat</code> 看看结果：</p>
-<p><img src="/assets/picture/realProtoTypeComponent1.png" alt=""><br><img src="/assets/picture/realProtoTypeComponent2.png" alt=""></p>
-<p>很明显，我们成功的创建了 <code>prototype bean</code>!</p>
-<h5 id="继承-ApplicationContextAware-每次去获取bean"><a href="#继承-ApplicationContextAware-每次去获取bean" class="headerlink" title="继承 ApplicationContextAware 每次去获取bean"></a>继承 ApplicationContextAware 每次去获取bean</h5><p>这里不推荐使用 <code>ApplicationContextAware</code> 所以不给出方法了。</p>
-
-          
+          如何正确的创建 prototype 类型的 bean
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/01/技术-spring-2017-03-01-Spring使用过程中遇到的问题/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1305,212 +782,14 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.basepom.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>duplicate-finder-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">useDefaultResourceIgnoreList</span>&gt;</span>true<span class="tag">&lt;/<span class="name">useDefaultResourceIgnoreList</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 忽略不检查的资源 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">ignoredResourcePatterns</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">ignoredResourcePattern</span>&gt;</span>.*\.txt<span class="tag">&lt;/<span class="name">ignoredResourcePattern</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">ignoredResourcePattern</span>&gt;</span>.*\.properties<span class="tag">&lt;/<span class="name">ignoredResourcePattern</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">ignoredResourcePattern</span>&gt;</span>.*\.xml<span class="tag">&lt;/<span class="name">ignoredResourcePattern</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">ignoredResourcePatterns</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- fail fast after find duplicate class --&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--&lt;failBuildInCaseOfConflict&gt;true&lt;/failBuildInCaseOfConflict&gt;--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">ignoredDependencies</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!-- 不需要校验的依赖项 --&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--&lt;dependency&gt;--&gt;</span></span><br><span class="line">               <span class="comment">&lt;!--&lt;groupId&gt;com.sm.uc&lt;/groupId&gt;--&gt;</span></span><br><span class="line">               <span class="comment">&lt;!--&lt;artifactId&gt;uc-rpc&lt;/artifactId&gt;--&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--&lt;/dependency&gt;--&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">ignoredDependencies</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">goal</span>&gt;</span>check<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="Maven-Release-plugin"><a href="#Maven-Release-plugin" class="headerlink" title="Maven Release plugin"></a>Maven Release plugin</h4><h5 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">scm</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">developerConnection</span>&gt;</span>scm:svn:https://svn.mycompany.com/repos/myapplication/trunk/mycomponent/<span class="tag">&lt;/<span class="name">developerConnection</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- developerConnection:  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">scm</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-release-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.5.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>Goal</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>release:branch</td>
-<td>Branch a project in SCM, using the same steps as the release:prepare goal, creating a branch instead of a tag. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/branch.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/branch.html</a>.</td>
-</tr>
-<tr>
-<td>release:clean</td>
-<td>Clean up after a release preparation. This is done automatically after a successful release:perform, so is best served for cleaning up a failed or abandoned release, or a dry run. Note that only the working copy is cleaned up, no previous steps are rolled back. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/clean-release.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/clean-release.html</a>.</td>
-</tr>
-<tr>
-<td>release:help</td>
-<td>Display help information on maven-release-plugin. Call mvn release:help -Ddetail=true -Dgoal=<goal-name> to display parameter details.</goal-name></td>
-</tr>
-<tr>
-<td>release:perform</td>
-<td>Perform a release from SCM, either from a specified tag, or the tag representing the previous release in the working copy created by release:prepare. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/perform-release.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/perform-release.html</a>.</td>
-</tr>
-<tr>
-<td>release:prepare</td>
-<td>Prepare for a release in SCM. Steps through several phases to ensure the POM is ready to be released and then prepares SCM to eventually contain a tagged version of the release and a record in the local copy of the parameters used. This can be followed by a call to</td>
-</tr>
-<tr>
-<td>release:perform. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html</a>.</td>
-</tr>
-<tr>
-<td>release:prepare-with-pom</td>
-<td>Prepare for a release in SCM, fully resolving dependencies for the purpose of producing a “release POM”.</td>
-</tr>
-<tr>
-<td>release:rollback</td>
-<td>Rollback changes made by a previous release. This requires that the previous release descriptor release.properties is still available in the local working copy. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/rollback-release.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/rollback-release.html</a>.</td>
-</tr>
-<tr>
-<td>release:stage</td>
-<td>Perform a release from SCM to a staging repository. If no goals are given, these default to deploy or deploy site:stage-deploy, if the project has a <distributionmanagement>/<site> element. If the goals contain site-deploy or site:deploy, these are overridden with site:stage-deploy.</site></distributionmanagement></td>
-</tr>
-<tr>
-<td>release:update-versions</td>
-<td>Update the POM versions for a project. This performs the normal version updates of the release:prepare goal without making other modifications to the SCM such as tagging. For more info see <a href="http://maven.apache.org/plugins/maven-release-plugin/examples/update-versions.html" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/examples/update-versions.html</a>.</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2017/02/12/技术-maven-2017-02-12-Maven-scope-import/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liam Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/headPicture.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ice summer bug's notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/12/技术-maven-2017-02-12-Maven-scope-import/" itemprop="url">Maven 继承方式： scope import</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-12T21:00:00+08:00">
-                2017-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Maven/" itemprop="url" rel="index">
-                    <span itemprop="name">Maven</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="使用-scope-import-解决Maven-单继承问题"><a href="#使用-scope-import-解决Maven-单继承问题" class="headerlink" title="使用 scope import 解决Maven 单继承问题"></a>使用 <code>scope import</code> 解决Maven 单继承问题</h3><p><code>Maven</code> 本身支持继承，很多时候我们会创建多模块项目，而多个模块会引入相同的依赖项，这个时候我们就能使用 <code>Maven</code> 的父子工程结构，<br>创建一个父 pom 文件，其他子项目中的 pom 文件继承父pom</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>base.parent<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>--&gt;</span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>parent.management<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这样我们就能是的依赖项的管理更加有条理</p>
-<p>但是 <code>Maven</code> 父子项目结构和 Java继承一样，都是单继承，一个子项目只能制定一个父 pom</p>
-<p>很多时候，我们需要打破这种 <code>单继承</code></p>
-<p>例如使用 <code>spring-boot</code> 的时候， 官方推荐的方式是继承父pom <code>spring-boot-starter-parent</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>但是如果项目中已经有了其他父pom， 又想用 <code>spring-boot</code> 怎么办呢？</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>就是使用 <code>scope import</code>， 还需要指定 <code>type pom</code></p>
-<p><em>注意：<code>scope import</code> 只能在 <code>dependencyManagement</code> 中的使用</em></p>
-
-          
+          maven 常用插件使用示例，参数简介
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/23/技术-maven-2017-02-23-maven常用插件/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1649,16 +928,160 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h4 id="使用-Maven-构建-Spring-Boot-项目"><a href="#使用-Maven-构建-Spring-Boot-项目" class="headerlink" title="使用 Maven 构建 Spring-Boot 项目"></a>使用 <code>Maven</code> 构建 Spring-Boot 项目</h4><ol>
-<li>继承 父pmo 构建 Spring-Boot 项目</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- ...... the artifactId and groupId of the application --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 继承 spring-boot-starter-parent 使用 spring-boot的最优方法； 也可以不继承这个父pom，使用其他方法 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 设置插件，打包jar包 --&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- ...... the artifactId and groupId of the application --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- Override Spring Data release train provided by Spring Boot --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.data<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-data-releasetrain<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">version</span>&gt;</span>Fowler-SR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!--  --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 设置插件，打包jar包 --&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="dev-tools"><a href="#dev-tools" class="headerlink" title="dev-tools"></a>dev-tools</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 设置插件，打包jar包 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 使用 dev-tools 需要禁用默认的 excludeDevtools --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">excludeDevtools</span>&gt;</span>false<span class="tag">&lt;/<span class="name">excludeDevtools</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>DevToolsPropertyDefaultsPostProcessor</p>
+          Spring Boot 入门
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/12/技术-spring-2017-02-12-SpringBoot/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2017/02/12/技术-maven-2017-02-12-Maven-scope-import/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liam Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headPicture.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ice summer bug's notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/12/技术-maven-2017-02-12-Maven-scope-import/" itemprop="url">Maven 继承方式： scope import</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-12T21:00:00+08:00">
+                2017-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Maven/" itemprop="url" rel="index">
+                    <span itemprop="name">Maven</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          什么？ Maven 能多继承？
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/12/技术-maven-2017-02-12-Maven-scope-import/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1797,27 +1220,14 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>在使用 <code>Spring MVC</code> 的过程中，遇到一个问题，在 <code>Spring 容器</code> 中注册的属性文件， 在 <code>SpringMVC 容器</code> 中无法用 <code>@Value</code> 标签引入！<br>按理说， <code>SpringMVC 容器</code> 应该能继承父容器中的所有Bean， 为什么不能使用父容器中引入的配置文件信息呢？</p>
-<p><em>很遗憾，这个问题暂时没能找到答案，如果哪位大神能解答，请告知</em></p>
-<p>但是问题还是要解决的， 我们只能换个思路解决。 如果 <code>SpringMVC 子容器</code> 和 <code>Spring 父容器</code> 如果合一了，不就不存在需要重复引入的问题吗？<br>那么问题来了：</p>
-<h3 id="SpringMVC-容器和-Spring-容器能合一吗？"><a href="#SpringMVC-容器和-Spring-容器能合一吗？" class="headerlink" title="SpringMVC 容器和 Spring 容器能合一吗？"></a>SpringMVC 容器和 Spring 容器能合一吗？</h3><p>先来看看一般我们使用 <code>SpringMVC</code> 的 <code>web.xml</code> 配置文件，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE web-app PUBLIC</span><br><span class="line">        &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;</span><br><span class="line">        &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;</span><br><span class="line"></span><br><span class="line">&lt;web-app&gt;</span><br><span class="line">    &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- spring 父容器配置文件路径 --&gt;</span><br><span class="line">    &lt;context-param&gt;</span><br><span class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;classpath:spring/spring-root.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/context-param&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- listener：加载spring 父容器 --&gt;</span><br><span class="line">    &lt;listener&gt;</span><br><span class="line">        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">    &lt;/listener&gt;</span><br><span class="line"></span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">				&lt;!-- spring mvc 子容器配置文件路径，如果不配置默认为 /WEB-INF/*-servlet.xml --&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;classpath:spring/spring-mvc.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line"></span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">    &lt;error-page&gt;</span><br><span class="line">        &lt;error-code&gt;500&lt;/error-code&gt;</span><br><span class="line">        &lt;location&gt;/error.jsp&lt;/location&gt;</span><br><span class="line">    &lt;/error-page&gt;</span><br><span class="line"></span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
-<p><code>Tomcat</code> 在解析 <code>web.xml</code> 的时候先后加载 <code>listener</code> -&gt; <code>filter</code> -&gt; <code>servlet</code><br>先记载 <code>ContextLoaderListener</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 覆写 `ServletContextListener` 中的 `contextInitialized` 方法，</span></span><br><span class="line"><span class="comment">* 实现时，调用父类的 `initWebApplicationContext` 方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextInitialized</span><span class="params">(ServletContextEvent event)</span> </span>&#123;</span><br><span class="line">	initWebApplicationContext(event.getServletContext());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> servletContext 当前 web 容器上下文</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> spring 容器上下文</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@see</span> #ContextLoader(WebApplicationContext)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@see</span> #CONTEXT_CLASS_PARAM</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@see</span> #CONFIG_LOCATION_PARAM</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> WebApplicationContext <span class="title">initWebApplicationContext</span><span class="params">(ServletContext servletContext)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (servletContext.getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">					<span class="string">"Cannot initialize context because there is already a root application context present - "</span> +</span><br><span class="line">					<span class="string">"check whether you have multiple ContextLoader* definitions in your web.xml!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Log logger = LogFactory.getLog(ContextLoader.class);</span><br><span class="line">		servletContext.log(<span class="string">"Initializing Spring root WebApplicationContext"</span>);</span><br><span class="line">		<span class="keyword">if</span> (logger.isInfoEnabled()) &#123;</span><br><span class="line">			logger.info(<span class="string">"Root WebApplicationContext: initialization started"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">// 创建一个 WebApplicationContext 实例</span></span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.context == <span class="keyword">null</span>) &#123;</span><br><span class="line">				<span class="keyword">this</span>.context = createWebApplicationContext(servletContext);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.context <span class="keyword">instanceof</span> ConfigurableWebApplicationContext) &#123;</span><br><span class="line">				ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) <span class="keyword">this</span>.context;</span><br><span class="line">				<span class="keyword">if</span> (!cwac.isActive()) &#123;</span><br><span class="line">					<span class="comment">// The context has not yet been refreshed -&gt; provide services such as</span></span><br><span class="line">					<span class="comment">// setting the parent context, setting the application context id, etc</span></span><br><span class="line">					<span class="keyword">if</span> (cwac.getParent() == <span class="keyword">null</span>) &#123;</span><br><span class="line">						<span class="comment">// The context instance was injected without an explicit parent -&gt;</span></span><br><span class="line">						<span class="comment">// determine parent for root web application context, if any.</span></span><br><span class="line">						ApplicationContext parent = loadParentContext(servletContext);</span><br><span class="line">						cwac.setParent(parent);</span><br><span class="line">					&#125;</span><br><span class="line">					configureAndRefreshWebApplicationContext(cwac, servletContext);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 当前创建的spring 父容器注册到 web 容器中， 属性名称是： org.springframework.web.context.WebApplicationContext.ROOT</span></span><br><span class="line">			servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, <span class="keyword">this</span>.context);</span><br><span class="line"></span><br><span class="line">			ClassLoader ccl = Thread.currentThread().getContextClassLoader();</span><br><span class="line">			<span class="keyword">if</span> (ccl == ContextLoader.class.getClassLoader()) &#123;</span><br><span class="line">				currentContext = <span class="keyword">this</span>.context;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (ccl != <span class="keyword">null</span>) &#123;</span><br><span class="line">				currentContextPerThread.put(ccl, <span class="keyword">this</span>.context);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">				logger.debug(<span class="string">"Published root WebApplicationContext as ServletContext attribute with name ["</span> +</span><br><span class="line">						WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE + <span class="string">"]"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (logger.isInfoEnabled()) &#123;</span><br><span class="line">				<span class="keyword">long</span> elapsedTime = System.currentTimeMillis() - startTime;</span><br><span class="line">				logger.info(<span class="string">"Root WebApplicationContext: initialization completed in "</span> + elapsedTime + <span class="string">" ms"</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.context;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (RuntimeException ex) &#123;</span><br><span class="line">			logger.error(<span class="string">"Context initialization failed"</span>, ex);</span><br><span class="line">			servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, ex);</span><br><span class="line">			<span class="keyword">throw</span> ex;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Error err) &#123;</span><br><span class="line">			logger.error(<span class="string">"Context initialization failed"</span>, err);</span><br><span class="line">			servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, err);</span><br><span class="line">			<span class="keyword">throw</span> err;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>而 <code>DispatcherServlet</code> 继承 <code>FrameworkServlet</code>, <code>FrameworkServlet</code> 继承 <code>HttpServletBean</code><br><code>HttpServletBean</code> 继承 <code>HttpServlet</code>, 并且提供 <code>init</code> 方法</p>
-<p>HttpServletBean 中的 <code>init</code> 方法调用抽象方法 <code>initServletBean</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">			logger.debug(<span class="string">"Initializing servlet '"</span> + getServletName() + <span class="string">"'"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// ......</span></span><br><span class="line">		<span class="comment">// Let subclasses do whatever initialization they like.</span></span><br><span class="line">		initServletBean();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">			logger.debug(<span class="string">"Servlet '"</span> + getServletName() + <span class="string">"' configured successfully"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p><code>FrameworkServlet</code> 实现 <code>initServletBean</code> 方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">initServletBean</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">			<span class="comment">// ...... 忽略</span></span><br><span class="line">			<span class="keyword">this</span>.webApplicationContext = initWebApplicationContext();</span><br><span class="line">			initFrameworkServlet();</span><br><span class="line">			<span class="comment">// ...... 忽略</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> WebApplicationContext <span class="title">initWebApplicationContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 在 web 容器  ServletContext 中查找 属性为 org.springframework.web.context.WebApplicationContext.ROOT 的 WebApplicationContext Spring 父容器</span></span><br><span class="line">	WebApplicationContext rootContext =</span><br><span class="line">			WebApplicationContextUtils.getWebApplicationContext(getServletContext());</span><br><span class="line">	WebApplicationContext wac = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 如果当前以及创建了  SpringMVC 子容器</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>.webApplicationContext != <span class="keyword">null</span>) &#123;</span><br><span class="line">		wac = <span class="keyword">this</span>.webApplicationContext;</span><br><span class="line">		<span class="keyword">if</span> (wac <span class="keyword">instanceof</span> ConfigurableWebApplicationContext) &#123;</span><br><span class="line">			<span class="comment">// 如果 springmvc 子容器是 ConfigurableWebApplicationContext, 并且没有激活，设置 spring 父容器和 springmvc 子容器之前的父子容器关系</span></span><br><span class="line">			ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) wac;</span><br><span class="line">			<span class="keyword">if</span> (!cwac.isActive()) &#123;</span><br><span class="line">				<span class="keyword">if</span> (cwac.getParent() == <span class="keyword">null</span>) &#123;</span><br><span class="line">					cwac.setParent(rootContext);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">// 配置刷下spring mvc 子容器</span></span><br><span class="line">				configureAndRefreshWebApplicationContext(cwac);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果当前没有创建 springmvc 子容器</span></span><br><span class="line">	<span class="keyword">if</span> (wac == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="comment">// 在 web 容器  ServletContext 中查找 属性为 org.springframework.web.context.WebApplicationContext.ROOT 的 spring 容器， 将这个父容器作为 spring mvc 子容器， 这种情况下， spring mvc 子容器和 spring 父容器就合一了！</span></span><br><span class="line">		wac = findWebApplicationContext();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果上一步没有在 web 容器  ServletContext 中查找到 属性为 org.springframework.web.context.WebApplicationContext.ROOT 的 WebApplicationContext Spring 容器；创建 contextConfigLocation 设置的配置文件注定的 springmvc 子容器</span></span><br><span class="line">	<span class="keyword">if</span> (wac == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="comment">// No context instance is defined for this servlet -&gt; create a local one</span></span><br><span class="line">		wac = createWebApplicationContext(rootContext);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ...... 忽略</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> wac;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，我们找到了 两个容器合一的方法！ 果然是 <code>Time is cheap, show me the code</code>, 源码能告诉我们一切！<br>到这里， 找到了配置方式：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE web-app PUBLIC</span></span><br><span class="line"><span class="meta">        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></span><br><span class="line"><span class="meta">        "http://java.sun.com/dtd/web-app_2_3.dtd" &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Archetype Created Web Application<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:spring/spring-root.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- listener --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- spring mvc --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 该servlet的spring上下文采用WebApplicationContext，不再重复生成上下文 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextAttribute<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>org.springframework.web.context.WebApplicationContext.ROOT<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>下面在回头来看看之前没有解决的问题：</p>
-<h3 id="为什么-SpringMVC-子容器-不能继承-Spring-父容器-引入的属性文件"><a href="#为什么-SpringMVC-子容器-不能继承-Spring-父容器-引入的属性文件" class="headerlink" title="为什么 SpringMVC 子容器 不能继承 Spring 父容器 引入的属性文件"></a>为什么 <code>SpringMVC 子容器</code> 不能继承 <code>Spring 父容器</code> 引入的属性文件</h3><p><em>待解决…</em></p>
-
-          
+          Spring 两个容器之间的关系
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/21/技术-spring-2017-01-21-SpringMvc和Spring使用一个容器/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1956,31 +1366,160 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h3 id="mysql-避免重复插入"><a href="#mysql-避免重复插入" class="headerlink" title="mysql 避免重复插入"></a>mysql 避免重复插入</h3><p><code>mysql</code> 避免重复插入的方式有这样几种</p>
-<ol>
-<li>使用 <code>ignore</code> 关键字</li>
-<li>使用 <code>replace</code> 关键字</li>
-<li>使用 <code>on duplicate key update</code></li>
-</ol>
-<hr>
-<h4 id="使用-ignore-关键字"><a href="#使用-ignore-关键字" class="headerlink" title="使用 ignore 关键字"></a>使用 <code>ignore</code> 关键字</h4><p>当表中存在<code>主键</code>或者<code>唯一索引</code>的时候, 避免重复插入的时候，就可以使用以下命令</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">ignore</span> <span class="keyword">into</span> table_name <span class="keyword">set</span> <span class="keyword">name</span> = ?, <span class="keyword">desc</span> = ?</span><br></pre></td></tr></table></figure>
-<p>当表中已经存在数据的时候，本次 <code>insert</code> 会被忽略</p>
-<p><em>注意：需要注意的是 <code>insert ignore</code> 在忽略某一次插入的时候自增id 还是会增长的，举例如下：</em><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tb1`</span> (</span><br><span class="line"> <span class="string">`id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line"> <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'名称'</span>,</span><br><span class="line"> <span class="string">`modify_time`</span> <span class="keyword">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'2000-01-01 00:00:00'</span> <span class="keyword">COMMENT</span> <span class="string">'修改时间'</span>,</span><br><span class="line"> PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'测试表'</span>;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into tb1 value(1, "name1", now());</span><br><span class="line">Query OK, 1 row affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into tb1 value(1, "name2", now());</span><br><span class="line">ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'</span><br><span class="line">mysql&gt; select * from tb1;</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">| id | name  | modify_time         |</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">|  1 | name1 | 2018-07-25 13:35:27 |</span><br><span class="line">+<span class="comment">----+-------+---------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">insert</span> <span class="keyword">ignore</span> <span class="keyword">into</span> tb1 <span class="keyword">value</span>(<span class="number">1</span>, <span class="string">"name2"</span>, <span class="keyword">now</span>());</span><br><span class="line">Query OK, 0 rows affected, 1 warning (0.01 sec)</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="使用-replace-关键字"><a href="#使用-replace-关键字" class="headerlink" title="使用 replace 关键字"></a>使用 <code>replace</code> 关键字</h4><p>除了 <code>insert ignore</code> 之外还有 <code>replace into</code> 这里也要求表中必须存在 <code>主键</code> 或者 <code>唯一索引</code></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">replace</span> <span class="keyword">into</span> table_name <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'a'</span>, <span class="keyword">desc</span> = <span class="string">'b'</span></span><br></pre></td></tr></table></figure>
-<p>表中 name 必须存在 <code>唯一索引</code> ， 如果表中已经存在 name = ‘a’ 的时候， desc 的值将变更为 ‘b’</p>
-<hr>
-<h4 id="使用-on-duplicate-key-update"><a href="#使用-on-duplicate-key-update" class="headerlink" title="使用 on duplicate key update"></a>使用 <code>on duplicate key update</code></h4><p>当表中存在<code>主键</code>或者<code>唯一索引</code>的时候, 避免重复插入的时候，还可以使用以下命令</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name(uniq_name, <span class="keyword">desc</span>) <span class="keyword">values</span>(<span class="string">'exists_name'</span>, <span class="string">'desc'</span>) <span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">on</span> <span class="keyword">update</span> <span class="keyword">count</span> = <span class="keyword">count</span>+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>上面的语句在避免重复插入的同时，还可以修改某一字段， 如果不需要修改任何字段，请使用一下语句</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name(uniq_name, <span class="keyword">desc</span>) <span class="keyword">values</span>(<span class="string">'exists_name'</span>, <span class="string">'desc'</span>) <span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">on</span> <span class="keyword">update</span> <span class="keyword">desc</span> = <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-<p>可以说 <code>on duplicate key update</code> 能够实现 <code>insert ignore</code> 和 <code>replace into</code> 的功能！</p>
+          mysql 如何避免重复插入
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/14/技术-mysql-2017-01-14-mysql避免重复插入/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://summerbuger.github.io/2017/01/01/技术-protobuf-2017-01-01-Protobuf简单使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liam Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headPicture.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ice summer bug's notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/01/技术-protobuf-2017-01-01-Protobuf简单使用/" itemprop="url">Protobuf 简单使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-01T21:00:00+08:00">
+                2017-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/protobuf/" itemprop="url" rel="index">
+                    <span itemprop="name">protobuf</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          macOs 安装使用 protobuf
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/01/技术-protobuf-2017-01-01-Protobuf简单使用/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2119,34 +1658,14 @@ Database Collation: utf8_general_ci
 
       
         
-          
-            <h3 id="protoc-指令介绍"><a href="#protoc-指令介绍" class="headerlink" title="protoc 指令介绍"></a>protoc 指令介绍</h3><p><code>protoc</code> 指令使用示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc [参数] .proto文件路径</span><br></pre></td></tr></table></figure>
-<p>使用 <code>protoc</code> 指令讲 <code>.proto</code> 文件编译成 <code>.java</code> 文件的简单使用如下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --java_out=./ /path_to_proto_file/Demo.proto</span><br></pre></td></tr></table></figure>
-<p>protoc 指令参数翻译如下</p>
-<h6 id="注意：-protoc-对文件路径不敏感，所有参数中的路径，必须是绝对路径"><a href="#注意：-protoc-对文件路径不敏感，所有参数中的路径，必须是绝对路径" class="headerlink" title="注意： protoc 对文件路径不敏感，所有参数中的路径，必须是绝对路径"></a><em>注意： <code>protoc</code> 对文件路径不敏感，所有参数中的路径，必须是绝对路径</em></h6><hr>
-<p>-I[PATH], –proto_path=[PATH]: 指定 import 修饰符扫描文件夹；可以指定多次，被指定的文件夹将按照先后制定顺序被扫描；如果没有指定，将使用当前文件夹作为扫描文件夹</p>
-<h6 id="注意：-这里的-PATH-必须是绝对路径"><a href="#注意：-这里的-PATH-必须是绝对路径" class="headerlink" title="注意： 这里的[PATH]必须是绝对路径"></a><em>注意： 这里的[PATH]必须是绝对路径</em></h6><hr>
-<p>–version: 查看 protoc 指令版本</p>
-<hr>
-<p>-h, –help: 查看帮助文档</p>
-<hr>
-<p>–encode=MESSAGE_TYPE</p>
-<hr>
-<p>–decode=MESSAGE_TYPE</p>
-<p>–decode_raw</p>
-<p>-o[FILE], –descriptor_set_out=[FILE]</p>
-<p>–include_imports</p>
-<p>–include_source_info</p>
-<p>–error_format</p>
-<hr>
-<p>–java_out=[PATH]: 指定生成的java文件的输出文件夹</p>
-<p><em>注意 <code>.proto</code> 文件中如果指定了 java_package， 会在输出文件夹中创建java 的package</em></p>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ : ✗ protoc -h</span><br><span class="line">Usage: protoc [OPTION] PROTO_FILES</span><br><span class="line">Parse PROTO_FILES and generate output based on the options given:</span><br><span class="line">  -IPATH, --proto_path=PATH   Specify the directory in which to search for</span><br><span class="line">                              imports.  May be specified multiple times;</span><br><span class="line">                              directories will be searched in order.  If not</span><br><span class="line">                              given, the current working directory is used.</span><br><span class="line">  --version                   Show version info and exit.</span><br><span class="line">  -h, --help                  Show this text and exit.</span><br><span class="line">  --encode=MESSAGE_TYPE       Read a text-format message of the given type</span><br><span class="line">                              from standard input and write it in binary</span><br><span class="line">                              to standard output.  The message type must</span><br><span class="line">                              be defined in PROTO_FILES or their imports.</span><br><span class="line">  --decode=MESSAGE_TYPE       Read a binary message of the given type from</span><br><span class="line">                              standard input and write it in text format</span><br><span class="line">                              to standard output.  The message type must</span><br><span class="line">                              be defined in PROTO_FILES or their imports.</span><br><span class="line">  --decode_raw                Read an arbitrary protocol message from</span><br><span class="line">                              standard input and write the raw tag/value</span><br><span class="line">                              pairs in text format to standard output.  No</span><br><span class="line">                              PROTO_FILES should be given when using this</span><br><span class="line">                              flag.</span><br><span class="line">  -oFILE,                     Writes a FileDescriptorSet (a protocol buffer,</span><br><span class="line">    --descriptor_set_out=FILE defined in descriptor.proto) containing all of</span><br><span class="line">                              the input files to FILE.</span><br><span class="line">  --include_imports           When using --descriptor_set_out, also include</span><br><span class="line">                              all dependencies of the input files in the</span><br><span class="line">                              set, so that the set is self-contained.</span><br><span class="line">  --include_source_info       When using --descriptor_set_out, do not strip</span><br><span class="line">                              SourceCodeInfo from the FileDescriptorProto.</span><br><span class="line">                              This results in vastly larger descriptors that</span><br><span class="line">                              include information about the original</span><br><span class="line">                              location of each decl in the source file as</span><br><span class="line">                              well as surrounding comments.</span><br><span class="line">  --error_format=FORMAT       Set the format in which to print errors.</span><br><span class="line">                              FORMAT may be 'gcc' (the default) or 'msvs'</span><br><span class="line">                              (Microsoft Visual Studio format).</span><br><span class="line">  --plugin=EXECUTABLE         Specifies a plugin executable to use.</span><br><span class="line">                              Normally, protoc searches the PATH for</span><br><span class="line">                              plugins, but you may specify additional</span><br><span class="line">                              executables not in the path using this flag.</span><br><span class="line">                              Additionally, EXECUTABLE may be of the form</span><br><span class="line">                              NAME=PATH, in which case the given plugin name</span><br><span class="line">                              is mapped to the given executable even if</span><br><span class="line">                              the executable's own name differs.</span><br><span class="line">  --cpp_out=OUT_DIR           Generate C++ header and source.</span><br><span class="line">  --java_out=OUT_DIR          Generate Java source file.</span><br><span class="line">  --python_out=OUT_DIR        Generate Python source file.</span><br></pre></td></tr></table></figure>
-
-          
+          protoc 使用说明
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/01/技术-protobuf-2017-01-01-protoc指令介绍/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2234,7 +1753,7 @@ Database Collation: utf8_general_ci
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2245,7 +1764,7 @@ Database Collation: utf8_general_ci
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2256,7 +1775,7 @@ Database Collation: utf8_general_ci
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
