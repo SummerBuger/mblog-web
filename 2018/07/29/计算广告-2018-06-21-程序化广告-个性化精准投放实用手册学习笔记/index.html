@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/ads-flow.png">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/bidding.type.flow.png">
-<meta property="og:updated_time" content="2018-07-29T16:10:18.000Z">
+<meta property="og:updated_time" content="2018-07-31T17:04:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序化广告——个性化精准投放实用手册》学习笔记">
 <meta name="twitter:description" content="《程序化广告——个性化精准投放实用手册》学习总结及问题汇总">
@@ -405,7 +405,55 @@
 <li>2019 年之后：成熟期<br>市场规模到达瓶颈，程序化广告格局相对稳定。</li>
 </ol>
 <h4 id="广告参与者"><a href="#广告参与者" class="headerlink" title="广告参与者"></a>广告参与者</h4><p><img src="/assets/picture/ads-flow.png" alt="图片" title="程序化广告参与方交互关系"></p>
-<ol><br>  <li>需求方</li><br>  <ul><br>    <li>广告主：我要投广告</li><br>    <li>广告代理商：为广告主服务，制作广告，制定并优化广告投放计划；4A广告代理商为大型广告主服务</li><br>  </ul><br>  <li>广告代理商</li><br>  <ul><br>    <li>DSP(Demand Side Platform)</li><br>    <ol><br>      <li>管理广告素材及其投放计划</li><br>      <li>用户画像和受众定向</li><br>      <li>优化投放效果</li><br>      <li>数据统计及数据报告</li><br>      <li>Cookie Mapping</li><br>      <li>参与RTB</li><br>      <li>广告审核</li><br>    </ol><br>    <li>TD(Trading Desk)：通过API对接多个DSP，分配投放计划，进行广告投放计划管理</li><br>  </ul><br>  <li>供应方</li><br>  <ul><br>    <li>在线媒体：门户网站、垂直网站、社交平台</li><br>    <li>APP</li><br>    <li>ADN(AD Network)：广告网盟，将多个媒体方（主要是中小媒体）的流量按照人群标签打包售卖</li><br>  </ul><br>  <li>SSP(Supply Side Platform)</li><br>  <ul><br>    <li>对接媒体，提供广告位管理</li><br>    <li>Cookie Mapping</li><br>    <li>发起RTB</li><br>    <li>广告审核</li><br>  </ul><br>  <li>ADX(Ad Exchange)：对接需求方平台和供应方平台，主导RTB，完成广告交易</li><br>  <li>PCP(Programmatic Creative Platform)：程序化创意平台，自动生成大量创意并且进行动态创意优化</li><br>  <li>AVP(Ad Verification Platform)：广告验证平台，品牌安全、反作弊、可视度验证、无效流量验证</li><br>  <li>DMP(Data Management Platform)：数据管理平台，收集用户行为数据，建立用户画像，进行人群标签管理再投放</li><br>  <li>Measurement &amp; Analytics Platform：监测分析平台，收集广告展现、点击、转化数据，同步监控，评估广告投放平台数据的真实性</li><br></ol>
+<h5 id="需求方"><a href="#需求方" class="headerlink" title="需求方"></a>需求方</h5><h6 id="广告主"><a href="#广告主" class="headerlink" title="广告主"></a>广告主</h6><p>我要投广告，推广我的产品</p>
+<h6 id="广告代理商"><a href="#广告代理商" class="headerlink" title="广告代理商"></a>广告代理商</h6><p>为广告主服务，制作广告，制定并优化广告投放计划；4A广告代理商为大型广告主服务</p>
+<h6 id="需求方平台-Demand-Side-Platform-DSP"><a href="#需求方平台-Demand-Side-Platform-DSP" class="headerlink" title="需求方平台(Demand Side Platform, DSP)"></a>需求方平台(Demand Side Platform, DSP)</h6><ol>
+<li>管理广告及其投放计划</li>
+<li>结合DMP用于用户画像并用来受众定向</li>
+<li>优化投放效果</li>
+<li>数据统计及数据报告</li>
+<li>Cookie Mapping</li>
+<li>参与RTB</li>
+<li>广告审核</li>
+</ol>
+<h6 id="采购交易平台-Trading-Desk-TD"><a href="#采购交易平台-Trading-Desk-TD" class="headerlink" title="采购交易平台(Trading Desk, TD)"></a>采购交易平台(Trading Desk, TD)</h6><p>通过API对接多个DSP，分配投放预算，进行广告投放计划管理</p>
+<h6 id="程序化创意平台-Programmatic-Creative-Platform-PCP-："><a href="#程序化创意平台-Programmatic-Creative-Platform-PCP-：" class="headerlink" title="程序化创意平台(Programmatic Creative Platform, PCP)："></a>程序化创意平台(Programmatic Creative Platform, PCP)：</h6><p>自动生成大量创意并且进行动态创意优化</p>
+<h5 id="供给方"><a href="#供给方" class="headerlink" title="供给方"></a>供给方</h5><h6 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h6><p>包含移动端网站、PC端网站；网站也可以划分为门户网站、垂直网站、社交平台等</p>
+<h6 id="APP"><a href="#APP" class="headerlink" title="APP"></a>APP</h6><p>你手机上的各种各样的APP</p>
+<h6 id="广告网盟-Ad-Network，ADN"><a href="#广告网盟-Ad-Network，ADN" class="headerlink" title="广告网盟(Ad Network，ADN)"></a>广告网盟(Ad Network，ADN)</h6><p>收集用户数据，将多个媒体方（主要是中小媒体）的流量按照人群标签打包售卖</p>
+<h6 id="供给方平台-Supply-Side-Platform-DSP"><a href="#供给方平台-Supply-Side-Platform-DSP" class="headerlink" title="供给方平台(Supply Side Platform, DSP)"></a>供给方平台(Supply Side Platform, DSP)</h6><ol>
+<li>对接媒体，提供广告位管理</li>
+<li>Cookie Mapping</li>
+<li>发起RTB</li>
+<li>广告审核</li>
+</ol>
+<h5 id="广告交易平台-Ad-Exchange-ADX"><a href="#广告交易平台-Ad-Exchange-ADX" class="headerlink" title="广告交易平台(Ad Exchange, ADX)"></a>广告交易平台(Ad Exchange, ADX)</h5><p>对接需求方平台和供应方平台，主导RTB，完成广告交易</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><h6 id="广告验证平台-Ad-Verification-Platform-AVP-："><a href="#广告验证平台-Ad-Verification-Platform-AVP-：" class="headerlink" title="广告验证平台(Ad Verification Platform, AVP)："></a>广告验证平台(Ad Verification Platform, AVP)：</h6><p>提供品牌安全、反作弊、可视度验证、无效流量验证等功能</p>
+<h6 id="数据管理平台-Data-Management-Platform-DMP"><a href="#数据管理平台-Data-Management-Platform-DMP" class="headerlink" title="数据管理平台(Data Management Platform, DMP)"></a>数据管理平台(Data Management Platform, DMP)</h6><p>收集用户行为数据，建立用户画像，进行人群标签管理再投放</p>
+<h6 id="监测分析平台-Measurement-amp-Analytics-Platform"><a href="#监测分析平台-Measurement-amp-Analytics-Platform" class="headerlink" title="监测分析平台(Measurement &amp; Analytics Platform)"></a>监测分析平台(Measurement &amp; Analytics Platform)</h6><p>收集广告展现、点击、转化数据，同步监控，评估广告投放平台数据的真实性</p>
+<style>
+th:nth-child(1){
+     width:13%;
+}
+th:nth-child(2){
+     width:37%;
+}
+th:nth-child(3){
+     width:10%;
+}
+th:nth-child(4){
+     width:10%;
+}
+th:nth-child(5){
+     width:10%;
+}
+th:nth-child(6){
+     width:10%;
+}
+th:nth-child(7){
+     width:10%;
+}
+</style>
 
 <h4 id="广告交易模式"><a href="#广告交易模式" class="headerlink" title="广告交易模式"></a>广告交易模式</h4><table>
 <thead>
@@ -421,9 +469,9 @@
 </thead>
 <tbody>
 <tr>
-<td>Header Bidding(头部竞价)</td>
+<td>Header Bidding<br>(头部竞价)</td>
 <td>通过在媒体页面插入 JS SDK 代码在加载页面的时候，直接对接需求方，针对优质流量直接对Bidder进行竞价请求</td>
-<td>竞价（非RTB）</td>
+<td>竞价</td>
 <td>不担保</td>
 <td>自动</td>
 <td>否</td>
@@ -436,10 +484,10 @@
 <td>担保</td>
 <td>半自动</td>
 <td>是</td>
-<td>CPM,CPC,CPT</td>
+<td>CPM<br>CPC<br>CPT</td>
 </tr>
 <tr>
-<td>Perferred Deals(首选交易)</td>
+<td>Perferred Deals<br>(首选交易)</td>
 <td>双方在合同中按照固定单价不保量优先购买 PDB 之后的流量，但是如果 RTB 价格减去PDB 价格大于一个溢价，RTB 优先</td>
 <td>固定单价</td>
 <td>不担保</td>
@@ -448,7 +496,7 @@
 <td>CPM,CPC</td>
 </tr>
 <tr>
-<td>Private Auction(私有交易)</td>
+<td>Private Auction<br>(私有交易)</td>
 <td>供应方挑选一部分优质需求方，签订合同之后按照 RTB 方式交易PD 之后的流量</td>
 <td>RTB</td>
 <td>不担保</td>
@@ -457,7 +505,7 @@
 <td>CPM</td>
 </tr>
 <tr>
-<td>Open RTB（公开交易）</td>
+<td>Open RTB<br>（公开交易）</td>
 <td>供应方在公开交易市场进行实时竞价交易剩余流量</td>
 <td>RTB</td>
 <td>不担保</td>
@@ -642,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网广告发展史"><span class="nav-number">1.</span> <span class="nav-text">互联网广告发展史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序化广告"><span class="nav-number">2.</span> <span class="nav-text">程序化广告</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的定义"><span class="nav-number">2.1.</span> <span class="nav-text">程序化广告的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的价值"><span class="nav-number">2.2.</span> <span class="nav-text">程序化广告的价值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中国程序化广告发展阶段分析"><span class="nav-number">2.3.</span> <span class="nav-text">中国程序化广告发展阶段分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告参与者"><span class="nav-number">3.</span> <span class="nav-text">广告参与者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告交易模式"><span class="nav-number">4.</span> <span class="nav-text">广告交易模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网广告发展史"><span class="nav-number">1.</span> <span class="nav-text">互联网广告发展史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序化广告"><span class="nav-number">2.</span> <span class="nav-text">程序化广告</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的定义"><span class="nav-number">2.1.</span> <span class="nav-text">程序化广告的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的价值"><span class="nav-number">2.2.</span> <span class="nav-text">程序化广告的价值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中国程序化广告发展阶段分析"><span class="nav-number">2.3.</span> <span class="nav-text">中国程序化广告发展阶段分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告参与者"><span class="nav-number">3.</span> <span class="nav-text">广告参与者</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#需求方"><span class="nav-number">3.1.</span> <span class="nav-text">需求方</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#广告主"><span class="nav-number">3.1.1.</span> <span class="nav-text">广告主</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#广告代理商"><span class="nav-number">3.1.2.</span> <span class="nav-text">广告代理商</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#需求方平台-Demand-Side-Platform-DSP"><span class="nav-number">3.1.3.</span> <span class="nav-text">需求方平台(Demand Side Platform, DSP)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#采购交易平台-Trading-Desk-TD"><span class="nav-number">3.1.4.</span> <span class="nav-text">采购交易平台(Trading Desk, TD)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#程序化创意平台-Programmatic-Creative-Platform-PCP-："><span class="nav-number">3.1.5.</span> <span class="nav-text">程序化创意平台(Programmatic Creative Platform, PCP)：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#供给方"><span class="nav-number">3.2.</span> <span class="nav-text">供给方</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网站"><span class="nav-number">3.2.1.</span> <span class="nav-text">网站</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#APP"><span class="nav-number">3.2.2.</span> <span class="nav-text">APP</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#广告网盟-Ad-Network，ADN"><span class="nav-number">3.2.3.</span> <span class="nav-text">广告网盟(Ad Network，ADN)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#供给方平台-Supply-Side-Platform-DSP"><span class="nav-number">3.2.4.</span> <span class="nav-text">供给方平台(Supply Side Platform, DSP)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#广告交易平台-Ad-Exchange-ADX"><span class="nav-number">3.3.</span> <span class="nav-text">广告交易平台(Ad Exchange, ADX)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">3.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#广告验证平台-Ad-Verification-Platform-AVP-："><span class="nav-number">3.4.1.</span> <span class="nav-text">广告验证平台(Ad Verification Platform, AVP)：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数据管理平台-Data-Management-Platform-DMP"><span class="nav-number">3.4.2.</span> <span class="nav-text">数据管理平台(Data Management Platform, DMP)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#监测分析平台-Measurement-amp-Analytics-Platform"><span class="nav-number">3.4.3.</span> <span class="nav-text">监测分析平台(Measurement &amp; Analytics Platform)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告交易模式"><span class="nav-number">4.</span> <span class="nav-text">广告交易模式</span></a></li></ol></div>
             
 
           </div>
