@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="golang gc 机制浅探">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-29T02:31:58.000Z">
+<meta property="og:updated_time" content="2018-08-07T15:08:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang GC">
 <meta name="twitter:description" content="golang gc 机制浅探">
@@ -353,8 +353,8 @@
 </code></pre><p>golang GC 不分代，不压缩。 golang 在分配内存的时候是预先将内存划分为固定大小的内存块，以尽量减少碎片，同时消除常见情况下的锁定。</p>
 <pre><code>The algorithm decomposes into several steps.
 This is a high level description of the algorithm being used. For an overview of GC a good place to start is Richard Jones&apos; gchandbook.org.
-
-The algorithm&apos;s intellectual heritage includes Dijkstra&apos;s on-the-fly algorithm, see
+</code></pre><p>gc 算法被分解成多个步骤<br>这里是对 <code>垃圾回收</code> 算法的高度概括，对于 <code>垃圾回收</code> 算法的综述和入门学习的资料是 <code>Richard Jones</code> 的 <a href="http://gchandbook.org" title="gchandbook.org" target="_blank" rel="noopener">gchandbook.org</a></p>
+<pre><code>The algorithm&apos;s intellectual heritage includes Dijkstra&apos;s on-the-fly algorithm, see
 Edsger W. Dijkstra, Leslie Lamport, A. J. Martin, C. S. Scholten, and E. F. M. Steffens. 1978.
 On-the-fly garbage collection: an exercise in cooperation. Commun. ACM 21, 11 (November 1978),
 966-975.
@@ -364,12 +364,12 @@ Concurrency and Computation: Practice and Experience 15(3-5), 2003.
 
 
 1. GC performs sweep termination.
+</code></pre><p>gc 执行清除</p>
+<pre><code>a. Stop the world. This causes all Ps to reach a GC safe-point.
+</code></pre><p><code>SWT</code>(Stop the word)：使所有用户线程到达一个 <code>GC</code> 安全点</p>
+<pre><code>b. Sweep any unswept spans. There will only be unswept spans if this GC cycle was forced before the expected time.
 
-a. Stop the world. This causes all Ps to reach a GC safe-point.
 
-b. Sweep any unswept spans. There will only be unswept spans if this GC cycle was forced before the expected time.
-
-1. GC
 
 2. GC performs the &quot;mark 1&quot; sub-phase. In this sub-phase, Ps are
 allowed to locally cache parts of the work queue.
@@ -522,7 +522,7 @@ allowed to locally cache parts of the work queue.
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
