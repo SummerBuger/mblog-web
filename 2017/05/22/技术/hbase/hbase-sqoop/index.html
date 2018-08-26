@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="了解HBase 基本操作，实践从 Mysql 同步数据到HBase">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T07:32:27.000Z">
+<meta property="og:updated_time" content="2018-08-26T07:38:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HBase 简介和使用 Sqoop 同步 Mysql 数据到 HBase">
 <meta name="twitter:description" content="了解HBase 基本操作，实践从 Mysql 同步数据到HBase">
@@ -370,9 +370,7 @@
 </li>
 <li><p><code>--columns</code><br><br>本次导出的数据，可以一次导出多列，用逗号分隔，导出的列在hbase 中属于 <code>--column family</code> 参数指定的列簇，列名称是  <code>column family:mysql表中的列名</code>，需要注意的是，如果没有指定参数 <code>--hbase-row-key</code>，在hbase 表中的row key 将是 <code>--columns</code> 中第一列。</p>
 </li>
-</ol>
-<ol start="7">
-<li><p><code>--hbase-table</code><br><br>本次导入数据的 hbase 表</p>
+<li><p><code>--hbase-table</code><br><br>本次导入数据的 hbase 表，需要注意的是导入数据的hbase 表可以不存在，但是hbase 表所属的 namespace 必须是存在的，否则会报错：<code>Import failed: org.apache.hadoop.hbase.NamespaceNotFoundException: org.apache.hadoop.hbase.NamespaceNotFoundException: &#39;namespace&#39;</code></p>
 </li>
 <li><p><code>--hbase-create-table</code><br><br>如果导入数据的表不存在，则创建该表</p>
 </li>
@@ -413,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/技术/spring/2017-03-01-Spring使用过程中遇到的问题/" rel="next" title="如何正确的创建 prototype 类型的 bean">
-                <i class="fa fa-chevron-left"></i> 如何正确的创建 prototype 类型的 bean
+              <a href="/2017/05/22/技术/mysql/2017-05-22-mysql常用指令/" rel="next" title="mysql常用指令">
+                <i class="fa fa-chevron-left"></i> mysql常用指令
               </a>
             
           </div>
@@ -423,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/22/技术/mysql/2017-05-22-mysql常用指令/" rel="prev" title="mysql常用指令">
-                mysql常用指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/01/计算广告/2017-09-01-计算广告学习笔记之名词汇总0/" rel="prev" title="计算广告学习笔记之名词汇总">
+                计算广告学习笔记之名词汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
