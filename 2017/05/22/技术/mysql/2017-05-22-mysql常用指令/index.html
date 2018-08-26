@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="mysql 常用指令和操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-29T02:45:19.000Z">
+<meta property="og:updated_time" content="2018-08-22T03:48:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用指令">
 <meta name="twitter:description" content="mysql 常用指令和操作">
@@ -582,6 +582,38 @@ Database Collation: utf8_general_ci
 1 row in set (0.02 sec)
 </code></pre><h4 id="查看存储过程具体定义"><a href="#查看存储过程具体定义" class="headerlink" title="查看存储过程具体定义"></a>查看存储过程具体定义</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">procedure</span> %procedure_name%;</span><br></pre></td></tr></table></figure>
 <h4 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> &#123;<span class="keyword">PROCEDURE</span> | <span class="keyword">FUNCTION</span>&#125; [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] sp_name</span><br></pre></td></tr></table></figure>
+<h3 id="mysql-查看数据库和表容量大小"><a href="#mysql-查看数据库和表容量大小" class="headerlink" title="mysql 查看数据库和表容量大小"></a>mysql 查看数据库和表容量大小</h3><p><code>information_schema</code> 库中有个 <code>TABLES</code> 表</p>
+<pre><code>mysql&gt; show create table TABLES\G
+*************************** 1. row ***************************
+Table: TABLES
+Create Table: CREATE TEMPORARY TABLE `TABLES` (
+`TABLE_CATALOG` varchar(512) NOT NULL DEFAULT &apos;&apos;,
+`TABLE_SCHEMA` varchar(64) NOT NULL DEFAULT &apos;&apos;,
+`TABLE_NAME` varchar(64) NOT NULL DEFAULT &apos;&apos;,
+`TABLE_TYPE` varchar(64) NOT NULL DEFAULT &apos;&apos;,
+`ENGINE` varchar(64) DEFAULT NULL,
+`VERSION` bigint(21) unsigned DEFAULT NULL,
+`ROW_FORMAT` varchar(10) DEFAULT NULL,
+`TABLE_ROWS` bigint(21) unsigned DEFAULT NULL,
+`AVG_ROW_LENGTH` bigint(21) unsigned DEFAULT NULL,
+`DATA_LENGTH` bigint(21) unsigned DEFAULT NULL,
+`MAX_DATA_LENGTH` bigint(21) unsigned DEFAULT NULL,
+`INDEX_LENGTH` bigint(21) unsigned DEFAULT NULL,
+`DATA_FREE` bigint(21) unsigned DEFAULT NULL,
+`AUTO_INCREMENT` bigint(21) unsigned DEFAULT NULL,
+`CREATE_TIME` datetime DEFAULT NULL,
+`UPDATE_TIME` datetime DEFAULT NULL,
+`CHECK_TIME` datetime DEFAULT NULL,
+`TABLE_COLLATION` varchar(32) DEFAULT NULL,
+`CHECKSUM` bigint(21) unsigned DEFAULT NULL,
+`CREATE_OPTIONS` varchar(255) DEFAULT NULL,
+`TABLE_COMMENT` varchar(2048) NOT NULL DEFAULT &apos;&apos;
+) ENGINE=MEMORY DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+</code></pre><p>其中主要字段是</p>
+<p><code>TABLE_SCHEMA</code>: 数据库名称<br><code>TABLE_NAME</code>: 表名称<br><code>DATA_LENGTH</code>: 数据占用的空间大小，单位是字节<br><code>INDEX_LENGTH</code>: 索引占用的空间大小，单位是字节</p>
+<h4 id="查看数据库占用空间大小"><a href="#查看数据库占用空间大小" class="headerlink" title="查看数据库占用空间大小"></a>查看数据库占用空间大小</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SUM</span>(DATA_LENGTH) + <span class="keyword">SUM</span>(INDEX_LENGTH)) / <span class="number">1024</span> / <span class="number">1024</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.TABLES</span><br><span class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA = <span class="string">'database_name'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="查看表占用空间大小"><a href="#查看表占用空间大小" class="headerlink" title="查看表占用空间大小"></a>查看表占用空间大小</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SUM</span>(DATA_LENGTH) + <span class="keyword">SUM</span>(INDEX_LENGTH)) / <span class="number">1024</span> / <span class="number">1024</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.TABLES</span><br><span class="line"><span class="keyword">WHERE</span> TABLE_NAME = <span class="string">'table_name'</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -612,8 +644,8 @@ Database Collation: utf8_general_ci
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/技术/spring/2017-03-01-Spring使用过程中遇到的问题/" rel="next" title="如何正确的创建 prototype 类型的 bean">
-                <i class="fa fa-chevron-left"></i> 如何正确的创建 prototype 类型的 bean
+              <a href="/2017/05/22/技术/hbase/hbase-sqoop/" rel="next" title="HBase 简介和使用 Sqoop 同步 Mysql 数据到 HBase">
+                <i class="fa fa-chevron-left"></i> HBase 简介和使用 Sqoop 同步 Mysql 数据到 HBase
               </a>
             
           </div>
@@ -705,7 +737,7 @@ Database Collation: utf8_general_ci
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -716,7 +748,7 @@ Database Collation: utf8_general_ci
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -727,7 +759,7 @@ Database Collation: utf8_general_ci
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -760,7 +792,7 @@ Database Collation: utf8_general_ci
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看数据库和表容量大小"><span class="nav-number">4.</span> <span class="nav-text">mysql 查看数据库和表容量大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库占用空间大小"><span class="nav-number">4.1.</span> <span class="nav-text">查看数据库占用空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表占用空间大小"><span class="nav-number">4.2.</span> <span class="nav-text">查看表占用空间大小</span></a></li></ol></li></ol></div>
             
 
           </div>
