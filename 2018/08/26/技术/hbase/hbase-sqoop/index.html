@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="了解HBase 基本操作，实践从 Mysql 同步数据到HBase">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T07:44:05.000Z">
+<meta property="og:updated_time" content="2018-09-03T06:10:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HBase 简介和使用 Sqoop 同步 Mysql 数据到 HBase">
 <meta name="twitter:description" content="了解HBase 基本操作，实践从 Mysql 同步数据到HBase">
@@ -380,6 +380,7 @@
 <li><p><code>--column-family</code><br><br>指定导入数据所属的列簇，每次导入数据只能导入属于同一个<code>列簇</code> 的数据，如果 mysql 表中数据属于多个 <code>列簇</code>，只能通过多条指令分批导入。</p>
 </li>
 </ol>
+<p><strong><em>注意：上述指令没有指定列分隔符和行分隔符，默认的列分隔符是 <code>&#39;\001&#39;</code>，在less 中显示是 <code>^A</code>；默认的行分隔符是 <code>&#39;\n&#39;</code>。</em></strong></p>
 
       
     </div>
