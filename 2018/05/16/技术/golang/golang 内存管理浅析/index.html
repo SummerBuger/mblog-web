@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="golang 内存管理源码阅读分析">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-22T15:51:33.000Z">
+<meta property="og:updated_time" content="2018-09-15T04:23:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang 内存管理浅析">
 <meta name="twitter:description" content="golang 内存管理源码阅读分析">
@@ -378,6 +378,7 @@ this is a variable in func will return
 s1: this is a variable in func will return , addr:  0xc42005ff68
 s2: 0xc42000e020
 </code></pre><p>这里可以看到函数 <code>returnString1</code> 中没有发生逃逸，因为 <code>returnString1</code> 的返回值类型是 <code>string</code>, <code>main</code> 函数通过值复制将 <code>rs1</code> 的值复制一份而得到 <code>s1</code>；<br>而函数 <code>returnStringPrt1</code> 的返回值是 <code>string</code> 类型的指针，在 <code>main</code> 函数中调用了 <code>returnStringPrt1</code> 时，可以访问指针 <code>sp1</code> 指向的变量，此时指针 <code>sp1</code> 和指针 <code>s2</code> 指向同一个变量，因此变量 <code>rspt1</code> 分配在堆空间中。</p>
+<p>P:<br>M:<br>G: GoRoutine，协程</p>
 
       
     </div>
