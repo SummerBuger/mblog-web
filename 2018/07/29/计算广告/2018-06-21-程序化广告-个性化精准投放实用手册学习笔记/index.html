@@ -87,13 +87,10 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="《程序化广告——个性化精准投放实用手册》学习总结及问题汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://summerbuger.github.io/assets/picture/ads-flow.png">
-<meta property="og:image" content="https://summerbuger.github.io/assets/picture/bidding.type.flow.png">
-<meta property="og:updated_time" content="2018-07-31T17:04:41.000Z">
+<meta property="og:updated_time" content="2018-09-26T08:02:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序化广告——个性化精准投放实用手册》学习笔记">
 <meta name="twitter:description" content="《程序化广告——个性化精准投放实用手册》学习总结及问题汇总">
-<meta name="twitter:image" content="https://summerbuger.github.io/assets/picture/ads-flow.png">
 
 
 
@@ -349,173 +346,10 @@
       
 
       
-        <h4 id="互联网广告发展史"><a href="#互联网广告发展史" class="headerlink" title="互联网广告发展史"></a>互联网广告发展史</h4><ol>
-<li>启蒙时代：1993 - 1996年<br>直接将纸媒的广告模式迁移到线上，在页面固定位置放置广告位，广告的形式主要是 <code>Banner 广告位</code>，广告的类型主要是合约广告，广告的计费方式从一开始的按时间包断购买的<code>CPT</code> 逐渐发展出按流量购买的 <code>CPM</code>；</li>
-</ol>
-<ol start="2">
-<li>直销时代：1997 - 2002年<br>直销时代广告的售卖方式还是直接售卖广告位，计费模式还是CPT 或者CPM，广告的形式越来越丰富，出现了<code>弹窗广告</code>、<code>背投广告</code>等广告方式</li>
-</ol>
-<p><em><em>直销时代和启蒙时代有什么本质区别？？？</em></em></p>
-<ol start="3">
-<li><p>网盟时代：2003 - 2011年<br>越来越多的媒体让广告主投入越来越多的人力去采买广告，<code>Ad Network(ADN)</code> 将多个媒体（或者其他ADN）打包，按照预定标签标识用户，按照用户标签去批量售卖流量；移动端的广告也在这个时期出现，开发者在网站源代码中添加JS 代码实现WAP 端的广告投放，APP 广告通过嵌入 SDK 代码到App 源代码中实现广告投放；</p>
-</li>
-<li><p>程序化广告</p>
-</li>
-</ol>
-<p>市场发展过程中，产生了受众定向，推动展示广告的交易模式进化到按受众购买，受众定向的数据来源于<code>Date Manager Platform(DMP)</code>；广告的参与方此时分为 <code>Ad Exchange(ADX)</code> 和 <code>Damend Side Platform(DSP)</code>，  <code>ADX</code> 也对接其他 <code>ADN</code>； 此时广告的交易模式可以分为：<br>a. PDB(programm Direct Pay, 程序化直接购买)： 担保库存、固定价格、广告主私有<br>b. PD(Preferred Deal, 优先交易)：不保证库存，事先出价（固定价格）、广告主私有<br>c. PA(Private Auction, 私有竞价)：不保证库存，RTB竞价、少量广告主<br>d. OA(Open Auction， 公开竞价)：不保证库存，RTB竞价、公开面对所有广告主</p>
-<h4 id="程序化广告"><a href="#程序化广告" class="headerlink" title="程序化广告"></a>程序化广告</h4><h5 id="程序化广告的定义"><a href="#程序化广告的定义" class="headerlink" title="程序化广告的定义"></a>程序化广告的定义</h5><p>程序化广告是指利用技术手段进行广告交易和管理的一种广告形态。<br>广告主程序化购买媒体资源、利用算法和技术自动实现精准的目标受众定向；<br>媒体程序化售卖跨媒体、跨终端的媒体资源，利用技术实现广告流量的分级</p>
-<ol>
-<li>以人为本的精准广告定向</li>
-<li>媒体资源的自动化、数字化售卖和采购</li>
-</ol>
-<h5 id="程序化广告的价值"><a href="#程序化广告的价值" class="headerlink" title="程序化广告的价值"></a>程序化广告的价值</h5><p>传统广告的购买模式，广告主需要逐一和媒体方谈判购买流量；ADN 通过预定义人群标签，打包售卖媒体资源，提高了媒体购买效率。而程序化广告实现了预定义人群定向到自定义人群精准定向的跨越，还能对广告投放进行 <code>频次控制</code>，避免像同一个广告受众反复投放同一个或一组广告；程序化广告还能借助广告验证平台的投放验证，满足广告主对 <code>品牌安全</code>、<code>反作弊过滤</code>、<code>广告可见度分析</code>等方面的要求。</p>
-<p>广告主角度</p>
-<ol>
-<li>效率提升：提高媒体采购效率；提高广告投放效率</li>
-<li>效果提升：提高广告投放效率；缩短优化周期</li>
-</ol>
-<p>媒体角度</p>
-<ol>
-<li>效率提升：提高媒体资源售卖效率</li>
-<li>效果提升：提高流量利用率和用户体验</li>
-</ol>
-<h5 id="中国程序化广告发展阶段分析"><a href="#中国程序化广告发展阶段分析" class="headerlink" title="中国程序化广告发展阶段分析"></a>中国程序化广告发展阶段分析</h5><ol>
-<li>2010 - 2011年：萌芽期<br>阿里妈妈推出全网的广告交易平台 <code>Tanx</code></li>
-<li>2012 - 2013年：探索期<br>DSP 市场起步阶段；ADX 如雨后春笋</li>
-<li>2014 - 2016年：燥热期<br>DSP、ADX 大量出现; DMP 越来越智能；市场过度膨胀应发了程序化广告的泡沫，行业存在一系列<code>不规则</code>的玩法, 通过各种作弊造价的方式获取广告主预算</li>
-</ol>
-<p>具体作弊玩法介绍参见刘鹏老师讲解：<br><br><a href="https://zhuanlan.zhihu.com/p/24780235" target="_blank" rel="noopener">互联网广告作弊十八般武艺(上)</a><br><br><a href="https://zhuanlan.zhihu.com/p/24780235" target="_blank" rel="noopener">互联网广告作弊十八般武艺(下)</a></p>
-<ol start="4">
-<li>2017 - 2018年：洗牌期<br>市场过度膨胀之后，行业逐渐回归有序。</li>
-</ol>
-<p>广告主的变化</p>
-<ol>
-<li>透明程序化的诉求：流量、数据环节透明化；财务和合同等流程的规范化、严谨化</li>
-<li>盘活私有数据：广告主自建 DSP、DMP</li>
-<li>更加合理的KPI衡量标准：严格把关广告的流量消耗，杜绝作弊</li>
-</ol>
-<p>媒体的变化</p>
-<ol>
-<li>掌握流量控制权：自建ADX/SSP</li>
-<li>完善广告交易模式：升级PA、PD、PDB 交易模式的技术支持</li>
-<li>广告形式更加丰富：媒体形式越来越多，原生广告、可玩广告、短视频广告等广告形式的出现</li>
-</ol>
-<p><em>可玩广告：游戏类APP短时间试玩游戏的广告形式</em></p>
-<ol start="5">
-<li>2019 年之后：成熟期<br>市场规模到达瓶颈，程序化广告格局相对稳定。</li>
-</ol>
-<h4 id="广告参与者"><a href="#广告参与者" class="headerlink" title="广告参与者"></a>广告参与者</h4><p><img src="/assets/picture/ads-flow.png" alt="图片" title="程序化广告参与方交互关系"></p>
-<h5 id="需求方"><a href="#需求方" class="headerlink" title="需求方"></a>需求方</h5><h6 id="广告主"><a href="#广告主" class="headerlink" title="广告主"></a>广告主</h6><p>我要投广告，推广我的产品</p>
-<h6 id="广告代理商"><a href="#广告代理商" class="headerlink" title="广告代理商"></a>广告代理商</h6><p>为广告主服务，制作广告，制定并优化广告投放计划；4A广告代理商为大型广告主服务</p>
-<h6 id="需求方平台-Demand-Side-Platform-DSP"><a href="#需求方平台-Demand-Side-Platform-DSP" class="headerlink" title="需求方平台(Demand Side Platform, DSP)"></a>需求方平台(Demand Side Platform, DSP)</h6><ol>
-<li>管理广告及其投放计划</li>
-<li>结合DMP用于用户画像并用来受众定向</li>
-<li>优化投放效果</li>
-<li>数据统计及数据报告</li>
-<li>Cookie Mapping</li>
-<li>参与RTB</li>
-<li>广告审核</li>
-</ol>
-<h6 id="采购交易平台-Trading-Desk-TD"><a href="#采购交易平台-Trading-Desk-TD" class="headerlink" title="采购交易平台(Trading Desk, TD)"></a>采购交易平台(Trading Desk, TD)</h6><p>通过API对接多个DSP，分配投放预算，进行广告投放计划管理</p>
-<h6 id="程序化创意平台-Programmatic-Creative-Platform-PCP-："><a href="#程序化创意平台-Programmatic-Creative-Platform-PCP-：" class="headerlink" title="程序化创意平台(Programmatic Creative Platform, PCP)："></a>程序化创意平台(Programmatic Creative Platform, PCP)：</h6><p>自动生成大量创意并且进行动态创意优化</p>
-<h5 id="供给方"><a href="#供给方" class="headerlink" title="供给方"></a>供给方</h5><h6 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h6><p>包含移动端网站、PC端网站；网站也可以划分为门户网站、垂直网站、社交平台等</p>
-<h6 id="APP"><a href="#APP" class="headerlink" title="APP"></a>APP</h6><p>你手机上的各种各样的APP</p>
-<h6 id="广告网盟-Ad-Network，ADN"><a href="#广告网盟-Ad-Network，ADN" class="headerlink" title="广告网盟(Ad Network，ADN)"></a>广告网盟(Ad Network，ADN)</h6><p>收集用户数据，将多个媒体方（主要是中小媒体）的流量按照人群标签打包售卖</p>
-<h6 id="供给方平台-Supply-Side-Platform-DSP"><a href="#供给方平台-Supply-Side-Platform-DSP" class="headerlink" title="供给方平台(Supply Side Platform, DSP)"></a>供给方平台(Supply Side Platform, DSP)</h6><ol>
-<li>对接媒体，提供广告位管理</li>
-<li>Cookie Mapping</li>
-<li>发起RTB</li>
-<li>广告审核</li>
-</ol>
-<h5 id="广告交易平台-Ad-Exchange-ADX"><a href="#广告交易平台-Ad-Exchange-ADX" class="headerlink" title="广告交易平台(Ad Exchange, ADX)"></a>广告交易平台(Ad Exchange, ADX)</h5><p>对接需求方平台和供应方平台，主导RTB，完成广告交易</p>
-<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><h6 id="广告验证平台-Ad-Verification-Platform-AVP-："><a href="#广告验证平台-Ad-Verification-Platform-AVP-：" class="headerlink" title="广告验证平台(Ad Verification Platform, AVP)："></a>广告验证平台(Ad Verification Platform, AVP)：</h6><p>提供品牌安全、反作弊、可视度验证、无效流量验证等功能</p>
-<h6 id="数据管理平台-Data-Management-Platform-DMP"><a href="#数据管理平台-Data-Management-Platform-DMP" class="headerlink" title="数据管理平台(Data Management Platform, DMP)"></a>数据管理平台(Data Management Platform, DMP)</h6><p>收集用户行为数据，建立用户画像，进行人群标签管理再投放</p>
-<h6 id="监测分析平台-Measurement-amp-Analytics-Platform"><a href="#监测分析平台-Measurement-amp-Analytics-Platform" class="headerlink" title="监测分析平台(Measurement &amp; Analytics Platform)"></a>监测分析平台(Measurement &amp; Analytics Platform)</h6><p>收集广告展现、点击、转化数据，同步监控，评估广告投放平台数据的真实性</p>
-<style>
-th:nth-child(1){
-     width:13%;
-}
-th:nth-child(2){
-     width:37%;
-}
-th:nth-child(3){
-     width:10%;
-}
-th:nth-child(4){
-     width:10%;
-}
-th:nth-child(5){
-     width:10%;
-}
-th:nth-child(6){
-     width:10%;
-}
-th:nth-child(7){
-     width:10%;
-}
-</style>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<h4 id="广告交易模式"><a href="#广告交易模式" class="headerlink" title="广告交易模式"></a>广告交易模式</h4><table>
-<thead>
-<tr>
-<th>交易模式</th>
-<th>简单说明</th>
-<th>价格</th>
-<th>流量</th>
-<th>工作流程</th>
-<th>订单交易</th>
-<th>主要计费方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Header Bidding<br>(头部竞价)</td>
-<td>通过在媒体页面插入 JS SDK 代码在加载页面的时候，直接对接需求方，针对优质流量直接对Bidder进行竞价请求</td>
-<td>竞价</td>
-<td>不担保</td>
-<td>自动</td>
-<td>否</td>
-<td>CPM</td>
-</tr>
-<tr>
-<td>Programmatic Guaranteed(程序化保量交易)</td>
-<td>HB 之后的流量，双方在合同中约定价格，按照约定的流量 100% 或按照预定的返量比例进行采购；合同涉及的流量、交易价格等需要线下谈判，所以是半自动</td>
-<td>固定价格</td>
-<td>担保</td>
-<td>半自动</td>
-<td>是</td>
-<td>CPM<br>CPC<br>CPT</td>
-</tr>
-<tr>
-<td>Perferred Deals<br>(首选交易)</td>
-<td>双方在合同中按照固定单价不保量优先购买 PDB 之后的流量，但是如果 RTB 价格减去PDB 价格大于一个溢价，RTB 优先</td>
-<td>固定单价</td>
-<td>不担保</td>
-<td>半自动</td>
-<td>是</td>
-<td>CPM,CPC</td>
-</tr>
-<tr>
-<td>Private Auction<br>(私有交易)</td>
-<td>供应方挑选一部分优质需求方，签订合同之后按照 RTB 方式交易PD 之后的流量</td>
-<td>RTB</td>
-<td>不担保</td>
-<td>自动</td>
-<td>是</td>
-<td>CPM</td>
-</tr>
-<tr>
-<td>Open RTB<br>（公开交易）</td>
-<td>供应方在公开交易市场进行实时竞价交易剩余流量</td>
-<td>RTB</td>
-<td>不担保</td>
-<td>自动</td>
-<td>否</td>
-<td>CPM</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/assets/picture/bidding.type.flow.png" alt="图片" title="交易模式及顺序"></p>
+<h4 id="分类器-TP-TN-FP-FN"><a href="#分类器-TP-TN-FP-FN" class="headerlink" title="分类器: TP, TN, FP, FN"></a>分类器: <code>TP</code>, <code>TN</code>, <code>FP</code>, <code>FN</code></h4><p><code>TP</code>: 应该检索到而且检索到了的<br><code>TN</code>: 不应该检索到，而且没有检索到的<br><code>FP</code>: 不应该检索到但是检索到了<br><code>FN</code>: 应该检索到，但是没检索到</p>
+<p><code>准确率(accuracy)</code> =  $$\frac{TP+TN}{TP+TN+FP+FN}$$</p>
 
       
     </div>
@@ -556,7 +390,7 @@ th:nth-child(7){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/01/计算广告/程序化广告-个性化精准投放实用手册-常见问题导读/" rel="prev" title="《程序化广告——个性化精准投放实用手册》常见问题导读">
+              <a href="/2018/08/01/计算广告/点击率预估简要介绍/" rel="prev" title="《程序化广告——个性化精准投放实用手册》常见问题导读">
                 《程序化广告——个性化精准投放实用手册》常见问题导读 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -639,7 +473,7 @@ th:nth-child(7){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +484,7 @@ th:nth-child(7){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -661,7 +495,7 @@ th:nth-child(7){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -694,7 +528,7 @@ th:nth-child(7){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网广告发展史"><span class="nav-number">1.</span> <span class="nav-text">互联网广告发展史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序化广告"><span class="nav-number">2.</span> <span class="nav-text">程序化广告</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的定义"><span class="nav-number">2.1.</span> <span class="nav-text">程序化广告的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序化广告的价值"><span class="nav-number">2.2.</span> <span class="nav-text">程序化广告的价值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中国程序化广告发展阶段分析"><span class="nav-number">2.3.</span> <span class="nav-text">中国程序化广告发展阶段分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告参与者"><span class="nav-number">3.</span> <span class="nav-text">广告参与者</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#需求方"><span class="nav-number">3.1.</span> <span class="nav-text">需求方</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#广告主"><span class="nav-number">3.1.1.</span> <span class="nav-text">广告主</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#广告代理商"><span class="nav-number">3.1.2.</span> <span class="nav-text">广告代理商</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#需求方平台-Demand-Side-Platform-DSP"><span class="nav-number">3.1.3.</span> <span class="nav-text">需求方平台(Demand Side Platform, DSP)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#采购交易平台-Trading-Desk-TD"><span class="nav-number">3.1.4.</span> <span class="nav-text">采购交易平台(Trading Desk, TD)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#程序化创意平台-Programmatic-Creative-Platform-PCP-："><span class="nav-number">3.1.5.</span> <span class="nav-text">程序化创意平台(Programmatic Creative Platform, PCP)：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#供给方"><span class="nav-number">3.2.</span> <span class="nav-text">供给方</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网站"><span class="nav-number">3.2.1.</span> <span class="nav-text">网站</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#APP"><span class="nav-number">3.2.2.</span> <span class="nav-text">APP</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#广告网盟-Ad-Network，ADN"><span class="nav-number">3.2.3.</span> <span class="nav-text">广告网盟(Ad Network，ADN)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#供给方平台-Supply-Side-Platform-DSP"><span class="nav-number">3.2.4.</span> <span class="nav-text">供给方平台(Supply Side Platform, DSP)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#广告交易平台-Ad-Exchange-ADX"><span class="nav-number">3.3.</span> <span class="nav-text">广告交易平台(Ad Exchange, ADX)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">3.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#广告验证平台-Ad-Verification-Platform-AVP-："><span class="nav-number">3.4.1.</span> <span class="nav-text">广告验证平台(Ad Verification Platform, AVP)：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数据管理平台-Data-Management-Platform-DMP"><span class="nav-number">3.4.2.</span> <span class="nav-text">数据管理平台(Data Management Platform, DMP)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#监测分析平台-Measurement-amp-Analytics-Platform"><span class="nav-number">3.4.3.</span> <span class="nav-text">监测分析平台(Measurement &amp; Analytics Platform)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广告交易模式"><span class="nav-number">4.</span> <span class="nav-text">广告交易模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类器-TP-TN-FP-FN"><span class="nav-number">1.</span> <span class="nav-text">分类器: TP, TN, FP, FN</span></a></li></ol></div>
             
 
           </div>

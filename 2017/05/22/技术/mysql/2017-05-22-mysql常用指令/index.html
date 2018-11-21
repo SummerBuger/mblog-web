@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="mysql 常用指令和操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-22T03:48:02.000Z">
+<meta property="og:updated_time" content="2018-11-01T09:40:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用指令">
 <meta name="twitter:description" content="mysql 常用指令和操作">
@@ -581,6 +581,8 @@ collation_connection: utf8mb4_general_ci
 Database Collation: utf8_general_ci
 1 row in set (0.02 sec)
 </code></pre><h4 id="查看存储过程具体定义"><a href="#查看存储过程具体定义" class="headerlink" title="查看存储过程具体定义"></a>查看存储过程具体定义</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">procedure</span> %procedure_name%;</span><br></pre></td></tr></table></figure>
+<h4 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h4><p><strong><em>注意：在创建存储过程的时候，语句中的分号会导致报错，需要用 <code>DELIMITER</code> 重新定义分隔符</em></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $$</span><br><span class="line"><span class="comment">-- to create procedure</span></span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
 <h4 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> &#123;<span class="keyword">PROCEDURE</span> | <span class="keyword">FUNCTION</span>&#125; [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] sp_name</span><br></pre></td></tr></table></figure>
 <h3 id="mysql-查看数据库和表容量大小"><a href="#mysql-查看数据库和表容量大小" class="headerlink" title="mysql 查看数据库和表容量大小"></a>mysql 查看数据库和表容量大小</h3><p><code>information_schema</code> 库中有个 <code>TABLES</code> 表</p>
 <pre><code>mysql&gt; show create table TABLES\G
@@ -614,6 +616,9 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
 <p><code>TABLE_SCHEMA</code>: 数据库名称<br><code>TABLE_NAME</code>: 表名称<br><code>DATA_LENGTH</code>: 数据占用的空间大小，单位是字节<br><code>INDEX_LENGTH</code>: 索引占用的空间大小，单位是字节</p>
 <h4 id="查看数据库占用空间大小"><a href="#查看数据库占用空间大小" class="headerlink" title="查看数据库占用空间大小"></a>查看数据库占用空间大小</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SUM</span>(DATA_LENGTH) + <span class="keyword">SUM</span>(INDEX_LENGTH)) / <span class="number">1024</span> / <span class="number">1024</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.TABLES</span><br><span class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA = <span class="string">'database_name'</span>;</span><br></pre></td></tr></table></figure>
 <h4 id="查看表占用空间大小"><a href="#查看表占用空间大小" class="headerlink" title="查看表占用空间大小"></a>查看表占用空间大小</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SUM</span>(DATA_LENGTH) + <span class="keyword">SUM</span>(INDEX_LENGTH)) / <span class="number">1024</span> / <span class="number">1024</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.TABLES</span><br><span class="line"><span class="keyword">WHERE</span> TABLE_NAME = <span class="string">'table_name'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql-求时间差距"><a href="#mysql-求时间差距" class="headerlink" title="mysql 求时间差距"></a>mysql 求时间差距</h3><p><code>timestampdiff(unit,datetime_expr1,datetime_expr2)</code> 比较两个 timestamp 时间间隔，返回单位是unit 的数值</p>
+<p>例如</p>
+<p><code>timestampdiff(second,&#39;2018-01-01 00:00:00&#39;,&#39;2018-01-01 00:00:02&#39;)</code> 得到 2</p>
 
       
     </div>
@@ -737,7 +742,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -748,7 +753,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -759,7 +764,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -792,7 +797,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看数据库和表容量大小"><span class="nav-number">4.</span> <span class="nav-text">mysql 查看数据库和表容量大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库占用空间大小"><span class="nav-number">4.1.</span> <span class="nav-text">查看数据库占用空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表占用空间大小"><span class="nav-number">4.2.</span> <span class="nav-text">查看表占用空间大小</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">创建存储过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.4.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看数据库和表容量大小"><span class="nav-number">4.</span> <span class="nav-text">mysql 查看数据库和表容量大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库占用空间大小"><span class="nav-number">4.1.</span> <span class="nav-text">查看数据库占用空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表占用空间大小"><span class="nav-number">4.2.</span> <span class="nav-text">查看表占用空间大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-求时间差距"><span class="nav-number">5.</span> <span class="nav-text">mysql 求时间差距</span></a></li></ol></div>
             
 
           </div>
