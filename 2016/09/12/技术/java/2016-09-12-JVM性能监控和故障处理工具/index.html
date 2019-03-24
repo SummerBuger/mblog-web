@@ -88,7 +88,7 @@
 <meta property="og:description" content="JVM 脚本工具参数说明和使用示例">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/jps_help.png">
-<meta property="og:updated_time" content="2018-07-29T02:33:35.000Z">
+<meta property="og:updated_time" content="2019-01-16T07:12:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM 性能监控和故障处理工具">
 <meta name="twitter:description" content="JVM 脚本工具参数说明和使用示例">
@@ -503,6 +503,7 @@ where &lt;option&gt; is one of:
 </tr>
 </tbody>
 </table>
+<h2 id="GC-日志"><a href="#GC-日志" class="headerlink" title="GC 日志"></a>GC 日志</h2><h3 id="日志设置"><a href="#日志设置" class="headerlink" title="日志设置"></a>日志设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_OPTS=<span class="string">"-Xms8g -Xmx16g -XX:PermSize=512m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=../logs  -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:../logs/gc.log"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -628,7 +629,7 @@ where &lt;option&gt; is one of:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -639,7 +640,7 @@ where &lt;option&gt; is one of:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -650,7 +651,7 @@ where &lt;option&gt; is one of:
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -683,7 +684,7 @@ where &lt;option&gt; is one of:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jps-JVM-Process-Status-Tool"><span class="nav-number">1.</span> <span class="nav-text">jps (JVM Process Status Tool)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示指定系统中的所有虚拟机进程"><span class="nav-number">1.1.</span> <span class="nav-text">显示指定系统中的所有虚拟机进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.2.</span> <span class="nav-text">[ 注意 ]</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不管使用-root-用户权限还是-普通用户权限都不能执行-jps-指令"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">不管使用 root 用户权限还是 普通用户权限都不能执行 jps 指令</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上述问题解决方案"><span class="nav-number">1.2.1.</span> <span class="nav-text">上述问题解决方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstat-JVM-Statistics-Monitoring-Tool"><span class="nav-number">2.</span> <span class="nav-text">jstat (JVM Statistics Monitoring Tool)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jinfo-Configuration-Info-for-java"><span class="nav-number">3.</span> <span class="nav-text">jinfo (Configuration Info for java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实时查询和调整虚拟机各项参数"><span class="nav-number">3.1.</span> <span class="nav-text">实时查询和调整虚拟机各项参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jmap-Memory-Map-for-Java"><span class="nav-number">4.</span> <span class="nav-text">jmap (Memory Map for Java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成对存储快照"><span class="nav-number">4.1.</span> <span class="nav-text">生成对存储快照</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jhat-JVM-Heap-Analysis-Tool"><span class="nav-number">5.</span> <span class="nav-text">jhat (JVM Heap Analysis Tool)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与jmap搭配使用，-来分析-jmap-生成的-堆存储快照文件"><span class="nav-number">5.1.</span> <span class="nav-text">与jmap搭配使用， 来分析 jmap 生成的 堆存储快照文件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#注意-分析工作比较消耗资源，可将dump-文件复制到其他机器上分析"><span class="nav-number">5.1.0.1.</span> <span class="nav-text">[ 注意 ] : 分析工作比较消耗资源，可将dump 文件复制到其他机器上分析</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstack-Stack-Trace-for-Java"><span class="nav-number">6.</span> <span class="nav-text">jstack (Stack Trace for Java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成JVM-当前时刻的线程快照"><span class="nav-number">6.1.</span> <span class="nav-text">生成JVM 当前时刻的线程快照</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jps-JVM-Process-Status-Tool"><span class="nav-number">1.</span> <span class="nav-text">jps (JVM Process Status Tool)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示指定系统中的所有虚拟机进程"><span class="nav-number">1.1.</span> <span class="nav-text">显示指定系统中的所有虚拟机进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.2.</span> <span class="nav-text">[ 注意 ]</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不管使用-root-用户权限还是-普通用户权限都不能执行-jps-指令"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">不管使用 root 用户权限还是 普通用户权限都不能执行 jps 指令</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上述问题解决方案"><span class="nav-number">1.2.1.</span> <span class="nav-text">上述问题解决方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstat-JVM-Statistics-Monitoring-Tool"><span class="nav-number">2.</span> <span class="nav-text">jstat (JVM Statistics Monitoring Tool)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jinfo-Configuration-Info-for-java"><span class="nav-number">3.</span> <span class="nav-text">jinfo (Configuration Info for java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实时查询和调整虚拟机各项参数"><span class="nav-number">3.1.</span> <span class="nav-text">实时查询和调整虚拟机各项参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jmap-Memory-Map-for-Java"><span class="nav-number">4.</span> <span class="nav-text">jmap (Memory Map for Java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成对存储快照"><span class="nav-number">4.1.</span> <span class="nav-text">生成对存储快照</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jhat-JVM-Heap-Analysis-Tool"><span class="nav-number">5.</span> <span class="nav-text">jhat (JVM Heap Analysis Tool)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与jmap搭配使用，-来分析-jmap-生成的-堆存储快照文件"><span class="nav-number">5.1.</span> <span class="nav-text">与jmap搭配使用， 来分析 jmap 生成的 堆存储快照文件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#注意-分析工作比较消耗资源，可将dump-文件复制到其他机器上分析"><span class="nav-number">5.1.0.1.</span> <span class="nav-text">[ 注意 ] : 分析工作比较消耗资源，可将dump 文件复制到其他机器上分析</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstack-Stack-Trace-for-Java"><span class="nav-number">6.</span> <span class="nav-text">jstack (Stack Trace for Java)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成JVM-当前时刻的线程快照"><span class="nav-number">6.1.</span> <span class="nav-text">生成JVM 当前时刻的线程快照</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC-日志"><span class="nav-number"></span> <span class="nav-text">GC 日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志设置"><span class="nav-number">1.</span> <span class="nav-text">日志设置</span></a></li></ol></div>
             
 
           </div>
@@ -703,7 +704,7 @@ where &lt;option&gt; is one of:
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

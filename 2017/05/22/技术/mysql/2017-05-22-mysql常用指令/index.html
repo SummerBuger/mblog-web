@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="mysql 常用指令和操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T09:40:20.000Z">
+<meta property="og:updated_time" content="2019-01-23T07:15:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用指令">
 <meta name="twitter:description" content="mysql 常用指令和操作">
@@ -619,6 +619,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
 <h3 id="mysql-求时间差距"><a href="#mysql-求时间差距" class="headerlink" title="mysql 求时间差距"></a>mysql 求时间差距</h3><p><code>timestampdiff(unit,datetime_expr1,datetime_expr2)</code> 比较两个 timestamp 时间间隔，返回单位是unit 的数值</p>
 <p>例如</p>
 <p><code>timestampdiff(second,&#39;2018-01-01 00:00:00&#39;,&#39;2018-01-01 00:00:02&#39;)</code> 得到 2</p>
+<h3 id="表结构常用修改语句"><a href="#表结构常用修改语句" class="headerlink" title="表结构常用修改语句"></a>表结构常用修改语句</h3><h4 id="重置-AUTO-INCREMENT"><a href="#重置-AUTO-INCREMENT" class="headerlink" title="重置 AUTO_INCREMENT"></a>重置 AUTO_INCREMENT</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">Table</span> <span class="keyword">Name</span>&gt; AUTO_INCREMENT = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -742,7 +743,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -753,7 +754,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -764,7 +765,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -797,7 +798,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">创建存储过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.4.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看数据库和表容量大小"><span class="nav-number">4.</span> <span class="nav-text">mysql 查看数据库和表容量大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库占用空间大小"><span class="nav-number">4.1.</span> <span class="nav-text">查看数据库占用空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表占用空间大小"><span class="nav-number">4.2.</span> <span class="nav-text">查看表占用空间大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-求时间差距"><span class="nav-number">5.</span> <span class="nav-text">mysql 求时间差距</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-sql-文件"><span class="nav-number">1.</span> <span class="nav-text">执行 .sql 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看-binlog"><span class="nav-number">2.</span> <span class="nav-text">mysql 查看 binlog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决问题"><span class="nav-number">2.1.</span> <span class="nav-text">待解决问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看存储过程"><span class="nav-number">3.</span> <span class="nav-text">mysql 查看存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看存储过程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看存储过程具体定义"><span class="nav-number">3.2.</span> <span class="nav-text">查看存储过程具体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建存储过程"><span class="nav-number">3.3.</span> <span class="nav-text">创建存储过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除存储过程"><span class="nav-number">3.4.</span> <span class="nav-text">删除存储过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-查看数据库和表容量大小"><span class="nav-number">4.</span> <span class="nav-text">mysql 查看数据库和表容量大小</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库占用空间大小"><span class="nav-number">4.1.</span> <span class="nav-text">查看数据库占用空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表占用空间大小"><span class="nav-number">4.2.</span> <span class="nav-text">查看表占用空间大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-求时间差距"><span class="nav-number">5.</span> <span class="nav-text">mysql 求时间差距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表结构常用修改语句"><span class="nav-number">6.</span> <span class="nav-text">表结构常用修改语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重置-AUTO-INCREMENT"><span class="nav-number">6.1.</span> <span class="nav-text">重置 AUTO_INCREMENT</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -817,7 +818,7 @@ Create Table: CREATE TEMPORARY TABLE `TABLES` (
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

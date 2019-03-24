@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="etcd 安装及入门使用说明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-29T02:29:29.000Z">
+<meta property="og:updated_time" content="2019-03-24T02:05:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="etcd 使用入门">
 <meta name="twitter:description" content="etcd 安装及入门使用说明">
@@ -378,9 +378,34 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
 </ol>
 <p>3.1 使用默认配置启动程序</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcd</span><br></pre></td></tr></table></figure>
-<p>3.2 来一个配置文件</p>
-<p><em><em>待补充</em></em></p>
-
+<p>3.2 来一些启动配置，启动一个集群</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">nohup ./etcd --name test1 --initial-advertise-peer-urls http://localhost:2380 \</span><br><span class="line">  --listen-peer-urls http://localhost:2380 \</span><br><span class="line">  --listen-client-urls http://localhost:2379,http://127.0.0.1:2379 \</span><br><span class="line">  --advertise-client-urls http://localhost:2379 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data1 &amp;</span><br><span class="line"></span><br><span class="line">nohup ./etcd --name test2 --initial-advertise-peer-urls http://localhost:2390 \</span><br><span class="line">  --listen-peer-urls http://localhost:2390 \</span><br><span class="line">  --listen-client-urls http://localhost:2389,http://127.0.0.1:2389 \</span><br><span class="line">  --advertise-client-urls http://localhost:2389 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data2 &amp;</span><br><span class="line"></span><br><span class="line">nohup ./etcd --name test3 --initial-advertise-peer-urls http://localhost:2400 \</span><br><span class="line">  --listen-peer-urls http://localhost:2400 \</span><br><span class="line">  --listen-client-urls http://localhost:2399,http://127.0.0.1:2399 \</span><br><span class="line">  --advertise-client-urls http://localhost:2399 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data3 &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="ETCD-简单指令操作"><a href="#ETCD-简单指令操作" class="headerlink" title="ETCD 简单指令操作"></a><code>ETCD</code> 简单指令操作</h3><ol>
+<li><code>ETCD</code> 数据插入</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcdctl put key value</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>插入文件数据到 <code>ETCD</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file | ./etcdctl put key</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>数据查看</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcdctl get key</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>集群健康度查看</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcdctl --endpoints=[endpoint1, endpoint2, endpoint3] endpoint health</span><br></pre></td></tr></table></figure>
+<p>得到结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">endpoint1 is healthy: successfully committed proposal: took = 932.637µs</span><br><span class="line">endpoint2 is healthy: successfully committed proposal: took = 1.058401ms</span><br><span class="line">endpoint3 is healthy: successfully committed proposal: took = 1.127266ms</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>集群节点状态查询</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcdctl --endpoints=[endpoint1, endpoint2, endpoint3] endpoint status</span><br></pre></td></tr></table></figure>
+<p>得到结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">endpoint1, 180821f2462664c9, 3.2.12, 555 MB, <span class="literal">true</span>, 169, 12167260</span><br><span class="line">endpoint2, b2b4375ce5b9bb02, 3.2.12, 555 MB, <span class="literal">false</span>, 169, 12167260</span><br><span class="line">endpoint3, e4927ddc8eb44d9e, 3.2.12, 555 MB, <span class="literal">false</span>, 169, 12167260</span><br></pre></td></tr></table></figure>
+<pre><code>注意：`ETCD` 的API 分为 `V2` 和 `V3` 两个版本，两者之间差距很大，上述 `etcdctl` 客户端的使用都是 `V3` API，在执行之前，请执行命令 `export ETCDCTL_API=3`
+</code></pre>
       
     </div>
     
@@ -412,8 +437,8 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/16/技术/golang/2018-05-16-golang-GC/" rel="next" title="golang GC">
-                <i class="fa fa-chevron-left"></i> golang GC
+              <a href="/2018/05/16/技术/golang/golang 内存管理浅析/" rel="next" title="golang 内存管理浅析">
+                <i class="fa fa-chevron-left"></i> golang 内存管理浅析
               </a>
             
           </div>
@@ -505,7 +530,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +541,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -527,7 +552,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -560,7 +585,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#etcd-使用入门"><span class="nav-number">1.</span> <span class="nav-text">etcd 使用入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etcd-安装"><span class="nav-number">1.2.</span> <span class="nav-text">etcd 安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#etcd-使用入门"><span class="nav-number">1.</span> <span class="nav-text">etcd 使用入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etcd-安装"><span class="nav-number">1.2.</span> <span class="nav-text">etcd 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ETCD-简单指令操作"><span class="nav-number">1.3.</span> <span class="nav-text">ETCD 简单指令操作</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -580,7 +605,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
