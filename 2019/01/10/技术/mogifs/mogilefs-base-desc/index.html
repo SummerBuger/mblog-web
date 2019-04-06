@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="mogilefs 基础介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-05T10:22:50.000Z">
+<meta property="og:image" content="https://s1.51cto.com/images/20171204/1512393806362708.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:updated_time" content="2019-04-06T09:33:56.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mogilefs 基础介绍">
 <meta name="twitter:description" content="mogilefs 基础介绍">
+<meta name="twitter:image" content="https://s1.51cto.com/images/20171204/1512393806362708.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 
 
 
@@ -346,8 +348,10 @@
       
 
       
-        <h1 id="mogilefs"><a href="#mogilefs" class="headerlink" title="mogilefs"></a><code>mogilefs</code></h1><h2 id="mogilefs-介绍"><a href="#mogilefs-介绍" class="headerlink" title="mogilefs 介绍"></a><code>mogilefs</code> 介绍</h2><p><strong><em>todo…</em></strong></p>
-<h2 id="mogilefs-基本概念"><a href="#mogilefs-基本概念" class="headerlink" title="mogilefs 基本概念"></a><code>mogilefs</code> 基本概念</h2><p><code>tracker节点</code>:<br><br><code>database节点</code>:<br><br><code>storage节点</code>:<br></p>
+        <h1 id="mogilefs"><a href="#mogilefs" class="headerlink" title="mogilefs"></a><code>mogilefs</code></h1><h2 id="mogilefs-介绍"><a href="#mogilefs-介绍" class="headerlink" title="mogilefs 介绍"></a><code>mogilefs</code> 介绍</h2><p>MogileFS是一个开源的分布式文件存储系统，由LiveJournal旗下的DangaInteractive公司开发。Danga团队开发了包括 Memcached、MogileFS、Perlbal 等多个知名的开源项目。目前使用MogileFS 的公司非常多，如日本排名先前的几个互联公司及国内的yupoo(又拍)、digg、豆瓣、1号店、大众点评、搜狗和安居客等，分别为所在的组织或公司管理着海量的图片。</p>
+<h2 id="mogilefs-基本概念"><a href="#mogilefs-基本概念" class="headerlink" title="mogilefs 基本概念"></a><code>mogilefs</code> 基本概念</h2><h3 id="mogilefs-组成架构"><a href="#mogilefs-组成架构" class="headerlink" title="mogilefs 组成架构"></a><code>mogilefs</code> 组成架构</h3><p><code>tracker节点</code>: <code>tracker节点</code> 是应用程序 <code>mogilefsd</code>，通过数据库来保存元数据，提供API 响应客户端 <br><br><code>storage节点</code>: <code>storage节点</code> 是应用程序 <code>mogstored</code>，本质上是一个 <code>WebDAV</code> 服务，默认监听 <code>7500</code> 端口，接受客户端的文件存储请求 <br><br><code>database</code>: 用于存储元数据的 <code>mysql</code> 数据库 <br></p>
+<p><img src="https://s1.51cto.com/images/20171204/1512393806362708.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="" title="mogilefs 结构图"></p>
+<h3 id="mogilefs-数据存储相关概念"><a href="#mogilefs-数据存储相关概念" class="headerlink" title="mogilefs 数据存储相关概念"></a><code>mogilefs</code> 数据存储相关概念</h3><p><code>domain</code>: <code>mogilefs</code> 划分数据存储的容器，每一个 domain 中的数据的  key 不能重复，但是不同 domain 中数据的 key 可以重复；domain 的划分可以按照数据类型划分，也可以按照业务类型划分。<br><br><code>host</code>: <code>mogilefs</code> 的每一个存储节点被称为一个 <code>host</code>，每个 <code>host</code> 有自己的 ID<br><br><code>device</code>: 每个存储节点可以挂靠多个 <code>device</code>， 每个 <code>device</code> 对应一个时间存储数据的存储设备（硬盘），每个 <code>device</code> 有自己的ID<br><br><code>class</code>: 对于存储在mogilefs 上的文件进行分类，同一 <code>domain</code> 下的文件可以分类不同类型，但是key 不同重复，上传文件时，可指定 <code>class</code>， 默认为 <code>default</code> <br> </p>
 <h2 id="mogilefs-基本操作"><a href="#mogilefs-基本操作" class="headerlink" title="mogilefs 基本操作"></a><code>mogilefs</code> 基本操作</h2><h3 id="mogadm"><a href="#mogadm" class="headerlink" title="mogadm"></a><code>mogadm</code></h3><h4 id="mogadm-check"><a href="#mogadm-check" class="headerlink" title="mogadm check"></a><code>mogadm check</code></h4><p>检查 <code>mogilefs</code> 集群状态</p>
 <pre><code>$mogadm check
 Checking trackers...
@@ -394,8 +398,8 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/Flink-DateStream-API-Desc/" rel="next" title="Flink DateStream API">
-                <i class="fa fa-chevron-left"></i> Flink DateStream API
+              <a href="/2018/11/19/技术/flink/flink安装和运行/" rel="next" title="Flink 安装和运行">
+                <i class="fa fa-chevron-left"></i> Flink 安装和运行
               </a>
             
           </div>
@@ -542,7 +546,7 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mogilefs"><span class="nav-number">1.</span> <span class="nav-text">mogilefs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">mogilefs 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">mogilefs 基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本操作"><span class="nav-number">1.3.</span> <span class="nav-text">mogilefs 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogadm"><span class="nav-number">1.3.1.</span> <span class="nav-text">mogadm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-check"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">mogadm check</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-domain"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">mogadm domain</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mogilefs"><span class="nav-number">1.</span> <span class="nav-text">mogilefs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">mogilefs 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">mogilefs 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-组成架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">mogilefs 组成架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-数据存储相关概念"><span class="nav-number">1.2.2.</span> <span class="nav-text">mogilefs 数据存储相关概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本操作"><span class="nav-number">1.3.</span> <span class="nav-text">mogilefs 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogadm"><span class="nav-number">1.3.1.</span> <span class="nav-text">mogadm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-check"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">mogadm check</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-domain"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">mogadm domain</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
