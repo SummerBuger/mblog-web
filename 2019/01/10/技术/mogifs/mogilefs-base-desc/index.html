@@ -88,7 +88,7 @@
 <meta property="og:description" content="mogilefs 基础介绍">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.51cto.com/images/20171204/1512393806362708.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
-<meta property="og:updated_time" content="2019-04-06T09:33:56.431Z">
+<meta property="og:updated_time" content="2019-04-06T10:06:13.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mogilefs 基础介绍">
 <meta name="twitter:description" content="mogilefs 基础介绍">
@@ -368,7 +368,22 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
      total:   374.702     29.018    345.684   7.74%
 </code></pre><h4 id="mogadm-domain"><a href="#mogadm-domain" class="headerlink" title="mogadm domain"></a><code>mogadm domain</code></h4><p><code>mogilefs</code> 集群 <code>domain</code> 管理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mogadm domain add domain1 <span class="comment"># 新增 domain</span></span><br><span class="line">mogadm domain delete domain1 <span class="comment"># 删除 domain</span></span><br><span class="line">mogadm domain list <span class="comment"># 列出所有 domain</span></span><br></pre></td></tr></table></figure>
-
+<h4 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mogupload --trackers=<span class="string">"127.0.0.1:7001"</span> --domain=[<span class="variable">$&#123;domain&#125;</span>] --key=[<span class="variable">$&#123;key&#125;</span>] --file=[<span class="variable">$&#123;file&#125;</span>] --class=[<span class="variable">$&#123;class&#125;</span>]</span><br></pre></td></tr></table></figure>
+<p><code>--domain</code>: 指定上传文件的 <code>domain</code><br><code>--key</code>: 指定上传文件的 <code>key</code><br><code>--file</code>: 指定上传文件的路径<br><code>--class</code>: 指定上传文件的 <code>class</code>，可选项，默认值为 <code>default</code></p>
+<h4 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mogfetch --trackers=host --domain=[<span class="variable">$&#123;domain&#125;</span>] --key=[<span class="variable">$&#123;key&#125;</span>] --file=[<span class="variable">$&#123;file&#125;</span>]</span><br></pre></td></tr></table></figure>
+<p><code>--domain</code>: 指定上传文件的 <code>domain</code><br><code>--key</code>: 指定上传文件的 <code>key</code><br><code>--file</code>: 指定下载文件的路径及名称</p>
+<h4 id="文件查看"><a href="#文件查看" class="headerlink" title="文件查看"></a>文件查看</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mogfileinfo  --trackers=<span class="string">"127.0.0.1:7001"</span> --domain=[<span class="variable">$&#123;domain&#125;</span>] --key=[<span class="variable">$&#123;key&#125;</span>]</span><br></pre></td></tr></table></figure>
+<p><code>--domain</code>: 指定上传文件的 <code>domain</code><br><code>--key</code>: 指定上传文件的 <code>key</code></p>
+<p>输出结果：</p>
+<pre><code>- file: [$file]
+class:                   default
+devcount:                    1
+domain:                 [$domain]
+fid:                   30
+key:      [$key]
+length:                  608
+- http://127.0.0.1:7500/dev1/0/000/000/0000000030.fid
+</code></pre>
       
     </div>
     
@@ -398,8 +413,8 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/flink安装和运行/" rel="next" title="Flink 安装和运行">
-                <i class="fa fa-chevron-left"></i> Flink 安装和运行
+              <a href="/2018/11/19/技术/flink/yarn集群维护问题汇总/" rel="next" title="yarn 集群日常问题汇总">
+                <i class="fa fa-chevron-left"></i> yarn 集群日常问题汇总
               </a>
             
           </div>
@@ -408,8 +423,8 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/26/技术/flink/flink之重启策略/" rel="prev" title="Flink 探究之路 ———— Flink Job 重启策略">
-                Flink 探究之路 ———— Flink Job 重启策略 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/26/技术/flink/flink之savepoints和checkpoints/" rel="prev" title="Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint">
+                Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +561,7 @@ host device         size(G)    used(G)    free(G)   use%   ob state   I/O%
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mogilefs"><span class="nav-number">1.</span> <span class="nav-text">mogilefs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">mogilefs 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">mogilefs 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-组成架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">mogilefs 组成架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-数据存储相关概念"><span class="nav-number">1.2.2.</span> <span class="nav-text">mogilefs 数据存储相关概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本操作"><span class="nav-number">1.3.</span> <span class="nav-text">mogilefs 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogadm"><span class="nav-number">1.3.1.</span> <span class="nav-text">mogadm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-check"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">mogadm check</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-domain"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">mogadm domain</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mogilefs"><span class="nav-number">1.</span> <span class="nav-text">mogilefs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">mogilefs 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">mogilefs 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-组成架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">mogilefs 组成架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mogilefs-数据存储相关概念"><span class="nav-number">1.2.2.</span> <span class="nav-text">mogilefs 数据存储相关概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogilefs-基本操作"><span class="nav-number">1.3.</span> <span class="nav-text">mogilefs 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mogadm"><span class="nav-number">1.3.1.</span> <span class="nav-text">mogadm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-check"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">mogadm check</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mogadm-domain"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">mogadm domain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件上传"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">文件上传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件下载"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">文件下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件查看"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">文件查看</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
