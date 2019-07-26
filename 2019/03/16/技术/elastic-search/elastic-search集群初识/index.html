@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="Elastic Search 集群简单介绍及在线扩容和收缩">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-24T02:37:11.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elastic Search 集群管理之动态扩容收缩">
 <meta name="twitter:description" content="Elastic Search 集群简单介绍及在线扩容和收缩">
@@ -347,9 +347,7 @@
 
       
         <h1 id="Elastic-Search-集群简单介绍"><a href="#Elastic-Search-集群简单介绍" class="headerlink" title="Elastic Search 集群简单介绍"></a><code>Elastic Search</code> 集群简单介绍</h1><h2 id="Elastic-Search-节点重启"><a href="#Elastic-Search-节点重启" class="headerlink" title="Elastic Search 节点重启"></a><code>Elastic Search</code> 节点重启</h2><p><strong><em>注意：本人使用的是 <code>Elastic Search</code> 的版本是 <code>5.6.x</code>, 不同版本的操作 API 可能不一致</em></strong></p>
-<ol>
-<li>禁止分配分片</li>
-</ol>
+<p>“1. 禁止分配分片</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -X PUT <span class="string">"localhost:9200/_cluster/settings"</span> -H <span class="string">'Content-Type: application/json'</span> -d<span class="string">'</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  "transient": &#123;</span></span><br><span class="line"><span class="string">    "cluster.routing.allocation.enable": "none"</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">'</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>停止不必要的索引的创建，并发出同步刷新请求（非必要步骤）</li>

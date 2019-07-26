@@ -88,7 +88,7 @@
 <meta property="og:description" content="记如何使用 hexo + NexT + GitHub Pages 搭建个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/next-demo.png">
-<meta property="og:updated_time" content="2018-08-05T17:20:08.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo-next-github-page">
 <meta name="twitter:description" content="记如何使用 hexo + NexT + GitHub Pages 搭建个人博客">
@@ -441,9 +441,7 @@ found 1 low severity vulnerability in 2296 scanned packages
 <p><img src="/assets/picture/next-demo.png" alt="" title="NexT 主题 Demo 图片"></p>
 <h2 id="配置-NexT-主题"><a href="#配置-NexT-主题" class="headerlink" title="配置 NexT 主题"></a>配置 <code>NexT</code> 主题</h2><h3 id="修改菜单栏"><a href="#修改菜单栏" class="headerlink" title="修改菜单栏"></a>修改菜单栏</h3><p>修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span>                                                          <span class="string">|  menu:                                                      </span></span><br><span class="line"><span class="string"></span><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span>                                              <span class="string">|    home: / || home                        # 主页，默认配置打开</span></span><br><span class="line"><span class="string">  #about: /about/ || user                                      |    #about: /about/ || user                # 关于自己，可以配置</span></span><br><span class="line"><span class="string">  #tags: /tags/ || tags                                        |    tags: /tags/ || tags                   # 标签页，默认配置关闭，需要你打开注释</span></span><br><span class="line"><span class="string">  #categories: /categories/ || th                              |    categories: /categories/ || th         # 分类页，默认配置关闭，需要你打开注释</span></span><br><span class="line"><span class="string"></span><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span>                              <span class="string">|    archives: /archives/ || archive        # 归档页，默认配置打开</span></span><br><span class="line"><span class="string">  #schedule: /schedule/ || calendar                            |    #schedule: /schedule/ || calendar</span></span><br><span class="line"><span class="string">  #sitemap: /sitemap.xml || sitemap                            |    #sitemap: /sitemap.xml || sitemap</span></span><br><span class="line"><span class="string">  #commonweal: /404/ || heartbeat                                                                          # 公益404页，默认配置关闭，需要你打开注释</span></span><br></pre></td></tr></table></figure>
-<h4 id="配置标签页"><a href="#配置标签页" class="headerlink" title="配置标签页"></a>配置标签页</h4><ol>
-<li>创建标签页</li>
-</ol>
+<h4 id="配置标签页"><a href="#配置标签页" class="headerlink" title="配置标签页"></a>配置标签页</h4><p>“1. 创建标签页</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><p>修改 themes/next/_config.yml 文件<br>去除 <code>menu.tags</code> 前的 <code>#</code></p>
@@ -451,9 +449,7 @@ found 1 low severity vulnerability in 2296 scanned packages
 <li><p>修改标签页标题<br>修改 source/tags/index.md 文件中的 title，写一个你喜欢的标题</p>
 </li>
 </ol>
-<h4 id="配置分类页"><a href="#配置分类页" class="headerlink" title="配置分类页"></a>配置分类页</h4><ol>
-<li>创建标签页</li>
-</ol>
+<h4 id="配置分类页"><a href="#配置分类页" class="headerlink" title="配置分类页"></a>配置分类页</h4><p>“1. 创建标签页</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><p>修改 themes/next/_config.yml 文件<br>去除 <code>menu.categories</code> 前的 <code>#</code></p>
@@ -473,8 +469,8 @@ $content-desktop = 900px
 
 // 当视窗超过 1600px 后的宽度
 $content-desktop-large = 1300px
-</code></pre><h4 id="生成文章摘要"><a href="#生成文章摘要" class="headerlink" title="生成文章摘要"></a>生成文章摘要</h4><ol>
-<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，在 <code>&lt;!-- more --&gt;</code> 上方撰写摘要，Hexo 提供的方式 <em>【推荐】</em></li>
+</code></pre><h4 id="生成文章摘要"><a href="#生成文章摘要" class="headerlink" title="生成文章摘要"></a>生成文章摘要</h4><p>“1. 在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，在 <code>&lt;!-- more --&gt;</code> 上方撰写摘要，Hexo 提供的方式 <em>【推荐】</em></p>
+<ol start="2">
 <li>在文章的 <code>front-matter</code> 中添加 <code>description</code>，并提供文章摘录，我选择这种</li>
 </ol>
 <h4 id="修改作者名称、描述、语言、时区"><a href="#修改作者名称、描述、语言、时区" class="headerlink" title="修改作者名称、描述、语言、时区"></a>修改作者名称、描述、语言、时区</h4><p>修改 <code>_config.yml</code> 文件</p>

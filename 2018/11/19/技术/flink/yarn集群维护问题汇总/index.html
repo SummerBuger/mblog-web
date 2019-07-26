@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="yarn 集群日常问题汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T15:13:35.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yarn 集群日常问题汇总">
 <meta name="twitter:description" content="yarn 集群日常问题汇总">
@@ -346,8 +346,8 @@
       
 
       
-        <h1 id="yarn-日志"><a href="#yarn-日志" class="headerlink" title="yarn 日志"></a>yarn 日志</h1><h2 id="如何确定-yarn-日志位置"><a href="#如何确定-yarn-日志位置" class="headerlink" title="如何确定 yarn 日志位置"></a>如何确定 yarn 日志位置</h2><ol>
-<li>当 <code>yarn.log-aggregation-enable = true</code> 时，<code>yarn</code> 集群中的 <code>application</code> 的日志将被聚合到 <code>yarn.nodemanager.remote-app-log-dir</code> 指向的目录中去，保留时间为 <code>yarn.log-aggregation.retain-seconds</code><br><br><br><strong><em><code>yarn.nodemanager.remote-app-log-dir</code> 指向的目录是 hdfs 目录</em></strong></li>
+        <h1 id="yarn-日志"><a href="#yarn-日志" class="headerlink" title="yarn 日志"></a>yarn 日志</h1><h2 id="如何确定-yarn-日志位置"><a href="#如何确定-yarn-日志位置" class="headerlink" title="如何确定 yarn 日志位置"></a>如何确定 yarn 日志位置</h2><p>“1. 当 <code>yarn.log-aggregation-enable = true</code> 时，<code>yarn</code> 集群中的 <code>application</code> 的日志将被聚合到 <code>yarn.nodemanager.remote-app-log-dir</code> 指向的目录中去，保留时间为 <code>yarn.log-aggregation.retain-seconds</code><br><br><br><strong><em><code>yarn.nodemanager.remote-app-log-dir</code> 指向的目录是 hdfs 目录</em></strong></p>
+<ol start="2">
 <li>当 <code>yarn.log-aggregation-enable = false</code> 时，<code>yarn</code> 集群中的 <code>application</code> 的日志将被存储到 <code>yarn.nodemanager.log-dirs</code> 属性指向的在 <code>nodemanager nodes</code> 上的文件夹中，保留时间为 <code>yarn.nodemanager.log.retain-seconds</code></li>
 </ol>
 <h2 id="为什么会有-application-没有日志"><a href="#为什么会有-application-没有日志" class="headerlink" title="为什么会有 application 没有日志"></a>为什么会有 application 没有日志</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application does not have any log files.</span><br></pre></td></tr></table></figure>
@@ -381,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/flink基本概念入门/" rel="next" title="Flink 基本概念入门">
-                <i class="fa fa-chevron-left"></i> Flink 基本概念入门
+              <a href="/2018/09/28/技术/tomcat/tomcat的日志配置/" rel="next" title="Tomcat 日志配置说明">
+                <i class="fa fa-chevron-left"></i> Tomcat 日志配置说明
               </a>
             
           </div>
@@ -391,8 +391,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/10/技术/mogifs/mogilefs-base-desc/" rel="prev" title="mogilefs 基础介绍">
-                mogilefs 基础介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/19/技术/flink/flink基本概念入门/" rel="prev" title="Flink 基本概念入门">
+                Flink 基本概念入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

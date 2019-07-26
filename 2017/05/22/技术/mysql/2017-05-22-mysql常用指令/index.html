@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="mysql 常用指令和操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-27T15:51:01.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用指令">
 <meta name="twitter:description" content="mysql 常用指令和操作">
@@ -348,9 +348,8 @@
       
         <h3 id="执行-sql-文件"><a href="#执行-sql-文件" class="headerlink" title="执行 .sql 文件"></a>执行 <code>.sql</code> 文件</h3><p><em>方法1</em></p>
 <pre><code>mysql -h1.1.1.1 -P3306 -uadmin -ppwd db_name &lt; test.sql
-</code></pre><p><em>方法2</em></p>
-<ol>
-<li>使用 <code>mysql-client</code> 登录到 mysql 服务器</li>
+</code></pre><p><em>方法2</em><br>“1. 使用 <code>mysql-client</code> 登录到 mysql 服务器</p>
+<ol start="2">
 <li>source /root/path/to/.sql</li>
 </ol>
 <h3 id="mysql-查看-binlog"><a href="#mysql-查看-binlog" class="headerlink" title="mysql 查看 binlog"></a>mysql 查看 binlog</h3><p><code>mysql</code> 提供了 <code>mysqlbinlog</code> 指令，用于查看binlog</p>
@@ -370,11 +369,9 @@ mysql&gt; show variables like &apos;log_bin&apos;;
 <p>在 <code>mysql</code> 的 <code>官方文档</code> 中，对于 <code>binlog</code> 的开启只有一段内容</p>
 <pre><code>Binary logging is enabled by default (the log_bin system variable is set to ON). The exception is if you use mysqld to initialize the data directory manually by invoking it with the --initialize or --initialize-insecure option, when binary logging is disabled by default, but can be enabled by specifying the --log-bin option.
 二进制日志是默认启用（系统变量log_bin默认设置为ON）。唯一的例外是如果你使用mysqld来初始化数据目录手动调用它的 --initialize 或 --initialize-insecure 选项，当二进制日志默认是禁用的，但可以通过指定 `--log-bin` 选项启用。
-</code></pre><p>我们开始设置 <code>mysql</code> 的启动配置， 这里有两种方式</p>
-<ol>
-<li><p>直接在启动命令行中添加参数</p>
+</code></pre><p>我们开始设置 <code>mysql</code> 的启动配置， 这里有两种方式<br>“1. 直接在启动命令行中添加参数</p>
 <pre><code>sudo /usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql --log-bin=mysql-bin --user=\_mysql
-</code></pre></li>
+</code></pre><ol start="2">
 <li><p>在 mysql 配置文件中增加配置信息<br>这个时候我们遇到一个问题: Mysql 的配置文件在哪？</p>
 <pre><code>&gt; sudo mysqld --verbose --help | grep -A2 &quot;Default options are read from the following files in the given order:&quot;
 Default options are read from the following files in the given order:

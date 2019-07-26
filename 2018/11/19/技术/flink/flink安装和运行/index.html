@@ -88,7 +88,7 @@
 <meta property="og:description" content="apache flink 安装运行">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/flink.single.png">
-<meta property="og:updated_time" content="2019-01-26T04:58:57.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flink 安装和运行">
 <meta name="twitter:description" content="apache flink 安装运行">
@@ -354,9 +354,7 @@
 <p><img src="/assets/picture/flink.single.png" alt="图片" title="单机版flink运行"></p>
 <h2 id="flink-集群搭建准备工作"><a href="#flink-集群搭建准备工作" class="headerlink" title="flink 集群搭建准备工作"></a><code>flink</code> 集群搭建准备工作</h2><h3 id="JAVA-环境配置"><a href="#JAVA-环境配置" class="headerlink" title="JAVA 环境配置"></a>JAVA 环境配置</h3><p><strong><em>这里不赘述如何配置 JAVA 环境，只需要注意使用 JAVA 1.8+ 即可</em></strong></p>
 <h3 id="集群机器互信"><a href="#集群机器互信" class="headerlink" title="集群机器互信"></a>集群机器互信</h3><p>不管是 <code>standalone</code> 部署模式还是依赖 <code>hadoop yarn</code> 搭建集群，都需要在集群机器之间设置互信，实现 <code>ssh</code> 相互免密登录</p>
-<ol>
-<li>生成<code>公钥/秘钥</code></li>
-</ol>
+<p>“1. 生成<code>公钥/秘钥</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa  <span class="comment">#一直回车即可</span></span><br></pre></td></tr></table></figure>
 <p>生成了 <code>~/.ssh/id_rsa.pub</code> 和 <code>~/.ssh/id_rsa</code></p>
 <ol start="2">
@@ -370,7 +368,7 @@
 <h4 id="配置-hadoop"><a href="#配置-hadoop" class="headerlink" title="配置 hadoop"></a>配置 <code>hadoop</code></h4><p>在 <code>/path/to/hadoop-2.6.0-cdh5.11.0/etc/hadoop/</code> 文件夹下配置如下七个文件 <code>hadoop-env.sh</code>，<code>yarn-env.sh</code>，<code>slaves</code>，<code>core-site.xml</code>，<code>hdfs-site.xml</code>，<code>mapred-site.xml</code>，<code>yarn-site.xml</code></p>
 <h5 id="在-hadoop-env-sh"><a href="#在-hadoop-env-sh" class="headerlink" title="在 hadoop-env.sh"></a>在 <code>hadoop-env.sh</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/path/to/java/home</span><br></pre></td></tr></table></figure>
 <h5 id="在-yarn-env-sh-中配置-JAVA-HOME"><a href="#在-yarn-env-sh-中配置-JAVA-HOME" class="headerlink" title="在 yarn-env.sh 中配置 JAVA_HOME"></a>在 <code>yarn-env.sh</code> 中配置 <code>JAVA_HOME</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/path/to/java/home</span><br></pre></td></tr></table></figure>
-<h5 id="在-slaves-中配置-slave-节点的ip-或者host"><a href="#在-slaves-中配置-slave-节点的ip-或者host" class="headerlink" title="在 slaves 中配置 slave 节点的ip 或者host"></a>在 <code>slaves</code> 中配置 slave 节点的ip 或者host</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10.0.0.2</span><br><span class="line">10.0.0.3</span><br></pre></td></tr></table></figure>
+<h5 id="在-slaves-中配置-slave-节点的ip-或者host"><a href="#在-slaves-中配置-slave-节点的ip-或者host" class="headerlink" title="在 slaves 中配置 slave 节点的ip 或者host"></a>在 <code>slaves</code> 中配置 slave 节点的ip 或者host</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"10.0.0.2</span></span><br><span class="line"><span class="string">"</span>10.0.0.3</span><br></pre></td></tr></table></figure>
 <h5 id="修改-core-site-xml"><a href="#修改-core-site-xml" class="headerlink" title="修改 core-site.xml"></a>修改 <code>core-site.xml</code></h5><p>配置 <code>hadoop</code> 集群文件系统主机和端口、<code>hadoop</code> 临时目录</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- hadoop文件系统主机和端口 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://10.0.0.1:9000/<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置 hadoop 临时目录 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/path/to/hadoop-2.6.0-cdh5.11.0/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="修改-hdfs-site-xml"><a href="#修改-hdfs-site-xml" class="headerlink" title="修改 hdfs-site.xml"></a>修改 <code>hdfs-site.xml</code></h5><p>配置 <code>hadoop</code> 集群文件系统主机和端口、<code>hadoop</code> 临时目录</p>
@@ -431,8 +429,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/flink基本概念入门/" rel="prev" title="Flink 基本概念入门">
-                Flink 基本概念入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/10/技术/mogifs/mogilefs-base-desc/" rel="prev" title="mogilefs 基础介绍">
+                mogilefs 基础介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

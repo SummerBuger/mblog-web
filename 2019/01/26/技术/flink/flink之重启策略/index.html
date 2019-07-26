@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="apache flink 的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-26T08:28:17.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flink 探究之路 ———— Flink Job 重启策略">
 <meta name="twitter:description" content="apache flink 的">
@@ -348,16 +348,14 @@
       
         <h1 id="Flink-Job-重启策略"><a href="#Flink-Job-重启策略" class="headerlink" title="Flink Job 重启策略"></a>Flink Job 重启策略</h1><p>flink 提供多种重启策略，可以在 <code>flink-conf.yaml</code> 中通过配置 <code>restart-strategy</code> 参数设置默认使用的重启策略，也可以在 <code>job</code> 中指定重启策略。</p>
 <p>flink 提供如下重启策略</p>
-<ol>
-<li>固定延时重启(Fixed delay)</li>
+<p>“1. 固定延时重启(Fixed delay)</p>
+<ol start="2">
 <li>故障率重启(Failure rate)</li>
 <li>不重启(No restart)</li>
 </ol>
 <p>当 <code>job</code> 没有开启 <code>checkpoint</code> 的时候，一定是使用 <code>不重启</code> 策略，如果 <code>job</code> 开启了 <code>checkpoint</code> 但是没有设置重启策略的时候，将使用 <code>固定延时重启策略</code></p>
 <h3 id="固定延时重启-Fixed-delay"><a href="#固定延时重启-Fixed-delay" class="headerlink" title="固定延时重启(Fixed delay)"></a>固定延时重启(Fixed delay)</h3><p><code>job</code> 发生故障后，尝试重启 n 次，每次重启间隔固定时间 t，n 次之后失败。</p>
-<ol>
-<li>在 <code>flink-conf.yaml</code> 中设置重启策略</li>
-</ol>
+<p>“1. 在 <code>flink-conf.yaml</code> 中设置重启策略</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">restart-strategy: fixed-delay</span><br><span class="line">restart-strategy.fixed-delay.attempts: <span class="number">3</span> <span class="comment">// 故障发生后尝试重启次数</span></span><br><span class="line">restart-strategy.fixed-delay.delay: <span class="number">10</span> s <span class="comment">// 重启的间隔时间</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><code>job</code> 中直接指定重启策略</li>
@@ -365,17 +363,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();</span><br><span class="line">env.setRestartStrategy(RestartStrategies.fixedDelayRestart(</span><br><span class="line">  <span class="number">3</span>, <span class="comment">// number of restart attempts</span></span><br><span class="line">  Time.of(<span class="number">10</span>, TimeUnit.SECONDS) <span class="comment">// delay</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
 <h3 id="故障率重启-Failure-rate"><a href="#故障率重启-Failure-rate" class="headerlink" title="故障率重启(Failure rate)"></a>故障率重启(Failure rate)</h3><p>故障率重启策略在 <code>job</code> 发生故障后尝试重启，但是当在固定时间<code>failure rate interval</code> 内故障次数超过 <code>failure rate</code> 次后，<code>job</code> 被认定为故障。</p>
 <p>举例说明：<code>job</code> 故障停止运行之后，在 5min 内重试 3次，每次间隔10s，如果3次之后依旧失败，则认定为故障</p>
-<ol>
-<li>在 <code>flink-conf.yaml</code> 中设置重启策略</li>
-</ol>
+<p>“1. 在 <code>flink-conf.yaml</code> 中设置重启策略</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">restart-strategy: failure-rate</span><br><span class="line">restart-strategy.failure-rate.max-failures-per-interval: <span class="number">3</span>  <span class="comment">// 故障后尝试重启次数</span></span><br><span class="line">restart-strategy.failure-rate.failure-rate-interval: <span class="number">5</span> min  <span class="comment">// 故障后检查故障率的时间间隔</span></span><br><span class="line">restart-strategy.failure-rate.delay: <span class="number">10</span> s   <span class="comment">// 故障后两次尝试重启的间隔时间</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><code>job</code> 中直接指定重启策略</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();</span><br><span class="line">env.setRestartStrategy(RestartStrategies.failureRateRestart(</span><br><span class="line">  <span class="number">3</span>, <span class="comment">// max failures per interval</span></span><br><span class="line">  Time.of(<span class="number">5</span>, TimeUnit.MINUTES), <span class="comment">//time interval for measuring failure rate</span></span><br><span class="line">  Time.of(<span class="number">10</span>, TimeUnit.SECONDS) <span class="comment">// delay</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
-<h3 id="不重启策略-No-Restart"><a href="#不重启策略-No-Restart" class="headerlink" title="不重启策略(No Restart)"></a>不重启策略(No Restart)</h3><ol>
-<li>在 <code>flink-conf.yaml</code> 中设置重启策略</li>
-</ol>
+<h3 id="不重启策略-No-Restart"><a href="#不重启策略-No-Restart" class="headerlink" title="不重启策略(No Restart)"></a>不重启策略(No Restart)</h3><p>“1. 在 <code>flink-conf.yaml</code> 中设置重启策略</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">restart-strategy: none</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><code>job</code> 中直接指定重启策略</li>
@@ -413,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/26/技术/flink/flink之savepoints和checkpoints/" rel="next" title="Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint">
-                <i class="fa fa-chevron-left"></i> Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint
+              <a href="/2019/01/10/技术/mogifs/mogilefs-base-desc/" rel="next" title="mogilefs 基础介绍">
+                <i class="fa fa-chevron-left"></i> mogilefs 基础介绍
               </a>
             
           </div>
@@ -423,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/26/技术/flink/flink之state/" rel="prev" title="Flink 探究之路 ———— State">
-                Flink 探究之路 ———— State <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/26/技术/flink/flink之savepoints和checkpoints/" rel="prev" title="Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint">
+                Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

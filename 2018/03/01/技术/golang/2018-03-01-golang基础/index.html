@@ -88,7 +88,7 @@
 <meta property="og:description" content="golang 基础语法简单汇总">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/slice.png">
-<meta property="og:updated_time" content="2018-07-29T02:31:08.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang 基础学习笔记（-）———— 基本语法">
 <meta name="twitter:description" content="golang 基础语法简单汇总">
@@ -381,9 +381,7 @@ rune 是 `int32` 类型的别名, 或者说完全等同于 `int32`. 按照惯例
 <p><em>关键字 if 和 else 之后的左大括号 { 必须和关键字在同一行，如果你使用了 else-if 结构，则前段代码块的右大括号 } 必须和 else-if 关键字在同一行。这两条规则都是被编译器强制规定的。</em></p>
 <p>除了上述情况之外还有如下使用方法<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> initialization; condition &#123;</span><br><span class="line">	<span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Example:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> i := getValue(); i &gt; <span class="number">10</span> &#123;</span><br><span class="line">	<span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><ol>
-<li>常见用法</li>
-</ol>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><p>“1. 常见用法</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; count; i++ &#123;</span><br><span class="line">	<span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>go 中没有while 循环，用for 循环代替</li>
@@ -433,9 +431,8 @@ Process finished with exit code 0
 <p>如果数组元素本身可以比较的，那么数组也是可以用 <code>==</code> 比较的，反则会编译失败</p>
 <h4 id="slice（切片）"><a href="#slice（切片）" class="headerlink" title="slice（切片）"></a>slice（切片）</h4><p><code>slice(切片)</code> 是对数组的一个连续片段的使用</p>
 <p>切片也是可索引的，也可以使用 <code>len()</code> 函数的来获取长度<br>切片除了长度之外，还有一个属性是容量， 通过内建函数 <code>cap()</code> 函数来获取容量，容量的含义是切片开始位置到底层数组结束位置的数组长度<br>例如切片 s 是数组 a 的一部分，s = a[3:], 那么 <em>cap[s] = len(a) - 3</em><br>对于切片来说，始终需要保证 <code>0 &lt;= len(s) &lt;= cap(s)</code>， 如果 <em>len(s) &gt; cap(s)</em> 就会出现<code>越界异常</code></p>
-<p>从上面这段文字总结出 <code>slice</code> 的组成元素是：</p>
-<ol>
-<li>指针（指向底层数组中切片的第一个元素）</li>
+<p>从上面这段文字总结出 <code>slice</code> 的组成元素是：<br>“1. 指针（指向底层数组中切片的第一个元素）</p>
+<ol start="2">
 <li>长度</li>
 <li>容量</li>
 </ol>

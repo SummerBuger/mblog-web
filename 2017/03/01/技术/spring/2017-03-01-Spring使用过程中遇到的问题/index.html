@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/prototypecomponent.png">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/realProtoTypeComponent1.png">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/realProtoTypeComponent2.png">
-<meta property="og:updated_time" content="2018-07-29T02:50:27.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何正确的创建 prototype 类型的 bean">
 <meta name="twitter:description" content="如何正确的创建 prototype 类型的 bean">
@@ -367,8 +367,8 @@
 <p>这里，解决这个问题的第一个方案也出现了：</p>
 <h6 id="依赖-prototype-bean-也必须是-prototype-bean"><a href="#依赖-prototype-bean-也必须是-prototype-bean" class="headerlink" title="依赖 prototype bean 也必须是 prototype bean"></a>依赖 <code>prototype bean</code> 也必须是 <code>prototype bean</code></h6><p>很明显这个方案不能解决很多状况， 我们继续这个问题</p>
 <p>再来翻翻 <code>《Spring 揭秘》</code> 找找答案<br>我们看到了两个答案</p>
-<ol>
-<li>使用方法注入</li>
+<p>“1. 使用方法注入</p>
+<ol start="2">
 <li>继承 ApplicationContextAware 每次去获取bean</li>
 </ol>
 <h5 id="使用方法注入"><a href="#使用方法注入" class="headerlink" title="使用方法注入"></a>使用方法注入</h5><p>在传统的 xml 配置方式中我们需要这样配置</p>

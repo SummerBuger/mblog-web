@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="学习《计算广告》，列举广告行业基本术语">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-29T02:51:03.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算广告学习笔记之名词汇总">
 <meta name="twitter:description" content="学习《计算广告》，列举广告行业基本术语">
@@ -348,9 +348,8 @@
       
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>最近看了刘鹏老师的《计算广告》，叹为惊止，对于接触广告投放业务不到一年的我产生了很大帮助，决定好好研读这本广告 <code>圣经</code></p>
 <h4 id="计算广告名词汇总"><a href="#计算广告名词汇总" class="headerlink" title="计算广告名词汇总"></a>计算广告名词汇总</h4><p><code>广告主（Advisiter）</code>： 买广告位的个人或公司<br><code>媒体（media）</code>：卖广告位的个体<br><code>受众（audience）</code>：看广告的人</p>
-<p>在线广告创意类型</p>
-<ol>
-<li><code>横幅广告</code></li>
+<p>在线广告创意类型<br>“1. <code>横幅广告</code></p>
+<ol start="2">
 <li><code>文字链广告</code></li>
 <li><code>富媒体广告</code></li>
 <li><code>视屏广告</code></li>
@@ -363,9 +362,8 @@
 <p><code>竞价广告（auction-based advertising）</code><br><code>搜索广告（search advertising）</code>：用户输入关键词，根据关键词精确定位广告；广告主通过购买关键词来购买广告位资源<br><em>疑问：搜索广告和上下文广告中，广告主都是针对关键词出价，如果两个广告主都买了同一个广告词时，如果选择展示哪个广告？按照 eCPM 排序吗？</em><br><code>上下文广告（search advertising）</code>：将搜索广告中的搜索词换成页面的关键词，通过页面关键词定位广告</p>
 <p><code>广义第二高价(Generalized Second Price, GSP)</code></p>
 <p><code>ADN（AD Network）</code>：广告网络，批量运营媒体的广告位资源，按照人群或者上下文标签售卖给需求方，并用竞价的方式决定流量分配；在广告市场中广告网络的出现是为了批量聚合各媒体方的<code>剩余流量</code>，批量卖给需求方实现变现，因此广告网络提供的流量一般质量较差，广告网络先天性不适合投放品牌广告；国内主要公司产品：百度网盟</p>
-<p><code>竞价广告网络</code>: 竞价售卖方式的广告网络，淡化广告位标的，售卖标的是根据标签划分的人群。产品特点如下</p>
-<ol>
-<li>竞价方式不向广告主做出量的约定，使得广告网络可以专注于对eCPM的估计</li>
+<p><code>竞价广告网络</code>: 竞价售卖方式的广告网络，淡化广告位标的，售卖标的是根据标签划分的人群。产品特点如下<br>“1. 竞价方式不向广告主做出量的约定，使得广告网络可以专注于对eCPM的估计</p>
+<ol start="2">
 <li>广告网络的出现就是为了批量聚合各媒体的<code>剩余流量</code>，淡化广告位，按人群售卖，很难拿到品牌溢价高的广告位，一般不适合品牌类广告</li>
 <li>竞价广告的结算方式首推CPC, 屏蔽了广告位的概念之后，广告主无法估计每次展现出价，当使用CPC结算时，广告主只需要根据点击出价</li>
 </ol>
@@ -373,10 +371,7 @@
 <p><code>CPC（Cost per click）</code>：按点击收费<br><code>TD（Trading Desk）</code>：交易终端，面对多个ADN或者媒体按人群一站式采买的广告并优化投入产出比的需求方产品</p>
 <p><code>RTB（Real Time Bidding）</code>：实时竞价，针对每一次广告展现，向需求方产品发送广告位及用户标识，从需求方获取报价，比较各需求方的价格，选出最优价格，展示该需求方的广告<br><code>ADX (Advertising Exchange)</code>：广告交易平台，大量聚合媒体的剩余流量，并且通过实时竞价的方式将它们变现的产品形态<br><code>DSP（Demand Side Platform）</code>：需求方平台，通过实时竞价的方式，按照定制化的人群标签购买广告； 需求方平台将非竞价广告中需要广告交易平台来实现的对人群进行定制化标签划分工作给接管了，DSP 根据自身的第一方数据（来自DMP)面对市场提供的开放竞价接口，出价采买合适的广告<br><code>DMP (Data Management Platform)</code>：数据管理平台，收集第一方数据，为自身平台收集数据信息<br><code>数据交易平台 (Data Exchange Platform, DEP)</code> 数据交易平台，收集管理交易第三方数 据</p>
 <p>第一方数据：广告主自身的数据<br>第二方数据：广告平台的数据<br>第三方数据：不直接参与广告交易的其他数据提供方的数据</p>
-<p><code>重定向</code>: 针对在广告主网站有过操作的用户，精确投放操作相关的广告，提高转化率；缺点是只能提高ROI，无法获取新用户</p>
-<ol>
-<li>个性化重定向， 类似于站外推荐，依赖根据用户信息的精确推荐引擎，对于电商系统动态库存查询接口也是必要的</li>
-</ol>
+<p><code>重定向</code>: 针对在广告主网站有过操作的用户，精确投放操作相关的广告，提高转化率；缺点是只能提高ROI，无法获取新用户<br>“1. 个性化重定向， 类似于站外推荐，依赖根据用户信息的精确推荐引擎，对于电商系统动态库存查询接口也是必要的</p>
 <p><code>新客推荐</code>: 在第一方数据的基础上，依赖第二方数据，针对“对自己的产品可能感兴趣”的用户进行广告投放，针对的是没有关注广告主网站的用户。</p>
 <p><em><em>ADN 和 ADX 的差别在于，ADN将媒体资源分类后打包出售，而 ADX 针对每一次广告展现通过实时竞价的方式，单次售卖每一次广告展现</em></em></p>
 <p><em><em>TD 和 DSP 的差别在于，TD 批量的从ADN 或者媒体采买广告，而 DSP 需要尽可能的估计每一次广告展现带来的期望价值，计算出一个合理的报价，通过实时竞价从ADX 购买广告</em></em></p>
@@ -393,9 +388,8 @@
 (a:广告 u:用户 c:环境 r: 总收入 μ:点击率 v:点击价值)
 </code></pre><p>从上述表达式得出: 当点击价值恒定是，CTR == eCPM<br>eCPM代表DSP的出价，为了快速花完预算，可以将eCPM 预估的高于市场价；为了获得性价比高的流量，将eCPM定位在市场价较低的地方</p>
 <p><em><em>eCPM 一般指的是估计的千次展现收益; RPM 指的是千次展现收入; CPM 是千次展示成本</em></em></p>
-<p>广告结算方式</p>
-<ol>
-<li><code>CPM 结算</code>：按照千次展示结算，供给方和需求方约定好前次展示的计费标准，展示的收益效果由需求方把控</li>
+<p>广告结算方式<br>“1. <code>CPM 结算</code>：按照千次展示结算，供给方和需求方约定好前次展示的计费标准，展示的收益效果由需求方把控</p>
+<ol start="2">
 <li><code>CPC 结算</code>：即按点击结算，供给方（或中间市场）提供点击率数据，需求方估计点击价值，并且通过点击出价的方式向市场通知自己的估价。优点是，供给方通过大量收集用户行为数据可以相对准确的估计点击率；广告主通过分析用户的站内行为数据，对点击价值作出评估。</li>
 <li><code>CPS(Cose per sale)/ CPA(Cost Per Action)/ROI(Return Of Investment) 结算</code>：需求方按照转化收益结算，对需求方来说极大的规避了风险，对供给方来说既要估计点击率又要估计点击价值；在一些场景中供给方无法准确估计点击价值，该结算方式要求供给方能够较准确的估计点击价值或者能借助完善的第三方转化监测估计点击价值。</li>
 <li><code>CPT(Cost per Time)</code>：将某个广告位在某段时间内以独占的方式售卖给广告主，价格由双方约定，无需计量；是品牌广告的不二选择</li>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Tools,etcd," />
+  <meta name="keywords" content="etcd,Tools," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="etcd 安装及入门使用说明">
-<meta name="keywords" content="Tools,etcd">
+<meta name="keywords" content="etcd,Tools">
 <meta property="og:type" content="article">
 <meta property="og:title" content="etcd 使用入门">
 <meta property="og:url" content="https://summerbuger.github.io/2018/05/21/技术/etcd/2018-05-21-etcd安装使用/index.html">
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="etcd 安装及入门使用说明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-24T02:05:59.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="etcd 使用入门">
 <meta name="twitter:description" content="etcd 安装及入门使用说明">
@@ -348,17 +348,14 @@
       
         <h2 id="etcd-使用入门"><a href="#etcd-使用入门" class="headerlink" title="etcd 使用入门"></a>etcd 使用入门</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>介绍 etcd 和 raft协议</p>
 <h3 id="etcd-安装"><a href="#etcd-安装" class="headerlink" title="etcd 安装"></a>etcd 安装</h3><p>etcd 的安装有两种方式</p>
-<ol>
-<li>直接从<a href="&quot;https://github.com/coreos/etcd/releases/&quot;" title="release binary page">官网</a>下载 release 版本的二进制文件</li>
+<p>“1. 直接从<a href="&quot;https://github.com/coreos/etcd/releases/&quot;" title="release binary page">官网</a>下载 release 版本的二进制文件</p>
+<ol start="2">
 <li>下载源码手动编译安装</li>
 </ol>
 <p>个人倾向于使用 release 版本安装，下面开始下载安装</p>
-<ol>
-<li><p>找到下载的压缩包，解压</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip etcd-v3.3.8-darwin-amd64.zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将解压的文件夹的移动到安装目录中</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /path/to/etcd /usr/<span class="built_in">local</span>/etcd</span><br></pre></td></tr></table></figure>
+<p>“1. 找到下载的压缩包，解压<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip etcd-v3.3.8-darwin-amd64.zip</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>将解压的文件夹的移动到安装目录中<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /path/to/etcd /usr/<span class="built_in">local</span>/etcd</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>此时我们可以先看看解压后有什么？</p>
@@ -380,9 +377,7 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcd</span><br></pre></td></tr></table></figure>
 <p>3.2 来一些启动配置，启动一个集群</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">nohup ./etcd --name test1 --initial-advertise-peer-urls http://localhost:2380 \</span><br><span class="line">  --listen-peer-urls http://localhost:2380 \</span><br><span class="line">  --listen-client-urls http://localhost:2379,http://127.0.0.1:2379 \</span><br><span class="line">  --advertise-client-urls http://localhost:2379 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data1 &amp;</span><br><span class="line"></span><br><span class="line">nohup ./etcd --name test2 --initial-advertise-peer-urls http://localhost:2390 \</span><br><span class="line">  --listen-peer-urls http://localhost:2390 \</span><br><span class="line">  --listen-client-urls http://localhost:2389,http://127.0.0.1:2389 \</span><br><span class="line">  --advertise-client-urls http://localhost:2389 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data2 &amp;</span><br><span class="line"></span><br><span class="line">nohup ./etcd --name test3 --initial-advertise-peer-urls http://localhost:2400 \</span><br><span class="line">  --listen-peer-urls http://localhost:2400 \</span><br><span class="line">  --listen-client-urls http://localhost:2399,http://127.0.0.1:2399 \</span><br><span class="line">  --advertise-client-urls http://localhost:2399 \</span><br><span class="line">  --initial-cluster-token test-cluster \</span><br><span class="line">  --initial-cluster test1=http://localhost:2380,test2=http://localhost:2390,test3=http://localhost:2400 \</span><br><span class="line">  --initial-cluster-state new \</span><br><span class="line">  --data-dir /app/etcd/data3 &amp;</span><br></pre></td></tr></table></figure>
-<h3 id="ETCD-简单指令操作"><a href="#ETCD-简单指令操作" class="headerlink" title="ETCD 简单指令操作"></a><code>ETCD</code> 简单指令操作</h3><ol>
-<li><code>ETCD</code> 数据插入</li>
-</ol>
+<h3 id="ETCD-简单指令操作"><a href="#ETCD-简单指令操作" class="headerlink" title="ETCD 简单指令操作"></a><code>ETCD</code> 简单指令操作</h3><p>“1. <code>ETCD</code> 数据插入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./etcdctl put key value</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>插入文件数据到 <code>ETCD</code></li>
@@ -422,9 +417,9 @@ drwx------   3 ?  staff   102B  7 16 23:45 default.etcd
       
         <div class="post-tags">
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
             <a href="/tags/etcd/" rel="tag"># etcd</a>
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
           
         </div>
       

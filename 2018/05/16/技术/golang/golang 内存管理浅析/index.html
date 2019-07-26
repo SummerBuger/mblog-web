@@ -88,7 +88,7 @@
 <meta property="og:description" content="golang 内存管理源码阅读分析">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://summerbuger.github.io/assets/picture/theadheap.gif">
-<meta property="og:updated_time" content="2018-09-18T23:52:19.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang 内存管理浅析">
 <meta name="twitter:description" content="golang 内存管理源码阅读分析">
@@ -386,9 +386,8 @@ s2: 0xc42000e020
 <h3 id="小对象内存分配（Small-Object-Allocation）"><a href="#小对象内存分配（Small-Object-Allocation）" class="headerlink" title="小对象内存分配（Small Object Allocation）"></a>小对象内存分配（Small Object Allocation）</h3><p>线程本地缓存是一个单向链表 L1，链表 L1 的每个元素也是一个具有相同大小的空间对象的链表 l<sub>n</sub></p>
 <p><img src="/assets/picture/theadheap.gif" alt="" title="Thread Local Cache Heap"></p>
 <p><code>TCMalloc</code> 将线程本地缓存拆分成约170种大小类型的空闲对象列表，依次以 8bytes、16bytes、32bytes等大小递增</p>
-<p>小对象内存分配具体步骤如下：</p>
-<ol>
-<li>计算对象大小，找到大于对象大小的最小的大小类型 m；</li>
+<p>小对象内存分配具体步骤如下：<br>“1. 计算对象大小，找到大于对象大小的最小的大小类型 m；</p>
+<ol start="2">
 <li>在当前线程中找到该大小类型的空闲对象链表 l<sub>m</sub>；</li>
 <li>如果链表 l<sub>m</sub> 不为空，从链表中删除第一个空闲对象用于内存分配；这个操作过程中，<code>TCMalloc</code> 不需要加锁，这个对提高内存分配的效率很有帮助；</li>
 <li>如果链表 l<sub>m</sub> 为空，从所有线程共享的 <code>Central Free List</code> 中获取一堆空闲对象，放到当前线程的私有缓存队列上去，在重复步骤3，从线程私有缓存中返回一个空闲对象</li>
@@ -399,9 +398,8 @@ s2: 0xc42000e020
 <p>The allocator’s data structures are:</p>
 <p>fixalloc: a free-list allocator for fixed-size off-heap objects,<br>    used to manage storage used by the allocator.<br>mheap: the malloc heap, managed at page (8192-byte) granularity.<br>mspan: a run of pages managed by the mheap.<br>mcentral: collects all spans of a given size class.<br>mcache: a per-P cache of mspans with free space.<br>mstats: allocation statistics.</p>
 <p>Allocating a small object proceeds up a hierarchy of caches:</p>
-<ol>
-<li><p>Round the size up to one of the small size classes<br>and look in the corresponding mspan in this P’s mcache.<br>Scan the mspan’s free bitmap to find a free slot.<br>If there is a free slot, allocate it.<br>This can all be done without acquiring a lock.</p>
-</li>
+<p>“1. Round the size up to one of the small size classes<br>   and look in the corresponding mspan in this P’s mcache.<br>   Scan the mspan’s free bitmap to find a free slot.<br>   If there is a free slot, allocate it.<br>   This can all be done without acquiring a lock.</p>
+<ol start="2">
 <li><p>If the mspan has no free slots, obtain a new mspan<br>from the mcentral’s list of mspans of the required size<br>class that have free space.<br>Obtaining a whole span amortizes the cost of locking<br>the mcentral.</p>
 </li>
 <li><p>If the mcentral’s mspan list is empty, obtain a run<br>of pages from the mheap to use for the mspan.</p>
@@ -410,9 +408,8 @@ s2: 0xc42000e020
 </li>
 </ol>
 <p>Sweeping an mspan and freeing objects on it proceeds up a similar<br>hierarchy:</p>
-<ol>
-<li><p>If the mspan is being swept in response to allocation, it<br>is returned to the mcache to satisfy the allocation.</p>
-</li>
+<p>“1. If the mspan is being swept in response to allocation, it<br>   is returned to the mcache to satisfy the allocation.</p>
+<ol start="2">
 <li><p>Otherwise, if the mspan still has allocated objects in it,<br>it is placed on the mcentral free list for the mspan’s size<br>class.</p>
 </li>
 <li><p>Otherwise, if all objects in the mspan are free, the mspan<br>is now “idle”, so it is returned to the mheap and no longer<br>has a size class.<br>This may coalesce it with adjacent idle mspans.</p>
@@ -422,9 +419,8 @@ s2: 0xc42000e020
 </ol>
 <p>Allocating and freeing a large object uses the mheap<br>directly, bypassing the mcache and mcentral.</p>
 <p>Free object slots in an mspan are zeroed only if mspan.needzero is<br>false. If needzero is true, objects are zeroed as they are<br>allocated. There are various benefits to delaying zeroing this way:</p>
-<ol>
-<li><p>Stack frame allocation can avoid zeroing altogether.</p>
-</li>
+<p>“1. Stack frame allocation can avoid zeroing altogether.</p>
+<ol start="2">
 <li><p>It exhibits better temporal locality, since the program is<br>probably about to write to the memory.</p>
 </li>
 <li><p>We don’t zero pages that never get reused.</p>

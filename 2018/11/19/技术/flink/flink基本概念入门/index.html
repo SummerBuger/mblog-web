@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ice summer bug&#39;s notes">
 <meta property="og:description" content="apache flink 基本概念介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T09:32:09.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flink 基本概念入门">
 <meta name="twitter:description" content="apache flink 基本概念介绍">
@@ -352,8 +352,8 @@
 <h3 id="operator-subtask"><a href="#operator-subtask" class="headerlink" title="operator subtask"></a><code>operator subtask</code></h3><p>每个 <code>operator</code> 可以分成多个 <code>operator subtask</code>，一个 <code>operator</code> 的并行度就是 <code>operator subtask</code> 的数量</p>
 <h3 id="operator-chain"><a href="#operator-chain" class="headerlink" title="operator chain"></a><code>operator chain</code></h3><p><code>flink</code> 作为分布式运行系统，会将多个 <code>operator subtask</code> 关联成一个 <code>operator task</code>，这个过程就是 <code>operator chain</code>。</p>
 <p>两个 <code>operator subtask</code> 能否关联起来，需要满足下列要求</p>
-<ol>
-<li>上下游的并行度一致</li>
+<p>“1. 上下游的并行度一致</p>
+<ol start="2">
 <li>下游节点的入度为1 （也就是说下游节点没有来自其他节点的输入）</li>
 <li>上下游节点都在同一个 slot group 中（下面会解释 slot group）</li>
 <li>下游节点的 chain 策略为 ALWAYS（可以与上下游链接，map、flatmap、filter等默认是ALWAYS）</li>
@@ -398,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/flink安装和运行/" rel="next" title="Flink 安装和运行">
-                <i class="fa fa-chevron-left"></i> Flink 安装和运行
+              <a href="/2018/11/19/技术/flink/yarn集群维护问题汇总/" rel="next" title="yarn 集群日常问题汇总">
+                <i class="fa fa-chevron-left"></i> yarn 集群日常问题汇总
               </a>
             
           </div>
@@ -408,8 +408,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/19/技术/flink/yarn集群维护问题汇总/" rel="prev" title="yarn 集群日常问题汇总">
-                yarn 集群日常问题汇总 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/19/技术/flink/Flink-DateStream-API-Desc/" rel="prev" title="Flink DateStream API">
+                Flink DateStream API <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

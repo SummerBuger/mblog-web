@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://segmentfault.com/img/remote/1460000008129555">
 <meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/stream_aligning.svg">
 <meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/checkpointing.svg">
-<meta property="og:updated_time" content="2019-02-17T14:09:44.000Z">
+<meta property="og:updated_time" content="2019-04-15T02:56:15.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flink 探究之路 ———— 容错机制，Checkpoint 和 Savepoint">
 <meta name="twitter:description" content="apache flink 的">
@@ -353,7 +353,7 @@
         <h1 id="Flink-的容错机制"><a href="#Flink-的容错机制" class="headerlink" title="Flink 的容错机制"></a>Flink 的容错机制</h1><p><code>Flink</code> 最吸引使用者的地方就是它提供的容错机制保证数据流应用程序的<code>状态</code>的持续性恢复。<code>Flink</code> 保证即使在失败的情况下，数据流中的每一条数据最终也能确保只会对状态数据响应一次（<code>exactly once</code>）。<code>响应一次</code> 的机制可以手动降级到 <code>至少响应一次</code>(<code>at least once</code>)。</p>
 <p><code>容错机制</code> 对分布式流式数据持续性的产生<code>快照</code>(<code>snapshot</code>)并存储。对于持有小型数据状态的数据流应用来说，产生 <code>快照</code> 的过程是很轻量级的，对于数据流的正常处理过程的影响微乎其微。数据流应用的 <code>状态</code> 数据可以存储到一个可配置的环境(<code>Master</code>节点中，或者 <code>HDFS</code> 中）。</p>
 <p>当程序失败（机器、网络或者软件故障）的时候，<code>Flink</code> 将停止分布式数据流应用。然后再从最后一次成功的 <code>checkpoint</code> 中保存的 <code>状态</code>(<code>state</code>) 数据中恢复应用的所有 <code>算子</code>（<code>Operator</code>）。输入数据也被重置到最后一次成功的<code>快照</code>数据中保存的位置 。 <code>Flink</code> 保证并行数据流在重启之后处理的所有数据都不会是最近一次成功的 <code>checkpoint</code> 之前的数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：</span><br><span class="line">1. `checkpointing` 功能默认是关闭的，需要手动配置，指定开启 `checkpointing`</span><br><span class="line">2. 在 `Flink` 完成保证的基础上，数据流输入源 (`streaming source`)需要保障能回退到指定的最近一个位置。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：</span><br><span class="line">&quot;1. `checkpointing` 功能默认是关闭的，需要手动配置，指定开启 `checkpointing`</span><br><span class="line">2. 在 `Flink` 完成保证的基础上，数据流输入源 (`streaming source`)需要保障能回退到指定的最近一个位置。</span><br></pre></td></tr></table></figure>
 <h1 id="Checkpointing"><a href="#Checkpointing" class="headerlink" title="Checkpointing"></a><code>Checkpointing</code></h1><p><code>Flink</code> 的 <code>容错机制</code> 简而言之就是持续不断的对 <code>分布式数据流</code> 和 <code>算子状态(Operator state)</code> 产生 <code>一致性</code> 的 <code>快照</code> 数据。这些 <code>快照</code> 数据系统遇到故障时，用于从错误状态中恢复的 <code>检查点</code> (<code>checkpoints</code>)。 <code>Flink</code> 产生 <code>快照</code> 数据的机制的详细描述如下： <a href="http://arxiv.org/abs/1506.08603" title="Lightweight Asynchronous Snapshots for Distributed Dataflows" target="_blank" rel="noopener">Lightweight Asynchronous Snapshots for Distributed Dataflows</a>，该算法是在参考 <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/chandy.pdf" title="Chandy-Lamport algorithm" target="_blank" rel="noopener">Chandy-Lamport algorithm</a> 算法的基础上进行改进的，并针对 <code>Flink 执行模型</code> 进行量身定做。</p>
 <h2 id="Barriers-栅栏"><a href="#Barriers-栅栏" class="headerlink" title="Barriers (栅栏)"></a><code>Barriers</code> (<code>栅栏</code>)</h2><p><code>Flink</code> 的分布式快照的核心组成部分就是 <code>Barriers(栅栏)</code>，这些 <code>Barriers(栅栏)</code> 被插入到数据流中，和数据一起往下流。<code>Barriers(栅栏)</code> 不会影响数据流中数据的顺序，数据流保证严格有序。<code>Barriers(栅栏)</code> 将数据切分成两部分，前一部分的数据进入当前的快照数据(<code>snapshot</code>)中，后一部分的数据进入下一快照数据。每个 <code>Barriers(栅栏)</code> 都有一个 <code>ID</code>，这个 <code>ID</code> 就是 <code>Barriers(栅栏)</code> 前一个 <code>snapshot</code> 的 <code>ID</code>。<code>Barriers(栅栏)</code> 不会影响数据流的处理，所以非常轻量级。多个不同 <code>快照</code> 的多个 <code>Barriers(栅栏)</code> 可以在数据流中同时存在，即多个 <code>快照</code> 可以同时创建。</p>
 <p><strong><em>问题：数据流中的数据也会进入 <code>快照</code> ？？？不应该是只包含状态数据吗？</em></strong></p>
@@ -405,8 +405,8 @@
 <h1 id="比较一下-Checkpoint-和-Savepoint"><a href="#比较一下-Checkpoint-和-Savepoint" class="headerlink" title="比较一下 Checkpoint 和 Savepoint"></a>比较一下 <code>Checkpoint</code> 和 <code>Savepoint</code></h1><p><code>Checkpoint</code> 和 <code>Savepoint</code> 都是 flink 提供的容错恢复机制，两个不管是命名还是使用方式都很类似，这里分别对两个进行一个简单的介绍并且对二者进行对比。</p>
 <h2 id="保存点-Savepoint"><a href="#保存点-Savepoint" class="headerlink" title="保存点(Savepoint)"></a><code>保存点(Savepoint)</code></h2><p>保存点是通过 <code>Flink</code> 的 <code>检查点机制(checkpointing mechanism)</code> 创建的，包含数据流任务的运行状态的一个一致性的快照数据。你可以用保存点去停止并重启任务、复制任务或者更新任务。</p>
 <p>保存点由两个部分组成</p>
-<ol>
-<li>存储在一个稳定的存储介质（<code>HDFS</code>、<code>S3</code>等）上的，一般来说比较大的包含二进制文件的文件夹。这些二进制文件纯粹的保存任务的运行状态的快照数据。</li>
+<p>“1. 存储在一个稳定的存储介质（<code>HDFS</code>、<code>S3</code>等）上的，一般来说比较大的包含二进制文件的文件夹。这些二进制文件纯粹的保存任务的运行状态的快照数据。</p>
+<ol start="2">
 <li>一个元数据文件（一般来说比较小），文件中保存了指向存储在稳定存储介质上的保存点的所有文件的指针（文件路径）。</li>
 </ol>
 <h2 id="算子命名的重要性"><a href="#算子命名的重要性" class="headerlink" title="算子命名的重要性"></a>算子命名的重要性</h2><p>保存点中维护了一个 map 格式的数据</p>
@@ -492,8 +492,8 @@ mapper-id   | State of StatefulMapper
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/技术/mogifs/mogilefs-base-desc/" rel="next" title="mogilefs 基础介绍">
-                <i class="fa fa-chevron-left"></i> mogilefs 基础介绍
+              <a href="/2019/01/26/技术/flink/flink之重启策略/" rel="next" title="Flink 探究之路 ———— Flink Job 重启策略">
+                <i class="fa fa-chevron-left"></i> Flink 探究之路 ———— Flink Job 重启策略
               </a>
             
           </div>
@@ -502,8 +502,8 @@ mapper-id   | State of StatefulMapper
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/26/技术/flink/flink之重启策略/" rel="prev" title="Flink 探究之路 ———— Flink Job 重启策略">
-                Flink 探究之路 ———— Flink Job 重启策略 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/26/技术/flink/flink之state/" rel="prev" title="Flink 探究之路 ———— State">
+                Flink 探究之路 ———— State <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
